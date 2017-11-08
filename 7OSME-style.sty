@@ -1,0 +1,171 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% ---- 7OSME Paper Formatting - DO NOT EDIT  ---- %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Author: Mark Schenk, M.Schenk@bristol.ac.uk
+%
+% Version 1: 31 August 2017
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{7OSME-style}[2017/08/25 v1.0 7OSME]
+
+\RequirePackage{amsmath,amssymb,amsthm,graphicx,float,xcolor,geometry,cite,enumitem,fancyhdr,lipsum,subfig,sidecap}
+
+% page margins
+\geometry{
+  paperwidth = 6in, % page width 6 inch
+  inner = 0.9375in, % 15/16 in. gutter margin
+  outer = 0.5in, % 0.5 in. outer margin
+  paperheight = 9in,
+  includehead, % measure top margin to top of header 
+  top = 0.625in, % top margin
+  headheight = 12pt, % height of header
+  headsep = 12pt, % separation header and body text
+  includefoot, % measure bottom margin to bottom of footer
+  bottom=0.25in, % bottom margin to footer
+  footskip = 0.375in
+%  showframe
+}
+
+
+% font styles (compatible with )
+\RequirePackage{mathptmx}       % Times Roman as body font
+\RequirePackage{helvet}         % Helvetica as sans-serif font / use Arial in Word template
+\RequirePackage{courier}        % Courier as typewriter font
+
+
+% figure captions
+\RequirePackage[font=small,labelfont=bf,textfont=it,margin=\parindent,labelsep=colon]{caption}
+
+
+% define theorems
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+
+
+% link (url/links/citation) formatting
+\RequirePackage[pdfusetitle]{hyperref}
+\hypersetup{hidelinks,colorlinks,urlcolor=[rgb]{0,0,1},linkcolor=[rgb]{0,0,0},citecolor=[rgb]{0,0,0}}
+
+
+%% redefine custom LaTeX environments
+
+\makeatletter
+
+% paper title section
+\def\@maketitle{%
+  \newpage
+  \null
+  {\flushright
+    {\Large \bfseries \@title \par}%
+    \vskip 12pt%
+    {\it \author \par}%
+  \par}
+  \vskip 36pt
+}
+
+% redefine short author list for headers
+\newcommand{\authorlist}[2][]{%
+  \gdef\author{#2}%
+  \@ifnotempty{#1}{%
+    \gdef\shortauthor{#1}%
+  }%
+}
+
+% create author affiliations
+\def\affiliations#1{\gdef\@affiliations{#1}}
+
+\def\theaffiliations
+    {\begingroup
+    \if!\@affiliations!\else
+    \small
+    \vskip 1em \hrule \vskip 1em 
+    \noindent
+    \def\thanks##1{\unskip{}}%
+    \def\iand{\\[5pt]\let\and=\nand}%
+    \def\nand{\ifhmode\unskip\nobreak\fi\ $\cdot$ }%
+    \let\and=\nand
+    \def\at{\\\let\and=\iand}%
+    \@affiliations
+    \fi
+    \endgroup
+ }%
+
+
+% define email link
+\def\email#1{e-mail: \href{mailto:#1}{#1}}
+
+
+% change abstract environment
+\renewenvironment{abstract}
+   {\small \list{}{\listparindent=0em \leftmargin=36pt\rightmargin=0em} \item {\bfseries \abstractname}: \itshape \relax}
+   {\endlist \vskip 36pt}
+
+
+% update secion headers
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {0.5ex \@plus.2ex}%
+                                   {\normalfont\large\bfseries}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {0.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {0.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+
+
+% define vector style
+\def\vec#1{\ensuremath{\mathchoice
+                     {\mbox{\boldmath$\displaystyle\mathbf{#1}$}}
+                     {\mbox{\boldmath$\textstyle\mathbf{#1}$}}
+                     {\mbox{\boldmath$\scriptstyle\mathbf{#1}$}}
+                     {\mbox{\boldmath$\scriptscriptstyle\mathbf{#1}$}}}}%
+
+
+% tweak bibliography section (adapted from article class)
+\renewenvironment{thebibliography}[1]
+     {\section*{\refname}%
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \small % make text small
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr 
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+
+\makeatother
+
+
+
+% header/footer style
+\fancypagestyle{plain}{ 
+  \fancyhf{} 
+%  \fancyfoot[CO]{\footnotesize \textsf{\thepage}} % page numbers are added when papers are combined
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyhead[RO,LE]{\footnotesize \textsf{\thepage}} % page numbers are added when papers are combined
+\renewcommand{\headrulewidth}{0pt}
+
+
+% make list item spacing more compact
+\setlist[enumerate]{topsep=1ex,itemsep=-0.5ex,leftmargin=*}
+\setlist[enumerate,2]{topsep=-0.5ex,itemsep=-0.5ex,leftmargin=*}
+\setlist[itemize]{topsep=1ex,itemsep=-0.5ex,leftmargin=*}
+\setlist[itemize,2]{topsep=-0.5ex,itemsep=-0.5ex}
