@@ -1,0 +1,32 @@
+\subsection{Optimality}
+\label{sec:optimality}
+
+Under some suitable assumptions, our construction can be made $2+\varepsilon$ optimal,
+for arbitrarily small $\varepsilon$.
+
+We define the maximum deltas along the $y$-axis as $D_j = \max_i{\|E_{i,j}-E_{i,j+1}\|}$,
+and let $Y = n + \sum_{i=1}^{n-1} D_j$
+We also define the lowest and highest points along $x$-axis as
+$L_i = \max_j E_{ij}$ and $H_i = \max_j E_{ij}$, and let
+$$X = n + \sum\limits_{i=1}^n \left[(H_i-\min(L_i,L_{i+1})) + (H_i-\min(L_i,L_{i-1}))\right]$$
+
+The terms in the summation account for the total length of all the necessary worst case vertical walls,
+and the $n$ is for the top faces.
+
+\begin{claim}
+The $x$-axis length of the strip of paper required to fold this shape can be made arbitrarily close to $X$.
+\end{claim}
+\begin{claim}
+The $y$-axis length of the strip of paper required to fold this shape will be exactly $Y$.
+\end{claim}
+
+First, we pick an $\epsilon$, such that $2\varepsilon$ divides all extrusion heights.
+The construction will require paper of size $X'\times Y$, where $X' = X + 2\epsilon(n-1)$.
+
+There are two components to the construction
+\begin{itemize}
+	\item $n$ strips parallel to the $y$-axis. Each of these strips will fold to the corresponding strip in the extruded graph. The total area of these strips will be $X\times Y$.
+    \item $n-1$ Intermediate strips, each of size $2\epsilon\times Y$ to connect the main strips together.
+\end{itemize}
+The total area is therefore $X\times Y + (n-1)2\epsilon\times Y = X'\times Y$. This can of course be made arbitrarily close to $X\times Y$.
+

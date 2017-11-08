@@ -1,0 +1,25 @@
+\section{Orthogonal Graphs}
+\label{sec:orthogonal_graphs}
+
+In this section, we outline a construction of orthogonal graphs with arbitrary rational extrusion heights.
+In our construction, the cross section at will always be on the $x-z$ plane.
+This makes the analysis much simpler.
+
+\subsection{Grid Extrusion}
+\label{sec:grid_extrusion}
+
+To simplify the presentation, we will consider an uniform $X-Y$ grid,
+with arbitrary rational extrusion heights corresponding to every grid square.
+\begin{definition}
+An $n\times m$ rational grid extrusion is a 3-dimensional structure,
+whose projection onto the $x-y$ plane forms an unit grid of size $n\times m$.
+Additionally, the unit face corresponding to the location $(i.j)$,
+is extruded $E_{ij}$ units in the $z$ direction, where $E_{ij}$ is a rational number.
+\end{definition}
+
+\subsubsection{Strip Extrusion}
+\label{sec:strip_extrusion}
+We also consider each ''column'' of a given grid extrusion separately as an indivisual \emph{strip exrusion}.
+We will construct each of the $n$ strips independently, and attachthem together with \emph{strip connectors}.
+
+\input{orthogonal/optimal}

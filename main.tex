@@ -1,41 +1,13 @@
 \documentclass[10pt,twoside]{article}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% ---- import 7OSME Formatting - DO NOT EDIT ---- %%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \usepackage{7OSME-style}
 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% ----        start user formatting         ---- %%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% additional packages may be loaded for customised layout, 
-% but aim to minimise these to avoid clashes with packages 
-% used in the default layout. The preloaded packages can
-% be found in the 7OSME-style.sty file.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% ----         end user formatting          ---- %%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% ----   Document and Author Information    ---- %%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \title{Paper Title}
-\authorlist[Dickens, Orwell, Martin]{C. J. H. Dickens, G. Orwell, G. R. R. Martin} % the text in square brackets will be shown in the headers; this should be the author surnames
-\affiliations{Name of First Author \at Name, Address of Institute, \email{name@email.address} \and Name of Second Author \at Name, Address of Institute, \email{name@email.address}}
+\authorlist[Dickens, Orwell, Martin]{C. J. H. Dickens, G. Orwell, G. R. R. Martin}
+% the text in square brackets will be shown in the headers; this should be the author surnames
+\affiliations{Name of First Author \at Name, Address of Institute, \email{name@email.address}
+\and Name of Second Author \at Name, Address of Institute, \email{name@email.address}}
 
-
-% place title/authors in header
 \makeatletter
   \let\runtitle\@title
   \let\runauthor\shortauthor
@@ -43,9 +15,6 @@
 
 \fancyhead[RE]{\footnotesize \textsf{\textsc{\runauthor}}}
 \fancyhead[LO]{\footnotesize \textsf{\textsc{\runtitle}}}
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% ----          start document            ---- %%%%
@@ -55,155 +24,17 @@
 
 \maketitle
 
-\begin{abstract}
-  The abstract must summarise the main content of the paper, and may be up to approximately 100 words in length. Unlike previous OSME publications, the abstract will be included in the proceedings. This abstract needs not be the same as that submitted for acceptance to the conference.
-\end{abstract}
+\input{abstract}
 
+\input{introduction}
 
-\section{Introduction}
-\label{sec:introduction}
-%
-\lipsum[1] % lorem ipsum text
+\input{extrusions}
 
+\input{cross_sections}
 
-\section{Section Heading}
-\label{sec:section}
-%
-\lipsum[2] % lorem ipsum text
+\input{orthogonal/orthogonal}
 
-
-\subsection{Subsection Heading}
-\label{subsec:subsection}
-%
-The equations are numbered, so they can be cross-referenced. Equation~\ref{eq:numbered} shows the cross-product of vector $\vec{r}$ with vector $\vec{F}$.
-%
-\begin{equation}
-    \vec{M} = \vec{r} \times \vec{F}
-    \label{eq:numbered}
-\end{equation}
-%
-The equation numbering is optional
-%
-\begin{equation*}
-    \vec{M} = \vec{r} \times \vec{F}
-\end{equation*}
-%
-Equation~\ref{eq:two-align-one-number} has two aligned equations, but with a single equation number.
-%
-\begin{equation}
-  \begin{aligned}
-    \vec{p} & = m\vec{v} \\
-    \vec{H} & = \vec{I} \omega
-  \end{aligned}
-  \label{eq:two-align-one-number}  
-\end{equation}
-%
-Alternatively, each equation has its own number (Equations~\ref{eq:two-align-two-number-first} and \ref{eq:two-align-two-number-second}).
-%
-\begin{align}
-    \vec{F} & = \left[\begin{array}{c} F_x \\ F_y \end{array}\right] \label{eq:two-align-two-number-first}  \\
-    \vec{F} & = m\vec{a} \label{eq:two-align-two-number-second}  
-\end{align}
-
-\begin{theorem}
-  Theorem text goes here.
-\end{theorem}
-%
-\begin{proof}
-  Proof text goes here. 
-\end{proof}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=50mm]{Figures/7OSME-logo.pdf}
-  \caption{The caption provides a brief description of the figure. The 7OSME logo shows Oxford's dreaming spires.}
-  \label{fig:7OSMElogo}
-\end{figure}
-
-References to literature are handled using BibTeX. Sources can be cited individually \cite{SmithDoe2017} or multiple citations can be combined \cite{origami5,origami6}.
-
-Figures should be high resolution bitmaps (300dpi or higher) or vector graphics. For photographs, use .jpg files; for line drawings or sketches use .png files or vector graphics such as .pdf. Using .jpg files for line drawings will make the lines blurry.
-
-\begin{table}[hb]
-  \centering 
-  \caption{A simple table.}
-  \renewcommand{\arraystretch}{1.2}
-  \begin{tabular}{r|cc}
-    \hline
-    fruit & apples & pears \\
-    \hline
-    vegetables & cauliflower & courgette \\
-    \hline
-  \end{tabular}
-   \label{tab:table}
-\end{table}
-
-
-\subsubsection{Subsubsection Heading}
-\label{subsubsec:example}
-%
-\lipsum[3] % lorem ipsum text
-
-\begin{figure}
-  \centering
-  \subfloat[]{
-    \includegraphics[width=50mm]{Figures/7OSME-logo.pdf}
-    \label{fig:subfig:logo1}
-  }
-  \subfloat[]{
-    \includegraphics[width=50mm]{Figures/7OSME-logo.pdf}
-    \label{fig:subfig:logo2}
-  }  
-  \label{fig:7OSMElogosubfigs}
-  \caption{Two sub-figures where both (a) and (b) show the 7OSME logo.}
-\end{figure}
-
-\subsubsection{Subsubsection Heading}
-\label{subsubsec:list}
-%
-A list of items can use bullet points,
-%
-\begin{itemize}
-  \item item one
-  \item item two
-    \begin{itemize}
-        \item sub-item 1
-        \item sub-item 2
-    \end{itemize}  
-\end{itemize}
-%
-or can be numbered:
-%
-\begin{enumerate}
-  \item item one
-    \begin{enumerate}
-        \item sub-item 1
-        \item sub-item 2
-    \end{enumerate}
-  \item item two
-\end{enumerate}
-
-\lipsum[4] % lorem ipsum text
-
-
-\section{Results}
-\label{sec:results}
-%
-\lipsum[5] % lorem ipsum text
-
-\begin{SCfigure}[][ht]
-  \centering
-  \includegraphics[width=0.5\linewidth]{Figures/7OSME-logo.pdf}
-  \caption{In some situations, for example if a figure is tall and narrow, a side caption might be preferable. The caption will be placed on the outer margin of the page.}
-  \label{fig:7OSMElogo:sidecaption}
-\end{SCfigure}
-
-
-\section{Conclusions}
-\label{sec:conclusions}
-%
-\lipsum[6] % lorem ipsum text
-
+\input{polygons/polygons}
 
 % reference section
 \bibliographystyle{osmebibstyle}
