@@ -1,0 +1,80 @@
+\subsection{Time Travel}
+\label{sec:time_travel}
+
+In the process of time travel, the lengths of segments may change.
+This can also be visualized as movement of the corresponding joint along one of the segments.
+The movement of a joint increases the length of one of its associated segments,
+and decreases the length of the other segment by the same amount (this ensures that the total length is preserved).
+Most velocity sequences are invalid. For example\ldots
+
+We will use some abuuse of notation, by using $\vec v_i, \vec o_i$ etc.
+to refer to the corresponsing parameters of $s_i$.
+
+\begin{definition}
+\label{def:segment_length}
+For ever segment $s$, we associate a left velocity $L_s$,
+which indicates the rate at which $s$ grows from its left endpoint.
+Similarly, we define a right velocity $R_s$ \ldots
+\end{definition}
+
+\begin{claim}
+\label{clm:left_right_velocity}
+The right velocity of $s_{i}$ is the negation of the left velocity of $s_{i+1}$ i.e. $R_i = -L_{i+1}$.
+Furthermore, the left velocity of the first segment,
+and the right velocity of the last segment should be zero, i.e. $L_0 = R_n = 0$
+This ensures that the total length of the cross section does not change.
+\end{claim}
+
+\begin{figure}[htpb]
+\graphicspath{{./notebooks/}}
+    \centering
+    \def\svgwidth{0.7\textwidth}
+    \input{notebooks/joint_plane_velocity.pdf_tex}
+    \caption{A joint with segments $l$ and $r$.
+    The trajectory of the joint is shown in orange.
+    The trajectories of $a$ and $b$ are shown in blue.
+    The green arrows indicate $\vec v^\shortparallel$}
+    \label{fig:joint_plane_velocity}
+\end{figure}
+
+\todo[inline]{Define Nodes}
+Consider a joint $\vec J_i$ corresponding to segments $l = s_i$ and $r = s_{i+1}$, at time $t=0$.
+Henceforth, we will refer to $L_l$ as $L$, and $R_r$ as $R$.
+Without loss of genenerality, we assume that $L<0$.
+At a later time $t$, let the new joint position be $\vec J'_i$.
+We define nodes $a$ and $b$ corresponding to $\vec J_i$ and $\vec J_{i+1}$ respectively.
+We also define the initial and final positions of $a$ as $\vec a$,
+and $\vec a'$, and similarly for $b$, we define $\vec b$ and $\vec b'$.
+Let $d$ be the \emph{separation} between nodes $a$ and $b$.
+this setup is shown in Figure~\ref{fig:joint_plane_velocity}
+%We define $\vec{\hat o_l}$ as the orientation vector,
+%and $\vec v_l$ as the \emph{joint plane velocity} of segment $l$.
+%Similarly, we define $\vec{\hat o_r},\vec v_r$ for segment $r$.
+
+First, note that $\vec a, \vec b$ lie on the segment $l$, and $\vec a', \vec b'$ lie on the segment $r$,
+which implies that $\vec b-\vec a = d\cdot \vec{\hat o_l}$, and $\vec b'-\vec a' = d\cdot \vec{\hat o_r}$.
+\begin{align}
+\vec b' - \vec a' &= (\vec b + t\cdot \vec v_r^\shortparallel) - (\vec a + t\cdot \vec v_l^\shortparallel)\\
+\implies \vec b' - \vec a' &= (\vec b - \vec a) + t\cdot(\vec v_r^\shortparallel - \vec v_l^\shortparallel)\\
+\implies d\cdot \vec{\hat o_r} &= d\cdot \vec{\hat o_l} + t\cdot(\vec v_r^\shortparallel - \vec v_l^\shortparallel)\\
+\implies \vec v_r^\shortparallel - \vec v_l^\shortparallel &= \frac{d}{t}\cdot(\vec{\hat o_r}-\vec{\hat o_l})\\
+&= R\cdot(\vec{\hat o_r}-\vec{\hat o_l}) = -L\cdot(\vec{\hat o_r}-\vec{\hat o_l})
+\end{align}
+
+This implies that $\vec{\hat o_l}\times \vec{\hat o_r}$ is oriented opposite to $\vec v_l^\shortparallel\times \vec v_r^\shortparallel$.
+If the angle between the segments (between $\vec{\hat o_l}$ and $\vec{\hat o_r}$) is $\theta$,
+the magnitude of $\vec{\hat o_r}-\vec{\hat o_l}$ is $\sqrt{2-2\cos(\theta)}$,
+and $|\vec v_r^\shortparallel-\vec v_l^\shortparallel| = v\cdot\sqrt{2-2\cos(\pi-\theta)}$.
+Here, $v$ is magnitude of the plane velocity of $J_i$.
+\begin{align}
+R = \frac dt &= \frac{|\vec v_r^\shortparallel - \vec v_l^\shortparallel|}{|\vec{\hat o_r}-\vec{\hat o_l}|}\\
+&= v\cdot\frac{\sqrt{\sin^2\left( {\pi/2-\theta/2}\right)}}{\sqrt{\sin^2{\theta/2}}}\\
+&= v\cdot\cot\left( \frac{\theta}{2} \right)
+\end{align}
+
+\todo[inline]{Surface traced out by cross section}
+
+This can result in a segment length becoming zero then delete.
+We may create a new segment at any point of zero length.
+
+Note that time evolution is reversible.

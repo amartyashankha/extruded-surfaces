@@ -1,0 +1,28 @@
+\section{Cross Sections}
+\label{sec:cross_sections}
+
+We introduce a new method of origami construction, using cross section disgrams.
+Instead of beginning our construction from a 2-dimensional sheet of paper,
+we consider a 1-dimensional cross section moving forwards in time.
+A simple example is demonstrated in Figure~\ref{fig:strip_narrowing}.
+
+\todo[inline]{Conservation of length}
+
+\begin{definition}
+A cross section is defined as an ordered list of line segments $\langle s_1,s_2,\cdots,s_n\rangle$,
+such that for every segment $s_i$ (except the last),
+the right endpoint of $s_i$ coincides with the left endpoint of $s_{i+1}$.
+Each line segment is associated with a velocity vector $\vec v_i$ of unit magnitude.
+Each segment is also associated with an unit orientation vector $\vec o_i$,
+which is the unit vector from the left endpint to the right endpoint.
+\end{definition}
+
+\begin{lemma}
+\label{lem:uniform_velocity}
+All points on a single segment move with the same velocity $v_i$.
+\end{lemma}
+
+\input{cross_sections/joints}
+\input{cross_sections/evolution}
+\input{cross_sections/intervals}
+\input{cross_sections/flat}

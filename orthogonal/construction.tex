@@ -1,0 +1,27 @@
+\subsection{Construction of Grid Extrusion}
+\label{sec:construction_of_grid_extrusion}
+Given a strip of size $w\times Y$, we will consider the evolution of the cross sections along the length $Y$.
+Imagine that there are $T = \frac Y\epsilon$ time steps over which the cross section evolves along the $y$-axis.
+Consider the decomposition of $Y$ as
+$$Y = (1 + D_1) + (1 + D_2) + (1 + D_) +\cdots + (1 + D_{n-1})$$
+Here, the times corresponding to
+\begin{itemize}
+	\item the $i^{th}$ ''1'' is realized as the strip $i-1\le y\le i$
+	\item $D_i$ is the transition between $i-1\le y\le i$ and $i\le y\le i+1$
+\end{itemize}
+
+\subsection{Construction of Strip Extrusion}
+\label{sec:construction_of_strip_extrusion}
+
+\subsubsection{Level Shifting}
+\label{sec:level_shifting}
+
+\input{orthogonal/level_shift_figure}
+
+\subsection{Construction of Strip Connectors}
+\label{sec:construction_of_strip_connectors}
+
+\subsubsection{Alignment with Level Shifts}
+\label{sec:alignment_with_level_shifts}
+
+\input{orthogonal/column_connector_figure}

@@ -1,0 +1,48 @@
+\subsection{Joints}
+\label{sec:joints}
+
+\begin{definition}
+\label{def:joints}
+A cross section with $n$ segments is also associated with a list of joints
+$ \langle J_1,\cdots J_{n-1} \rangle$, where $J_i$ corresponds to the right endpoint of $s_i$.
+The velocity of a joint $J_i$, is $\vec J_v = \vec v_i+\vec v_{i+1}$
+(i.e. the sum of the velocities of the corresponding segments).
+\end{definition}
+\begin{definition}
+\label{def:creases}
+Note that the trajectory of the joints form a crease \ldots angle is angle between direction vectors.
+Creases are also created when a segment changes direction\ldots angle is change in direction vector.
+\end{definition}
+
+\begin{definition}
+\label{def:joint_plane}
+A joint plane is the plane that coincides with both segments $l$ and $r$ associated with a particular joint $J$.
+\end{definition}
+
+\begin{definition}
+\label{def:joint_plane_velocity}
+Consider a joint $J$ associated with segments $l$ and $r$, and joint plane $\mathcal P$,
+where $\vec v_l$ and $\vec v_r$ are the velocities of segments $l$ and $r$.
+We define $\vec v_l^\shortparallel$ and $\vec v_l^\perp$ as the components of $\vec v_l$ coinciding with,
+and orthogonal to the joint plane respectively.
+Similarly, we define $\vec v_r^\shortparallel$ and $\vec v_r^\perp$, as the components of $\vec v_r$.
+Further, note that $\vec v_l^\shortparallel$ and $\vec v_r^\shortparallel$
+have to be orthogonal to $\vec o_l$ and $\vec o_r$ respectively.
+\end{definition}
+
+\begin{claim}
+\label{clm:joint_orthogonal_velocity}
+For a joint $J$ associated with segments $l$ and $r$, $\vec v_l^\perp = \vec v_r^\perp$.
+\end{claim}
+
+\begin{corollary}
+\label{cor:joint_plane_velocity}
+For a joint $J$ associated with segments $l$ and $r$,
+$ \left\| \vec v_l^\shortparallel\right\| = \left\| \vec v_r^\shortparallel\right\|$.
+\end{corollary}
+
+\begin{claim}
+\label{clm:valid_joint}
+A joint $J$ corresponding to segments $s$ and $t$ is \emph{valid}
+if the resulting evolution of the joint preserves distances.
+\end{claim}

@@ -1,0 +1,43 @@
+\graphicspath{{./figures/level_shift/}}
+\begin{figure}[!htb]
+    \centering
+    \begingroup
+        \def\svgwidth{0.26\textwidth}
+        \captionsetup[subfigure]{width=0.26\textwidth}
+        \subfloat[Higher initial level. Top segment moves down.]%
+        {\input{./figures/level_shift/column0.pdf_tex}}
+    \endgroup
+    \subfloat[Two segments created. New segments are aligned with top segment, and move down. Vertical segments move inwards.] {
+        \def\svgwidth{0.25\textwidth}
+        \input{./figures/level_shift/column1.pdf_tex}
+        \def\svgwidth{0.26\textwidth}
+        \input{./figures/level_shift/column2.pdf_tex}
+    }%
+    \def\svgwidth{0.26\textwidth}
+    \subfloat[Two more segments created. Vertical segments reverse direction.] {
+        \input{./figures/level_shift/column3.pdf_tex}
+    %}%
+        \def\svgwidth{0.28\textwidth}
+    %\subfloat[] {
+        \input{./figures/level_shift/column4.pdf_tex}
+    %}%
+        \def\svgwidth{0.30\textwidth}
+    %\subfloat[] {
+        \input{./figures/level_shift/column5.pdf_tex}
+    }%
+
+    \subfloat[Level shift completed with four new horizontal segments.] {
+        \def\svgwidth{0.31\textwidth}
+        \input{./figures/level_shift/column6.pdf_tex}
+        \def\svgwidth{0.36\textwidth}
+        \input{./figures/level_shift/column7.pdf_tex}
+    }%
+    \begingroup
+        \def\svgwidth{0.27\textwidth}
+        \captionsetup[subfigure]{width=0.25\textwidth}
+        \subfloat[Flat folded state.]
+        {\input{./figures/level_shift/column8.pdf_tex}}%
+    \endgroup%
+    \caption{Level Shifting Gadget. The separation along the $Y$ direction serves to illustrate the layering.}
+    \label{fig:level_shift}
+\end{figure}
