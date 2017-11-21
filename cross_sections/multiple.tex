@@ -1,0 +1,62 @@
+\subsection{Multiple Cross Sections}
+\label{sec:intervals}
+\input{cross_sections/strip_narrowing}
+
+\begin{definition}
+\label{def:compatible}
+Given two cross section intervals $\mathcal C$ and $\mathcal D$, such that $\mathcal C^F$ and $\mathcal D^I$ are equivalent,
+we say that $\mathcal D$ is next-compatible with $\mathcal C$ and $\mathcal C$ is previous-compatible with $\mathcal D$.
+Two cross sections $C = \langle s_1, s_2,\cdots s_n \rangle$ and $D = \langle r_1, r_2,\cdots r_m \rangle$ are equivalent
+if and only if $C$ and $D$ correspond to the same sequence of segments after the deletion of all zero length segments.
+\end{definition}
+
+\begin{definition}
+\label{def:cross_section_sequence}
+A cross section sequence is a sequence is an ordered list of cross section intervals $ \langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+such that $C_{i}$ is next-compatible with $C_{i-1}$ for all $i\in [n-1]$.
+This is equivalent to stating that $C_{i}$ is previous-compatible with $C_{i+1}$ for all $i\in [n-1]$.
+Note that wedo not care about the directions of the segments.
+\end{definition}
+
+We will represent our full construction as a valid \emph{cross section sequence}.
+Given a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+the transition from $\mathcal C_i$ to $\mathcal C_{i+1}$ corresponds to the deletion of one or more
+length zero segments from $\mathcal C_i$, and the addition of one or more zero length segments to obtain $\mathcal C_{i+1}$.
+One simple example is shown in Figure~\ref{fig:strip_narrowing}.
+
+\begin{definition}
+\label{def:sequence_folding}
+Given a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+We obtain $\mathcal F_i$ as the folding of cross section $\mathcal C_i$.
+the transition from $\mathcal C_i$ to $\mathcal C_{i+1}$ corresponds to the deletion of one or more
+For every joint $J_i$, we attach the corresponding trapezoids for $s_i$ and $s_{i+1}$
+along the joint trajectory to obtain the folding of $\mathcal C$.
+\end{definition}
+
+\subsubsection{Evolution Corresponds to Flat Paper}
+\label{sec:flat}
+
+In this section we will demonstrate that the folding formed by cross section evolution is realizable from a sheet of flat paper.
+We note here that our construction may still result in self intersections.
+
+We consider a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+where each cross section interval $\mathcal C_i$ has evolution time $T_i$.
+
+We will then use Theorem~\ref{def:cross_section_sequence} to attach the sequence of $T_i$-strips,
+to form a complete $X\times T$ sheet of paper, where $T = \sum T_i$.
+
+\begin{restatable}{thm}{main}
+\label{thm:main}
+Consider a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$ where each
+cross section interval $\mathcal C_i$ evolves over time $T_i$ to form a folding $F_i$ such that the following properties hold
+\begin{itemize}
+    \item[] \vspace{-2em}\OrthogonalVelocity*
+    \item[] \vspace{-2em}\JointOrthogonalVelocity*
+    \item[] \vspace{-2em}\LeftRightVelocity*
+    \item[] \vspace{-2em}\JointVelocity*
+\end{itemize}
+Then, $F$ is isometric to a $X\times T$ strip strip of paper, where let $T = \sum T_i$.
+\end{restatable}
+\begin{proof}
+
+\end{proof}

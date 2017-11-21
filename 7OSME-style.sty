@@ -10,7 +10,7 @@
 
 \ProvidesPackage{7OSME-style}[2017/08/25 v1.0 7OSME]
 
-\RequirePackage{amsmath,amssymb,amsthm,graphicx,float,xcolor,geometry,cite,enumitem,fancyhdr,lipsum,subfig,sidecap}
+\RequirePackage{amsmath,amssymb,amsthm,thmtools,thm-restate,graphicx,float,xcolor,geometry,cite,enumitem,fancyhdr,lipsum,subfig,sidecap}
 
 % page margins
 \geometry{
@@ -40,12 +40,20 @@
 
 
 % define theorems
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{pro}{Property}
+\newtheorem{cor}{Corollary}
+\newtheorem{prop}{Proposition}
+\newtheorem{defn}{Definition}
+\newtheorem{clm}{Claim}
 \newtheorem{theorem}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}{Lemma}
+\newtheorem{property}{Property}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{claim}{Claim}
 
 % link (url/links/citation) formatting
 \RequirePackage[pdfusetitle]{hyperref}

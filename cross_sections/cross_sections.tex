@@ -7,22 +7,32 @@ we consider a 1-dimensional cross section moving forwards in time.
 A simple example is demonstrated in Figure~\ref{fig:strip_narrowing}.
 
 \todo[inline]{Conservation of length}
+\section{Segments and Cross Sections}
+\label{sec:segments_and_cross_sections}
 
 \begin{definition}
-A cross section is defined as an ordered list of line segments $\langle s_1,s_2,\cdots,s_n\rangle$,
-such that for every segment $s_i$ (except the last),
-the right endpoint of $s_i$ coincides with the left endpoint of $s_{i+1}$.
-Each line segment is associated with a velocity vector $\vec v_i$ of unit magnitude.
-Each segment is also associated with an unit orientation vector $\vec o_i$,
-which is the unit vector from the left endpint to the right endpoint.
+\label{def:segment}
+A segment $s$ is an oriented line segment with left and right endpoints $\vec s_l$ and $\vec s_r$.
+Each segment is also associated with an orientation vector $\vec{\hat o_s} =\frac{\vec s_r-\vec s_l}{ \left\| \vec s_r-\vec s_l\right\|}$.
+This vector serves to disambiguate the orientation of zero length segments.
 \end{definition}
 
-\begin{lemma}
-\label{lem:uniform_velocity}
-All points on a single segment move with the same velocity $v_i$.
-\end{lemma}
+\begin{definition}
+\label{def:cross_section}
+A cross section $C$ is defined as an ordered list of line segments $\langle s_1,s_2,\cdots,s_n\rangle$,
+such that for every segment $s_i$ (except the last),
+the right endpoint of $s_i$ coincides with the left endpoint of $s_{i+1}$.
+Each segment $s$ is also associated with a velocity vector $\vec{\hat v_s}$ of unit magnitude.
+For a segment $s\in C$ we will also denote this velocity as $\vec{\hat v_i}$.
+\end{definition}
+
+\begin{restatable}{pro}{OrthogonalVelocity}
+\label{pro:orthogonal_velocity}
+The velocity $\vec{\hat v_s}$ of segment $s$ is orthogonal to its orientation $\vec{\hat o_s}$.
+\end{restatable}
 
 \input{cross_sections/joints}
 \input{cross_sections/evolution}
-\input{cross_sections/intervals}
-\input{cross_sections/flat}
+\input{cross_sections/folding}
+\input{cross_sections/multiple}
+%\input{cross_sections/flat}
