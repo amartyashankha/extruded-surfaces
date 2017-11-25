@@ -1,3 +1,32 @@
+\subsection{Gluing Column Extrusions together with Strip Connectors}
+\label{sec:strip_connectors}
+
+Now that all the column extrusions $\left\{ \mathcal C^{(i)} \right\}$ have the same evolution time,
+we would like to glue them together into a continuous strip of paper.
+In order to achieve this, we consider the time-axis boundaries of $\mathcal C^{(i)}$
+(red line in Figure~\ref{fig:level_shift}~\ref{fig:up_down}).
+\graphicspath{{./figures/}}
+\begin{wrapfigure}{r}{0.35\textwidth}
+    \def\svgwidth{0.35\textwidth}
+    \input{./figures/boundaries.pdf_tex}%
+    \caption{Boundaries of adjacent column extrusions with $D_j = 8\epsilon$}
+    \label{fig:boundaries}
+\end{wrapfigure}
+\begin{itemize}
+    \item During the horizontal evolution of any row $j$, both boundaries move along the positive $y$-axis with unit velocity
+          (Figure~\ref{fig:level_shift0}~\ref{fig:level_shift3}~\ref{fig:level_shift4}~\ref{fig:up_down0}~\ref{fig:up_down4}~\ref{fig:up_down5}).
+    \item During the vertical transition from row $j$ to $j+1$, both boundaries move back and forth along the $x$-axis with unit velocity.
+          (Figure~\ref{fig:level_shift1}~\ref{fig:level_shift2}~\ref{fig:up_down1}~\ref{fig:up_down2}~\ref{fig:up_down3}).
+          We can divide the vertial transition into $k = D_j/(2\epsilon)$ intervals of length $2\epsilon$.
+          Each of these interval segments is either a up-shift, a down-shift, or a up-down gadget.
+    \begin{itemize}
+        \item In the first half of each interval ($\epsilon$ time), the left and right boundaries move towards each other;
+              i.e. the left boundary moves along the positive $x$-axis, and the right boundary moves along the negative $x$-axis for a distance of $\epsilon$.
+        \item In the second half of each interval, the left and right reverse directions, and return to their original positions.
+        \item After $D_j$ time, the boundaries return to their original positions, and resume their movement in the positive $y$ direction.
+    \end{itemize}
+\end{itemize}
+
 \graphicspath{{./figures/}}
 \begin{figure}[htb]
     \def\svgwidth{1.1\textwidth}
@@ -7,14 +36,6 @@
     }
     \label{fig:connector_cross_section}
 \end{figure}
-
-\subsection{Gluing Column Extrusions together with Strip Connectors}
-\label{sec:strip_connectors}
-
-Now that all the column extrusions $\left\{ \mathcal C^{(i)} \right\}$ have the same evolution time,
-we would like to glue them together into a continuous strip of paper.
-In order to achieve this, we consider the time-axis boundaries of $\mathcal C^{(i)}$
-(red line in Figure~\ref{fig:level_shift}~\ref{fig:up_down}).
 
 \input{orthogonal/column_connector_figure}
 
