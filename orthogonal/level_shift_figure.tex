@@ -1,43 +1,50 @@
-\graphicspath{{./figures/level_shift/}}
-\begin{figure}[!htb]
+\graphicspath{{./figures/level_shift/}}%
+\begin{figure}[t!]%
     \centering
-    \begingroup
-        \def\svgwidth{0.26\textwidth}
-        \captionsetup[subfigure]{width=0.26\textwidth}
-        \subfloat[Higher initial level. Top segment moves down.]%
-        {\input{./figures/level_shift/column0.pdf_tex}}
-    \endgroup
-    \subfloat[Two segments created. New segments are aligned with top segment, and move down. Vertical segments move inwards.] {
+    \begingroup%
         \def\svgwidth{0.25\textwidth}
-        \input{./figures/level_shift/column1.pdf_tex}
-        \def\svgwidth{0.26\textwidth}
-        \input{./figures/level_shift/column2.pdf_tex}
+        \captionsetup[subfigure]{width=0.25\textwidth}
+        \subfloat[Higher initial level. Top segment moves down.]{%
+            \input{./figures/level_shift/column0.pdf_tex}
+            \label{fig:level_shift0}
+        }%
+    \endgroup
+    \subfloat[Two segments created. New segments are aligned with top segment, and move down. Vertical segments move inwards.] {%
+        \def\svgwidth{0.24\textwidth}
+        \input{./figures/level_shift/column1.pdf_tex}%
+        \def\svgwidth{0.25\textwidth}
+        \input{./figures/level_shift/column2.pdf_tex}%
+        \label{fig:level_shift1}
     }%
-    \def\svgwidth{0.26\textwidth}
-    \subfloat[Two more segments created. Vertical segments reverse direction.] {
-        \input{./figures/level_shift/column3.pdf_tex}
+    \def\svgwidth{0.25\textwidth}
+    \subfloat[Two more segments created. Vertical segments reverse direction.] {%
+        \input{./figures/level_shift/column3.pdf_tex}%
     %}%
-        \def\svgwidth{0.28\textwidth}
+        \def\svgwidth{0.27\textwidth}
     %\subfloat[] {
-        \input{./figures/level_shift/column4.pdf_tex}
+        \input{./figures/level_shift/column4.pdf_tex}%
     %}%
-        \def\svgwidth{0.30\textwidth}
+        \def\svgwidth{0.29\textwidth}
     %\subfloat[] {
-        \input{./figures/level_shift/column5.pdf_tex}
+        \input{./figures/level_shift/column5.pdf_tex}%
+        \label{fig:level_shift2}
     }%
 
-    \subfloat[Level shift completed with four new horizontal segments.] {
-        \def\svgwidth{0.31\textwidth}
-        \input{./figures/level_shift/column6.pdf_tex}
-        \def\svgwidth{0.36\textwidth}
-        \input{./figures/level_shift/column7.pdf_tex}
+    \subfloat[Level shift completed with four new horizontal segments.] {%
+        \def\svgwidth{0.30\textwidth}
+        \input{./figures/level_shift/column6.pdf_tex}%
+        \def\svgwidth{0.35\textwidth}
+        \input{./figures/level_shift/column7.pdf_tex}%
+        \label{fig:level_shift3}
     }%
     \begingroup
-        \def\svgwidth{0.27\textwidth}
-        \captionsetup[subfigure]{width=0.25\textwidth}
-        \subfloat[Flat folded state.]
-        {\input{./figures/level_shift/column8.pdf_tex}}%
+        \def\svgwidth{0.25\textwidth}
+        \captionsetup[subfigure]{width=0.24\textwidth}
+        \subfloat[Flat folded state.]{%
+            \input{./figures/level_shift/column8.pdf_tex}%
+            \label{fig:level_shift4}
+        }%
     \endgroup%
-    \caption{Level Shifting Gadget. The separation along the $Y$ direction serves to illustrate the layering.}
+    \caption{Level Shifting Gadget. The separation along the $Y$ direction illustrates the layering. The red line denotes the boundary of the cross section.}
     \label{fig:level_shift}
-\end{figure}
+\end{figure}%

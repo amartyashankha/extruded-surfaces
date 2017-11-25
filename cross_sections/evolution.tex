@@ -1,41 +1,42 @@
 \subsection{Time Travel}
 \label{sec:time_travel}
 
-\begin{lemma}
-\label{lem:uniform_velocity}
-All points on a single segment $s$ move with the same velocity $v_i$.
-\end{lemma}
+In the process of time travel, all the nodes on a segment $s$, except the \emph{joint nodes} move with velocity $\vec{\hat v_s}$.
+%The evolution of the joint nodes or joints will be discussed in Section~\ref{sec:joints}.
+The joint node velocity $\vec J_v$ may have a component along $\vec{\hat o_s}$.  As a result, the lengths of segments may change (Figure~\ref{fig:trapezoid_angles}).
+This can be visualized as movement of the corresponding joint along one of the segments.
 
-In the process of time travel, the lengths of segments may change.
-This can also be visualized as movement of the corresponding joint along one of the segments.
+\begin{definition}
+\label{def:segment_length}
+For ever segment $s$ in a cross section $C$, we associate a left pace $L_s$,
+which indicates the rate at which $s$ shrinks from its left endpoint.
+Similarly, we define a right pace $R_s$ grows from its right endpoint.
+Note that both these quantities can be negative.
+\end{definition}
+After time $T$, the length of a segment changes by $T\cdot(R_s-L_s)$.
+For a segment $s_i$ with left joint $J^L$ and right joint $J^R$, we obtain the relations
+\begin{align}
+\vec J_v^L-\vec{\hat v_{s_i}} = L_{s_i}\cdot \vec{\hat o_{s_i}} && \vec J_v^R-\vec{\hat v_{s_i}} = R_{s_i}\cdot \vec{\hat o_{s_i}}
+\end{align}
+
+\begin{proposition}
+\label{prop:valid_joint}
+A joint $J$ corresponding to segments $s$ and $t$ is \emph{valid} if and only if the evolution
+resulting from the velocities $\vec{\hat v_l}$, $\vec{\hat v_r}$, and $\vec J_v$ preserves distances between nodes.
+\end{proposition}
+
 The movement of a joint increases the length of one of its associated segments,
 and decreases the length of the other segment by the same amount (this ensures that the total length is preserved).
-Most velocity sequences are invalid. For example\ldots
-
-We will use some abuse of notation, by using $\vec v_i, \vec o_i$ etc.
-to refer to the corresponding parameters of $s_i$.
+This puts some constraints on the possible velocities of adjacent segments.
 
 Note that the trajectory of the joints form a crease \ldots angle is angle between direction vectors.
 Creases are also created when a segment changes direction\ldots angle is change in direction vector.
 
-\begin{proposition}
-\label{prop:valid_joint}
-A joint $J$ corresponding to segments $s$ and $t$ is \emph{valid}
-if and only if the resulting evolution of the joint preserves distances.
-\end{proposition}
-
-\begin{definition}
-\label{def:segment_length}
-For ever segment $s$ in a cross section $C$, we associate a left velocity $L_s$,
-which indicates the rate at which $s$ grows from its left endpoint.
-Similarly, we define a right velocity $R_s$ \ldots
-\end{definition}
-
-\begin{restatable}{pro}{LeftRightVelocity}
-\label{pro:left_right_velocity}
-The right velocity of $s_{i}$ is the negation of the left velocity of $s_{i+1}$.
-This is to ensure the preservation of distance between any two nodes.
-Furthermore, the left velocity of the first segment, and the right velocity of the last segment should be zero, i.e. $L_0 = R_n = 0$
+\begin{restatable}{pro}{LeftRightPace}
+\label{pro:left_right_pace}
+The right pace of $s_{i}$ is equal to the left pace of $s_{i+1}$.
+This is to preserve the overall length of the cross section, and the distance between any two nodes.
+Furthermore, the left pace of the first segment, and the right pace of the last segment should be zero, i.e. $L_0 = R_n = 0$
 This ensures that the total length of the cross section does not change.
 \end{restatable}
 
@@ -51,9 +52,8 @@ This ensures that the total length of the cross section does not change.
     \label{fig:joint_plane_velocity}
 \end{figure}
 
-\todo[inline]{Define Nodes}
 Consider a joint $\vec J_i$ corresponding to segments $l = s_i$ and $r = s_{i+1}$, at time $t=0$.
-Henceforth, we will refer to $L_l$ as $L$, and $R_r$ as $R$.
+Henceforth, we will refer to $L_r$ as $L$, and $R_l$ as $R$.
 Without loss of genenerality, we assume that $L<0$.
 At a later time $t$, let the new joint position be $\vec J'_i$.
 We define nodes $a$ and $b$ corresponding to $\vec J_i$ and $\vec J_{i+1}$ respectively.
@@ -62,6 +62,8 @@ and $\vec a'$, and similarly for $b$, we define $\vec b$ and $\vec b'$.
 Let $d$ be the \emph{separation} between nodes $a$ and $b$.
 this setup is shown in Figure~\ref{fig:joint_plane_velocity}
 
+\todo[inline]{Orthogonal velocity}
+
 First, note that $\vec a, \vec b$ lie on the segment $l$, and $\vec a', \vec b'$ lie on the segment $r$,
 which implies that $\vec b-\vec a = d\cdot \vec{\hat o_l}$, and $\vec b'-\vec a' = d\cdot \vec{\hat o_r}$.
 \begin{align}
@@ -69,28 +71,35 @@ which implies that $\vec b-\vec a = d\cdot \vec{\hat o_l}$, and $\vec b'-\vec a'
 \implies \vec b' - \vec a' &= (\vec b - \vec a) + t\cdot(\vec v_r^\shortparallel - \vec v_l^\shortparallel)\\
 \implies d\cdot \vec{\hat o_r} &= d\cdot \vec{\hat o_l} + t\cdot(\vec v_r^\shortparallel - \vec v_l^\shortparallel)\\
 \implies \vec v_r^\shortparallel - \vec v_l^\shortparallel &= \frac{d}{t}\cdot(\vec{\hat o_r}-\vec{\hat o_l})\\
-&= R\cdot(\vec{\hat o_r}-\vec{\hat o_l}) = -L\cdot(\vec{\hat o_r}-\vec{\hat o_l})
+&= -R\cdot(\vec{\hat o_r}-\vec{\hat o_l}) = -L\cdot(\vec{\hat o_r}-\vec{\hat o_l})
 \end{align}
+This is only possible if $\vec{\hat o_l}\times \vec{\hat o_r}$ is oriented opposite to $\vec v_l^\shortparallel\times \vec v_r^\shortparallel$.
 
-This implies that $\vec{\hat o_l}\times \vec{\hat o_r}$ is oriented opposite to $\vec v_l^\shortparallel\times \vec v_r^\shortparallel$.
+\begin{restatable}{pro}{SegmentOrientation}
+\label{pro:SegmentOrientation}
+Given two adjacent segments $l$ and $r$ in a cross section $C$, the vector
+$\vec{\hat o_l}\times \vec{\hat o_r}$ must be oriented opposite to $\vec v_l^\shortparallel\times \vec v_r^\shortparallel$.
+\end{restatable}
+
 If the angle between the segments (between $\vec{\hat o_l}$ and $\vec{\hat o_r}$) is $\theta$,
 the magnitude of $\vec{\hat o_r}-\vec{\hat o_l}$ is $\sqrt{2-2\cos(\theta)}$,
-and $|\vec v_r^\shortparallel-\vec v_l^\shortparallel| = v\cdot\sqrt{2-2\cos(\pi-\theta)}$.
+and $ \left\| \vec v_r^\shortparallel-\vec v_l^\shortparallel\right\| = v\cdot\sqrt{2-2\cos(\pi-\theta)}$.
 Here, $v$ is magnitude of the plane velocity of $J_i$.
 \begin{align}
-R = \frac dt &= \frac{|\vec v_r^\shortparallel - \vec v_l^\shortparallel|}{|\vec{\hat o_r}-\vec{\hat o_l}|}\\
+-L = -R = \frac dt &= \vec{\hat v_l} - \vec{\hat o_l}\frac{ \left\| \vec v_r^\shortparallel
+- \vec v_l^\shortparallel\right\|}{ \left\| \vec{\hat o_r}-\vec{\hat o_l}\right\|}\\
 &= v\cdot\frac{\sqrt{\sin^2\left( {\pi/2-\theta/2}\right)}}{\sqrt{\sin^2{\theta/2}}}\\
-&= v\cdot\cot\left( \frac{\theta}{2} \right)
+&= v\cdot\cot\left( \frac{\theta}{2} \right) = v\cdot\cot\left( \phi \right)
 \end{align}
-
+Here, we set $\phi = \theta/2$.
 
 \begin{restatable}{pro}{JointVelocity}
 \label{pro:joint_velocity}
 The velocity of a joint $J$ associated with segments $l$ and $r$, is a constant vector
-$\vec J_v = \vec{\hat v_l} + \vec{\hat o_l}\frac{|\vec v_r^\shortparallel - \vec v_l^\shortparallel|}{|\vec{\hat o_r}-\vec{\hat o_l}|}$
+$\vec J_v = \vec{\hat v_l} - \vec{\hat o_l}\frac{ \left\| \vec v_r^\shortparallel
+- \vec v_l^\shortparallel\right\|}{ \left\| \vec{\hat o_r}-\vec{\hat o_l}\right\|}
+= \vec v_l - \left\| \vec v_l^\shortparallel\right\|\cdot\vec{\hat o_l}\cdot\cot\left( \phi \right)$
 \end{restatable}
-
-\todo[inline]{Surface traced out by cross section}
 
 This can result in a segment length becoming zero then delete.
 We may create a new segment at any point of zero length.

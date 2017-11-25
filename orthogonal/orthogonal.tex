@@ -1,26 +1,39 @@
-\section{Orthogonal Graphs}
-\label{sec:orthogonal_graphs}
+\section{Orthogonal Terrains}
+\label{sec:orthogonal_terrains}
 
-In this section, we outline a construction of orthogonal graphs with arbitrary rational extrusion heights.
+In this section, we outline a construction of orthogonal terrains with arbitrary rational extrusion heights.
 In our construction, the cross section at will always be on the $x-z$ plane.
 This makes the analysis much simpler.
+\graphicspath{{./figures/}}
+\begin{figure}[!htb]
+    \centering
+    \subfloat[Orthogonal terrain.]{
+        \includegraphics[width=0.4\linewidth]{figures/terrain.png}
+        \label{fig:terrain}
+    }%
+    \subfloat[A column extrusion with heights $\{0,1,3,1,2,0\}$]{
+        \def\svgwidth{0.6\textwidth}
+        \input{./figures/column_extrusion.pdf_tex}%
+        \label{fig:column_extrusion}
+    }%
+    \caption{}
+\end{figure}%
 
-\subsection{Grid Extrusion}
-\label{sec:grid_extrusion}
-
+%\begin{wrapfigure}{r}{0.5\textwidth}
+%\end{wrapfigure}
 To simplify the presentation, we will consider an uniform $X-Y$ grid,
-with arbitrary rational extrusion heights corresponding to every grid square.
+with arbitrary rational extrusion heights corresponding to every grid square (Figure~\ref{fig:terrain}).
 \begin{definition}
 An $n\times m$ rational grid extrusion is a 3-dimensional structure,
 whose projection onto the $x-y$ plane forms an unit grid of size $n\times m$.
-Additionally, the unit face corresponding to the location $(i.j)$,
-is extruded $E_{ij}$ units in the $z$ direction, where $E_{ij}$ is a rational number.
+In the 3-dimensional structure, the unit face corresponding to the location $(i.j)$,
+exists at height $E_{i,j}$ (in the $z$ direction), where $E_{i,j}$ is a rational number.
 \end{definition}
+%In the case that $E_{i,j}$ is rational, we can simply scale down down our construction by an appropriate size, to obtain integer heights.
 
-\subsubsection{Strip Extrusion}
-\label{sec:strip_extrusion}
-We also consider each ''column'' of a given grid extrusion separately as an indivisual \emph{strip exrusion}.
-We will construct each of the $n$ strips independently, and attachthem together with \emph{strip connectors}.
+We consider each ''column'' of a given grid extrusion separately as an individual \emph{column extrusion}.
+We will construct each of the $n$ columns independently (Figure~\ref{fig:level_shift}),
+and attach them together with \emph{column connectors} (Figure~\ref{fig:column_connector}).
 
-\input{orthogonal/optimal}
 \input{orthogonal/construction}
+\input{orthogonal/optimal}

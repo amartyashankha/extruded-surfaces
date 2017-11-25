@@ -5,7 +5,7 @@
 \label{def:joints}
 A cross section with $n$ segments is also associated with a list of joints $ \langle J_1,\cdots J_{n-1} \rangle$,
 where $J_i$ corresponds to the right endpoint of $s_i$ (same as left endpoint of $s_{i+1}$.
-A particular joint $\vec J_i$ is associated with a left segment $J_l = s_i$, and a right segment $J_r = s_{i+1}$.
+A particular joint $\vec J_i$ is associated with a left segment $s_i$, a right segment $s_{i+1}$, and a velocity $\vec J_v$.
 \end{definition}
 
 \begin{definition}
@@ -15,7 +15,7 @@ A joint plane is the plane that coincides with both segments $l$ and $r$ associa
 
 \begin{definition}
 \label{def:joint_plane_velocity}
-Consider a joint $J$ associated with segments $l = J_l$ and $r = J_r$ with joint plane $\mathcal P$,
+Consider a joint $J$ associated with segments $l$, $r$, and joint plane $\mathcal P$,
 where $\vec v_l$ and $\vec v_r$ are the velocities of segments $l$ and $r$.
 We define $\vec v_l^\shortparallel$ and $\vec v_l^\perp$ as the components of $\vec v_l$ coinciding with,
 and orthogonal to $\mathcal P$ respectively.

@@ -1,27 +1,97 @@
 \subsection{Construction of Grid Extrusion}
-\label{sec:construction_of_grid_extrusion}
-Given a strip of size $w\times Y$, we will consider the evolution of the cross sections along the length $Y$.
-Imagine that there are $T = \frac Y\epsilon$ time steps over which the cross section evolves along the $y$-axis.
-Consider the decomposition of $Y$ as
-$$Y = (1 + D_1) + (1 + D_2) + (1 + D_) +\cdots + (1 + D_{n-1})$$
+\label{sec:construction}
+
+We begin by choosing an $2\epsilon=1/K$ where $K$ is a positive integer.
+This is chosen such that $E_{i,j}$ is an integral multiple of $2\epsilon$ for all $i,j$.
+Then we scale the entire construction up by a factor of $K$.
+
+Given a strip of size $X\times T$, we will consider the evolution of a cross section of length $X$ evolving for time $T$.
+%Imagine that there are $T = \frac Y\epsilon$ time steps of length $\epsilon$, over which the cross section evolves along the $y$-axis.
+
+\subsection{Construction of Column Extrusion by Level Shifting}
+\label{sec:column_extrusion}
+
+First, we consider a single column of the orthogonal terrain $\left\{ E_{i1}, E_{i2}, \cdots, E_{i,n} \right\}$.
+We denote the column extrusion heights as $\left\{ H_1, H_2,\cdots H_n \right\}$, where $H_j = E_{i,j}$.
+Consider the decomposition of $T$ into the following time intervals.% (parallel to the $x$-axis).
+\begin{align}
+    \label{eq:column_decomposition}
+T = 1 + D_1  +  1 + D_2  +  1 + D_3  +\cdots\cdots +  1 + D_{m-1}  +  1
+\end{align}
 Here, the times corresponding to
 \begin{itemize}
-	\item the $i^{th}$ ''1'' is realized as the strip $i-1\le y\le i$
-	\item $D_i$ is the transition between $i-1\le y\le i$ and $i\le y\le i+1$
-\end{itemize}
+\item the $i^{th}$ 1 is realized as the surface at height $H_i$.
+\item $D_i = \left| H_i-H_{i+1}\right|$ is realized as the transition between $H_i$ and $H_{i+1}$.  \end{itemize}
 
-\subsection{Construction of Strip Extrusion}
-\label{sec:construction_of_strip_extrusion}
+\graphicspath{{./figures/}}
+\begin{figure}[htb]
+    \def\svgwidth{1.0\textwidth}
+    \input{./figures/level_shift_layers.pdf_tex}%
+    \caption{
+    Cross section change from level $i$ to $i+1$.
+    The \emph{accordion segments} are separated for illlustration.
+    In reality, the accordion is folded flat.
+    The direction of horizontal and vertical segments are shown by purple and green arrows respectively.
+    }
+    \label{fig:level_shift_layers}
+\end{figure}
 
-\subsubsection{Level Shifting}
-\label{sec:level_shifting}
+\input{orthogonal/level_shift_figure}%
 
-\input{orthogonal/level_shift_figure}
+To construct the column, we will present a cross section sequence.
+First, consider $H_i$, such that $H_{i+1} = H_i-2\epsilon\cdot d$.
+Figure~\ref{fig:level_shift_layers} shows the cross section evolution.
+This cross section comprises of a two vertical lines separated by a top horizontal line.
+The vertical lines are connected to the top segment with
+a sequence of $2k$ horizontal segments that \emph{accordion} back and forth.
+During the $K$-interval, all segments move along the positive $y$ direction (Figure~\ref{fig:level_shift0}),to create the $i^{th}$ level.
+Subsequently, during the level shift, all segments move in the $x-z$ plane (Figure~\ref{fig:level_shift1}~\ref{fig:level_shift2}).
+\todo[inline]{$y$ movement}
+\begin{lemma}
+\label{lem:accordion_even}
+The number of accordion folds during horizontal evolution (along the $y$ axis) must be even.
+\end{lemma}
 
-\subsection{Construction of Strip Connectors}
-\label{sec:construction_of_strip_connectors}
 
-\subsubsection{Alignment with Level Shifts}
-\label{sec:alignment_with_level_shifts}
+The top segment moves downwards in intervals of $2\epsilon$.
+During this process, the horizontal segments move downwards continuously (Figure~\ref{fig:level_shift1}~\ref{fig:level_shift2}).
+For the first $\epsilon$ time interval, a new horizontal downwards moving accordion segment of length zero is created at both accordions,
+and the vertical segments move towards each other along the $x$-axis (Figure~\ref{fig:level_shift1}).
+For the next $\epsilon$ time interval, similar (oppositely oriented) accordion segments are created at the lowest position.
+This time, the vertical segments move outwards.
+Overall, two sets of accordion segments on either side are added, and the height of the top segment decreases by $2\epsilon$.
 
-\input{orthogonal/column_connector_figure}
+In the case that $H_{i+1} = H_i+2\epsilon\cdot d$, the level up-shift is simply the down-shift evolution in reverse (Figure~\ref{fig:column_connector}).
+This transition is only possible if the initial number of accordion segments in the $H_i$ cross section is at least $2d$.
+Specifically, assuming that the minimum height is zero, we have the following lemma.
+\begin{lemma}
+\label{lem:layer_change}
+If the number of accordion segments at level $H_i$ is $l_i$,
+then the number of accordion segments after transitioning to level $H_{i+1}$ is $l_{i+1} = l_i - (H_{i+1}-H_i)/\epsilon$.
+Specifically, if the number of layers at level $0$ is $l$, then the number of layers
+at level $\max\left\{ H_i\right\}$ is $l - \max\left\{ H_i\right\}/\epsilon$.
+\end{lemma}
+\begin{corollary}
+\label{cor:layer_limit}
+Since the number of accordion segments can never be negative, the minimum number of layers at at level zero
+is $L = \max\left\{ H_i\right\}/\epsilon$. This also ensures that every other level shift is also possible.
+\end{corollary}
+\begin{corollary}
+\label{cor:column_cross_section_length}
+The length of the cross section at a zero level is at least $1 + 2\cdot L\cdot \epsilon$.
+So, the minimum possible length of the cross section under our construction is $1 + 2\cdot\max\left\{ H_i\right\}$.
+\end{corollary}
+
+This provides the minimum width of the strip required to construct a column extrusion.
+Now, we can also calculate the length of the strip as the total time evolution required
+$$ T = 1 + D_1  +  1 + D_2  +  1 + D_3  +\cdots\cdots +  1 + D_{m-1}  +  1 = m + \sum^{m-1}_{i=1} \left| H_{i+1}-H_i\right| $$
+
+\begin{theorem}
+\label{thm:column_extrusion}
+A given column extrusion with heights $\left\{ H_1, H_2,\cdots H_n \right\}$, can be constructed from a strip of paper with size
+$\left( 1 + 2\cdot\max\left\{ H_i\right\}\right)\times T$, where
+$$T \ge \left( m + \sum\limits^{m-1}_{i=1} \left| H_{i+1}-H_i\right|\right)$$
+\end{theorem}
+
+\input{orthogonal/grid}
+\input{orthogonal/connector}

@@ -13,7 +13,7 @@ A simple example is demonstrated in Figure~\ref{fig:strip_narrowing}.
 \begin{definition}
 \label{def:segment}
 A segment $s$ is an oriented line segment with left and right endpoints $\vec s_l$ and $\vec s_r$.
-Each segment is also associated with an orientation vector $\vec{\hat o_s} =\frac{\vec s_r-\vec s_l}{ \left\| \vec s_r-\vec s_l\right\|}$.
+Each segment is also associated with an orientation vector $\vec{\hat o_s} \equiv\frac{\vec s_r-\vec s_l}{ \left\| \vec s_r-\vec s_l\right\|}$.
 This vector serves to disambiguate the orientation of zero length segments.
 \end{definition}
 
@@ -25,6 +25,19 @@ the right endpoint of $s_i$ coincides with the left endpoint of $s_{i+1}$.
 Each segment $s$ is also associated with a velocity vector $\vec{\hat v_s}$ of unit magnitude.
 For a segment $s\in C$ we will also denote this velocity as $\vec{\hat v_i}$.
 \end{definition}
+
+\begin{definition}
+\label{def:node}
+Given a cross section $C = \langle s_1, s_2,\cdots s_n \rangle$, a node $x$ denotes a point on one of the segments $s_i$.
+A joint node is a node that resides on the endpoint of a segment.
+The distance between two nodes on a cross section is defined as the overall length f cross section between the two nodes.
+\todo[inline]{Distance}
+\end{definition}
+
+\begin{restatable}{pro}{UniformVelocity}
+\label{pro:uniform_velocity}
+All nodes on a segment $s$ except the joint nodes move with the same velocity $\vec{\hat v_s}$.
+\end{restatable}
 
 \begin{restatable}{pro}{OrthogonalVelocity}
 \label{pro:orthogonal_velocity}

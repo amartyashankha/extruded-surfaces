@@ -3,75 +3,61 @@
 
 \begin{definition}
 \label{def:interval}
-We consider a cross section $C$ composed of segments $ \langle s_1,s_2,\cdots,s_n \rangle$
+We consider a cross section composed of segments $ \langle s_1,s_2,\cdots,s_n \rangle$
 with total length $X$ (i.e. $\sum \left| s_i\right| = X$).
-If we allow this cross section to evolve for time $T$, we obtain a new cross section $C_T = \langle r_1,r_2,\cdots ,r_n \rangle$.
-The evolution from $C$ to $C_T$ forms a cross section interval $\mathcal C$ of length $T$.
+If we allow this cross section to evolve for time $T$, we obtain a new cross section $\langle r_1,r_2,\cdots ,r_n \rangle$.
+The evolution forms a cross section interval $\mathcal C$ of length $T$.
+The initial cross section is denoted as $\mathcal C_I = \langle s_1, s_2,\cdots s_n \rangle$,
+and the final cross section is denoted as $\mathcal C_F = \langle r_1, r_2,\cdots r_n \rangle$.
 \end{definition}
 
-\begin{definition}
-\label{def:}
-Say that the total length of the cross sections in $\mathcal C$ is $X$ (we showed in \ldots that length is conserved).
-We will denote a strip of paper of size $X\times L$ as an $L$-strip.
-\end{definition}
-
-\subsubsection{Interval Folding results in Flat Strip}
-\label{sec:interval_flat_strip}
+\input{cross_sections/trapezoid_figure}
+%\begin{definition}
+%\label{def:}
+%Say that the total length of the cross sections in $\mathcal C$ is $X$ (we showed in \ldots that length is conserved).
+%We will denote a strip of paper of size $X\times L$ as an $L$-strip.
+%\end{definition}
+%\subsubsection{Interval Folding results in Flat Strip}
+%\label{sec:interval_flat_strip}
 
 In this section, we focus on a single cross section interval $\mathcal C$ with segments $\langle s_1, s_2,\cdots s_n \rangle$ evolving over time $T$.
 First consider the surface traced out by an individual segment $s_i$.
-Since the endpoints of $s_i$ move in a straight line, each segment traces \todo{What is a trace?} a trapezoid.
+Since the endpoints of $s_i$ move in a straight line, each segment traces a trapezoid.
+\todo[inline]{What is a trace?}
 
-\begin{figure}[htb]
-\graphicspath{{./figures/}}
-    \centering
-    \subfloat[] {
-        \def\svgwidth{0.5\textwidth}
-        \input{figures/trapezoid.pdf_tex}
-        \label{fig:segment_trapezoid}
-    }
-    \hspace{-9em}
-    \subfloat[] {
-        \def\svgwidth{0.7\textwidth}
-        \input{figures/trapezoid_angles.pdf_tex}
-        \label{fig:trapezoid_angles}
-    }
-    \caption{}
-    \label{fig:trapezoids}
-\end{figure}
+We define the \emph{height} of a trapezoid to be the distance between its parallel sides.
 
-\begin{definition}
-\label{def:interval_folding}
-Given a cross section interval $\mathcal C$ formed from a cross section $C$ evolving over time $T$,
-we define the folding of $\mathcal C$ as the surface swept out by $C$ from over time $T$.
-Precisely
-\begin{enumerate}
-\item The folding of a the $i^{th}$ segment is the trapezoid formed by the initial and final state of the segment ($s_i$ and $r_i$).
-      This forms a trapezoid of height $T$ (Figure~\ref{fig:segment_trapezoid}).
-      The non-parallel sides are straight lines due to Property~\ref{pro:joint_velocity}.
-      In case either the initial or final segment has length, the resulting trapezoid will be a triangle.
-\item For every joint $J_i$, we attach the corresponding trapezoids for $s_i$ and $s_{i+1}$
-      along the joint trajectory $\mathcal T_{J_i}$ to obtain the folding of $\mathcal C$.
-\end{enumerate}
-\end{definition}
-
-First, we will show that each $\mathcal C_i$ corresponds to a $T_i$-strip.
-
-\begin{definition}
-\label{def:trapezoid}
-The surface traced out by a segment $s$ is a trapezoid $Z_s$ (Figure~\ref{fig:segment_trapezoid}).
+\begin{lemma}
+\label{lem:trapezoid}
+The surface traced out by a segment $s$ in time $T$ is a trapezoid $Z_s$ of height $T$ (Figure~\ref{fig:segment_trapezoid}).
 Specifically, if $L,R$ are the initial left and right endpoints of $s$, and $L',R'$ are the final endpoints,
 $Z_s = LL'R'R$ is the corresponding trapezoid (Figure~\ref{fig:segment_trapezoid}).
-\end{definition}
-
+\end{lemma}
+\begin{proof}
+By Property~\ref{pro:joint_velocity}, we know that the joint trajectories are straight lines, which form the non-parallel sides of the trapezoid.
+Since the non-joint nodes on a segment all have the same velocity, the initial and final segment positions form the parallel sides.
+\end{proof}
 \todo[inline]{Define gluing}
+\todo[inline]{Define joint trajectory}
 
 \begin{lemma}
 \label{lem:trapezoid_gluing_parallel}
-Consider a joint $J$ with segments $l$ and $r$, which has zero orthogonal joint velocity (i.e. $\vec v_l^\shortparallel = \vec v_r^\shortparallel = 0$.
+Consider a joint $J$ with segments $l$ and $r$,
+which has zero orthogonal joint velocity ( i.e. $\vec v_l^\perp = \vec v_r^\perp = \vec 0$).
 The gluing of trapezoids $Z_l$ and $Z_r$ along the joint trajectory $\mathcal T_J$ is isometric to a larger trapezoid.
 This joint trajectory is actually nothing but a crease in the folded state.
 \end{lemma}
+\begin{proof}
+We consider the evolution of joint $J$ for time $T$ (Figure~\ref{fig:trapezoid_angles}).
+Since, $\vec{\hat v_l} = \vec v_l^\shortparallel$, from Property~\ref{pro:joint_velocity},
+we know that $-R_l = \left\| \vec v_l^\shortparallel\right\|\cdot\vec{\hat o_v}\cdot\cot(\phi) = \vec{\hat o_v}\cdot\cot(\phi)$.
+So, $\vec J_v = \vec{\hat v_l} - \vec{\hat o_v}\cdot\cot(\phi)$.  Therefore,
+\begin{align}
+    \cot(\angle LJJ') &= \frac{\left\| T\cdot R_l\right\|}{ \left\| T\cdot(\vec J_v - R_l)\right\|} = \cot(\phi)\\
+\implies \angle LJJ' &= \phi
+\end{align}
+\todo[inline]{finish \ldots}
+\end{proof}
 
 \input{cross_sections/trapezoidZ_figure}
 \begin{lemma}
@@ -99,21 +85,38 @@ we conclude that $\angle LJJ' + \angle RJJ' = \pi$.
 Since $LJJ'L'$ and $RJJ'R'$ are both trapezoids, this implies that the resulting gluing along $JJ'$ is a larger trapezoid.
 \end{proof}
 
+\begin{definition}
+\label{def:interval_folding}
+Consider a cross section interval $\mathcal C$ formed from a cross section $C$ evolving over time $T$.
+By Lemma~\ref{lem:trapezoid}, the segments $ \langle s_1, s_2,\cdots s_n \rangle$ form trapezoids
+$ \langle Z_1, Z_2,\cdots Z_n \rangle$ each of height $T$.
+The folding $\mathcal F_C^T$ corresponding to $\mathcal C$ is formed by successively gluing the trapezoids
+$Z_i$ to $Z_{i+1}$ along the trajectory of joint $J_i$ (for $1\le i<n$) to form a connected shape.
+\end{definition}
+
+\begin{definition}
+\label{def:interval_folding_boundary}
+Given a cross section interval $\mathcal C$ with folding $\mathcal F_C^T$,
+the initial-boundary of a folding $\mathcal F_C^T$ is defined as the union of the initial cross section segments in $\mathcal C_I$,
+where the right endpoint of the $i^{th}$ segment is attached to the left endpoint of the $(i+1)^{th}$ segment.
+Similarly, the final-boundary of $\mathcal F_C^T$ is defined as the union of the final segments in $\mathcal C_F$.
+\end{definition}
+
 \begin{theorem}
 \label{thm:interval_strip}
-Consider a cross section interval $\mathcal C$ formed from a cross section $C$ evolving over time $T$ to form a folding $F$.
-Further assume that the total length of cross section $C$ is $X$ units. Then, $F$ is isometric to a $X\times T$ strip of paper.
+Consider a cross section interval $\mathcal C$ formed from a cross section $C$ evolving over time $T$ to form a folding $\mathcal F_C^T$.
+Further assume that the total length of cross section $C$ is $X$ units. Then, $\mathcal F_C^T$ is isometric to a $X\times T$ strip of paper.
 \end{theorem}
 \begin{proof}
-From Lemma~\ref{lem:trapezoid_gluing}, we know that $F$ is isometric to a trapezoid.
+By repeated use of Lemma~\ref{lem:trapezoid_gluing}, we know that $\mathcal F_C^T$ is isometric to a trapezoid.
 Let $L,L'$ be the initial and final positions of the left (non-parallel) edge of the trapezoid, and
 let $R,R'$ be the initial and final positions of the right edge of the trapezoid.
 Say that $C$ comprises of segments $ \langle s_1, s_2,\cdots s_n \rangle$.
-From Property~\ref{pro:left_right_velocity}, we know that the left velocity of $s_0$ is zero.
+From Property~\ref{pro:left_right_pace}, we know that the left pace of $s_0$ is zero.
 So, the line $LL'$ follows the trajectory of $\vec{\hat v_0}$, which is orthogonal to the segment $s_0$.
 In other words, the left edge of the trapezoid has length $T$, and is orthogonal to the parallel edges.
-Similarly, because the right velocity of $s_n$ is zero, the right edge of the trapezoid is also orthogonal.
-Therefore, $F$ is isometric to a right angled trapezoid (i.e. a strip) of length $X$ and width $T$.
+Similarly, because the right pace of $s_n$ is zero, the right edge of the trapezoid is also orthogonal.
+Therefore, $\mathcal F_C^T$ is isometric to a right angled trapezoid (i.e. a strip) of length $X$ and width $T$.
 \end{proof}
 \todo[inline]{property for NO zero length segments}
 
