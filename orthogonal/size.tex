@@ -1,0 +1,23 @@
+\subsection{Size of Construction}
+\label{sec:size}
+
+From Proposition~\ref{prop:accordion_layers}, we know that each column extrusion strip
+$\mathcal C^{(i)}$ has width $\left( 1 + 2\cdot\max_j\left\{ E_{ij}\right\}\right)$.
+Additionally, we have $n-1$ strip connecors, each of width $2\varepsilon$.
+We define $M_i = \max_j\left\{ E_{ij}\right\}$. So, the total width of the orthogonal terrain construction is
+$$X = 2(n-1)\cdot\varepsilon + n + 2\cdot\sum\limits_{i=1}^n M_i$$
+Now, note that our construction is also valid for any $\varepsilon' = \varepsilon/(2k)$, where $k$ is an integer.
+In other words, we can make $\varepsilon$ arbitrarily small.
+
+\begin{theorem}
+\label{thm:grid_extrusion}
+Using the time evolution ($y$ dimension) from Proposition~\ref{prop:accordion_layers},
+we conclude that a grid extrusion can be folded from a strip of size $X\times T$, where
+\begin{align}
+X = n + 2\cdot\sum\limits_{i=1}^n M_i + o(1) && T = m + \sum\limits^{m-1}_{j=1} D_j
+\end{align}
+\end{theorem}
+
+\subsection{Removing the Zero Level Assumption}
+\label{sec:zero_level_assumption}
+

@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{408.79773415bp}%
+    \setlength{\unitlength}{408.79773385bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%

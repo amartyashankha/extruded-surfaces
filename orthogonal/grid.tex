@@ -27,27 +27,22 @@ $$D_j = \max_j\left\{ D_{ij}\right\} = \max_j\left\{ \left| E_{i,j+1}-E_{i,j}\ri
 
 So, the slowest column dictates the transition time, and the faster columns have to \emph{stall} for additional time.
 To achieve this, we define an \emph{up-down} gadget, which is very similar to our original level shifting gadget.
-This up-down gadget (Figure~\ref{fig:up_down}) evolves for $2\epsilon$ time, but the height of the corresponding column remains unchanged.
-This gadget starts at a height $h$, and for the first $\epsilon$ time interval (Figure~\ref{fig:up_down1}),
+This up-down gadget (Figure~\ref{fig:up_down}) evolves for $2\varepsilon$ time, but the height of the corresponding column remains unchanged.
+This gadget starts at a height $h$, and for the first $\varepsilon$ time interval (Figure~\ref{fig:up_down1}),
 evolves exactly the same way as the down-shift gadget (Figure~\ref{fig:level_shift1}).
-For the second $\epsilon$ time interval, the cross section evolves in reverse (Figure~\ref{fig:up_down2}),
+For the second $\varepsilon$ time interval, the cross section evolves in reverse (Figure~\ref{fig:up_down2}),
 back to it's original state (Figure~\ref{fig:up_down3}).
 
-So, the vertical transition of $\mathcal C^{(i)}$ needs to use a total of $\left( D_j - D_{i,j}\right)/\left( 2\epsilon\right)$
-up-down gadgets (each gadget \emph{stalls} for $2\epsilon$ time).
-Notice that this gadget requires at least one accordion segment. In fact, by Lemma~\ref{lem:accordion_even}, it requires two segments.
-Given the worst case scenario, where $E_{i,j}=E_{i,j+1}$ is the max height in column $i$,
-we obtain the following primitive, as a consequence of Theorem~\ref{thm:column_extrusion}.
+So, the vertical transition of $\mathcal C^{(i)}$ needs to use a total of $\left( D_j - D_{i,j}\right)/\left( 2\varepsilon\right)$
+up-down gadgets (each gadget \emph{stalls} for $2\varepsilon$ time).
+%Notice that this gadget requires at least one accordion segment. In fact, by Lemma~\ref{lem:accordion_even}, it requires two segments.
+%Given the worst case scenario, where $E_{i,j}=E_{i,j+1}$ is the max height in column $i$,
+We obtain the following primitive, as a consequence of Theorem~\ref{thm:column_extrusion}.
 
 \begin{proposition}
 \label{prop:accordion_layers}
-The number of accordion layers for column $i$ at its minium height is
-$L_i = 2 + \left( \max_j\left\{ E_{i,j}\right\} - \min_j\left\{ E_{i,j}\right\} \right)/\epsilon$.
+%The number of accordion layers for column $i$ at its minium height is
+%$L_i = 2 + \left( \max_j\left\{ E_{i,j}\right\} - \min_j\left\{ E_{i,j}\right\} \right)/\varepsilon$.
+By Theorem~\ref{thm:column_extrusion}, the extrusion for column $i$ is constructed from a paper strip with size
+$$\left( 1 + 2\cdot\max_j\left\{ E_{ij}\right\}\right) {\sc X}  m + \sum\limits^{m-1}_{j=1} D_j $$
 \end{proposition}
-
-\begin{corollary}
-\label{cor:accordion_layers}
-The extrusion for column $i$ is constructed from a paper strip with size
-$$\left( 2\cdot\max_j\left\{ E_{ij}\right\}+ 2\cdot\epsilon + 1\right) \sc{X} \sum\limits^{m-1}_{j=1} D_j$$
-\end{corollary}
-

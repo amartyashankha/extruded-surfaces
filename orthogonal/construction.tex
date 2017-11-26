@@ -1,13 +1,3 @@
-\subsection{Construction of Grid Extrusion}
-\label{sec:construction}
-
-We begin by choosing an $2\epsilon=1/K$ where $K$ is a positive integer.
-This is chosen such that $E_{i,j}$ is an integral multiple of $2\epsilon$ for all $i,j$.
-Then we scale the entire construction up by a factor of $K$.
-
-Given a strip of size $X\times T$, we will consider the evolution of a cross section of length $X$ evolving for time $T$.
-%Imagine that there are $T = \frac Y\epsilon$ time steps of length $\epsilon$, over which the cross section evolves along the $y$-axis.
-
 \subsection{Construction of Column Extrusion by Level Shifting}
 \label{sec:column_extrusion}
 
@@ -28,9 +18,8 @@ Here, the times corresponding to
     \def\svgwidth{1.0\textwidth}
     \input{./figures/level_shift_layers.pdf_tex}%
     \caption{
-    Cross section change from level $i$ to $i+1$.
-    The \emph{accordion segments} are separated for illlustration.
-    In reality, the accordion is folded flat.
+    Cross section change from level $i$ to $i+1$. The \emph{accordion segments} are separated for illlustration.
+    In reality, the accordion is folded flat. Zero distances are marked by $\phi$.
     The direction of horizontal and vertical segments are shown by purple and green arrows respectively.
     }
     \label{fig:level_shift_layers}
@@ -39,7 +28,7 @@ Here, the times corresponding to
 \input{orthogonal/level_shift_figure}%
 
 To construct the column, we will present a cross section sequence.
-First, consider $H_i$, such that $H_{i+1} = H_i-2\epsilon\cdot d$.
+First, consider $H_i$, such that $H_{i+1} = H_i-2\varepsilon\cdot d$.
 Figure~\ref{fig:level_shift_layers} shows the cross section evolution.
 This cross section comprises of a two vertical lines separated by a top horizontal line.
 The vertical lines are connected to the top segment with
@@ -53,32 +42,36 @@ The number of accordion folds during horizontal evolution (along the $y$ axis) m
 \end{lemma}
 
 
-The top segment moves downwards in intervals of $2\epsilon$.
+The top segment moves downwards in intervals of $2\varepsilon$.
 During this process, the horizontal segments move downwards continuously (Figure~\ref{fig:level_shift1}~\ref{fig:level_shift2}).
-For the first $\epsilon$ time interval, a new horizontal downwards moving accordion segment of length zero is created at both accordions,
+For the first $\varepsilon$ time interval, a new horizontal downwards moving accordion segment of length zero is created at both accordions,
 and the vertical segments move towards each other along the $x$-axis (Figure~\ref{fig:level_shift1}).
-For the next $\epsilon$ time interval, similar (oppositely oriented) accordion segments are created at the lowest position.
+For the next $\varepsilon$ time interval, similar (oppositely oriented) accordion segments are created at the lowest position.
 This time, the vertical segments move outwards.
-Overall, two sets of accordion segments on either side are added, and the height of the top segment decreases by $2\epsilon$.
+Overall, two sets of accordion segments on either side are added, and the height of the top segment decreases by $2\varepsilon$.
 
-In the case that $H_{i+1} = H_i+2\epsilon\cdot d$, the level up-shift is simply the down-shift evolution in reverse (Figure~\ref{fig:column_connector}).
+In the case that $H_{i+1} = H_i+2\varepsilon\cdot d$, the level up-shift is simply the down-shift evolution in reverse (Figure~\ref{fig:column_connector}).
 This transition is only possible if the initial number of accordion segments in the $H_i$ cross section is at least $2d$.
 Specifically, assuming that the minimum height is zero, we have the following lemma.
+%This gives us the following lemma.
 \begin{lemma}
 \label{lem:layer_change}
 If the number of accordion segments at level $H_i$ is $l_i$,
-then the number of accordion segments after transitioning to level $H_{i+1}$ is $l_{i+1} = l_i - (H_{i+1}-H_i)/\epsilon$.
+then the number of accordion segments after transitioning to level $H_{i+1}$ is $l_{i+1} = l_i - (H_{i+1}-H_i)/\varepsilon$.
 Specifically, if the number of layers at level $0$ is $l$, then the number of layers
-at level $\max\left\{ H_i\right\}$ is $l - \max\left\{ H_i\right\}/\epsilon$.
+at level $\max\left\{ H_i\right\}$ is $l - \max\left\{ H_i\right\}/\varepsilon$.
+%Specifically, if the number of layers at level $\min\left\{ H_i\right\}$ is $L$, then the number of layers
+%at level $\max\left\{ H_i\right\}$ is $L - \left( \max\left\{ H_i\right\}-\min\left\{ H_i\right\} \right)/\varepsilon$.
 \end{lemma}
 \begin{corollary}
 \label{cor:layer_limit}
 Since the number of accordion segments can never be negative, the minimum number of layers at at level zero
-is $L = \max\left\{ H_i\right\}/\epsilon$. This also ensures that every other level shift is also possible.
+is $L = \max\left\{ H_i\right\}/\varepsilon$. This also ensures that every other level shift is also possible.
+%is $L = \left( \max\left\{ H_i\right\}-\min\left\{ H_i\right\} \right)/\varepsilon$. This also ensures that every other level shift is also possible.
 \end{corollary}
 \begin{corollary}
 \label{cor:column_cross_section_length}
-The length of the cross section at a zero level is at least $1 + 2\cdot L\cdot \epsilon$.
+The length of the cross section at a zero level is at least $1 + 2\cdot L\cdot \varepsilon$.
 So, the minimum possible length of the cross section under our construction is $1 + 2\cdot\max\left\{ H_i\right\}$.
 \end{corollary}
 
@@ -89,8 +82,11 @@ $$ T = 1 + D_1  +  1 + D_2  +  1 + D_3  +\cdots\cdots +  1 + D_{m-1}  +  1 = m +
 \begin{theorem}
 \label{thm:column_extrusion}
 A given column extrusion with heights $\left\{ H_1, H_2,\cdots H_n \right\}$, can be constructed from a strip of paper with size
-$\left( 1 + 2\cdot\max\left\{ H_i\right\}\right)\times T$, where
-$$T \ge \left( m + \sum\limits^{m-1}_{i=1} \left| H_{i+1}-H_i\right|\right)$$
+$X\times T$, where
+\begin{align}
+X\ge 1 + 2\cdot\max\left\{ H_i\right\} && T \ge \left( m + \sum\limits^{m-1}_{i=1} \left| H_{i+1}-H_i\right|\right)
+\end{align}
+%X\ge 1 + 2\cdot\left( \max\left\{ H_i\right\}-\min\left\{ H_i\right\}\right) &&T \ge \left( m + \sum\limits^{m-1}_{i=1} \left| H_{i+1}-H_i\right|\right)
 \end{theorem}
 
 \input{orthogonal/grid}
