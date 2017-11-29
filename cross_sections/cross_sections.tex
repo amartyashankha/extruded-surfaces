@@ -1,13 +1,12 @@
-\section{Cross Sections}
+\section{Cross Section Evolution}
 \label{sec:cross_sections}
 
-We introduce a new method of origami construction, using cross section disgrams.
+We introduce a new method of origami construction, using cross section diagrams.
 Instead of beginning our construction from a 2-dimensional sheet of paper,
 we consider a 1-dimensional cross section moving forwards in time.
-A simple example is demonstrated in Figure~\ref{fig:strip_narrowing}.
+A simple example using strip narrowing\cite{strip_narrowing} is demonstrated in Figure~\ref{fig:strip_narrowing}.
 
-\todo[inline]{Conservation of length}
-\section{Segments and Cross Sections}
+\subsection{Segments and Cross Sections}
 \label{sec:segments_and_cross_sections}
 
 \begin{definition}
@@ -30,13 +29,12 @@ For a segment $s\in C$ we will also denote this velocity as $\vec{\hat v_i}$.
 \label{def:node}
 Given a cross section $C = \langle s_1, s_2,\cdots s_n \rangle$, a node $x$ denotes a point on one of the segments $s_i$.
 A joint node is a node that resides on the endpoint of a segment.
-The distance between two nodes on a cross section is defined as the overall length f cross section between the two nodes.
-\todo[inline]{Distance}
+The distance between two nodes on a cross section is defined as the overall length of cross section between the two nodes.
 \end{definition}
 
 \begin{restatable}{pro}{UniformVelocity}
 \label{pro:uniform_velocity}
-All nodes on a segment $s$ except the joint nodes move with the same velocity $\vec{\hat v_s}$.
+All non-joint nodes on a segment $s$ move with the same velocity $\vec{\hat v_s}$.
 \end{restatable}
 
 \begin{restatable}{pro}{OrthogonalVelocity}

@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{525.72578114bp}%
+    \setlength{\unitlength}{835.6133647bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,7 +48,7 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.5272687)%
+  \begin{picture}(1,0.91484785)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{up_down5.pdf}}%
   \end{picture}%
 \endgroup%

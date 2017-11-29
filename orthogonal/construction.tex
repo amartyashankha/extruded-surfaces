@@ -1,17 +1,16 @@
 \subsection{Construction of Column Extrusion by Level Shifting}
 \label{sec:column_extrusion}
 
-First, we consider a single column of the orthogonal terrain $\left\{ E_{i1}, E_{i2}, \cdots, E_{i,n} \right\}$.
+First, we consider a single column (Figure~\ref{fig:column_extrusion})
+of the orthogonal terrain $\left\{ E_{i1}, E_{i2}, \cdots, E_{i,n} \right\}$.
 We denote the column extrusion heights as $\left\{ H_1, H_2,\cdots H_n \right\}$, where $H_j = E_{i,j}$.
 Consider the decomposition of $T$ into the following time intervals.% (parallel to the $x$-axis).
 \begin{align}
     \label{eq:column_decomposition}
 T = 1 + D_1  +  1 + D_2  +  1 + D_3  +\cdots\cdots +  1 + D_{m-1}  +  1
 \end{align}
-Here, the times corresponding to
-\begin{itemize}
-\item the $i^{th}$ 1 is realized as the surface at height $H_i$.
-\item $D_i = \left| H_i-H_{i+1}\right|$ is realized as the transition between $H_i$ and $H_{i+1}$.  \end{itemize}
+Here, the time corresponding to the $i^{th}$ 1 is realized as the surface at height $H_i$,
+and the time corresponding to $D_i = \left| H_i-H_{i+1}\right|$ is the transition between $H_i$ and $H_{i+1}$.
 
 \graphicspath{{./figures/}}
 \begin{figure}[htb]
@@ -20,37 +19,37 @@ Here, the times corresponding to
     \caption{
     Cross section change from level $i$ to $i+1$. The \emph{accordion segments} are separated for illlustration.
     In reality, the accordion is folded flat. Zero distances are marked by $\phi$.
-    The direction of horizontal and vertical segments are shown by purple and green arrows respectively.
+    The velocites of horizontal and vertical segments are shown by purple and green arrows respectively.
     }
     \label{fig:level_shift_layers}
 \end{figure}
 
 \input{orthogonal/level_shift_figure}%
 
-To construct the column, we will present a cross section sequence.
-First, consider $H_i$, such that $H_{i+1} = H_i-2\varepsilon\cdot d$.
+To construct the column, we will present a cross section sequence. First we describe a \emph{down-shift} gadget.
+That is, consider $i$, such that $H_{i+1} = H_i-2\varepsilon\cdot d < H_i$.
 Figure~\ref{fig:level_shift_layers} shows the cross section evolution.
 This cross section comprises of a two vertical lines separated by a top horizontal line.
 The vertical lines are connected to the top segment with
 a sequence of $2k$ horizontal segments that \emph{accordion} back and forth.
-During the $K$-interval, all segments move along the positive $y$ direction (Figure~\ref{fig:level_shift0}),to create the $i^{th}$ level.
-Subsequently, during the level shift, all segments move in the $x-z$ plane (Figure~\ref{fig:level_shift1}~\ref{fig:level_shift2}).
-\todo[inline]{$y$ movement}
-\begin{lemma}
-\label{lem:accordion_even}
+During each $1$-interval, all segments move along the positive $y$ direction (Figure~\ref{fig:level_shift0}),to create the $i^{th}$ level.
+Subsequently, during the level shift, all segments move in the $x-z$ plane (Figure~\ref{fig:level_shift1},~\ref{fig:level_shift2}).
+\begin{property}
+\label{pro:accordion_even}
 The number of accordion folds during horizontal evolution (along the $y$ axis) must be even.
-\end{lemma}
-
+\end{property}
 
 The top segment moves downwards in intervals of $2\varepsilon$.
-During this process, the horizontal segments move downwards continuously (Figure~\ref{fig:level_shift1}~\ref{fig:level_shift2}).
+During this process, the horizontal segments move downwards continuously (Figure~\ref{fig:level_shift1},~\ref{fig:level_shift2}).
 For the first $\varepsilon$ time interval, a new horizontal downwards moving accordion segment of length zero is created at both accordions,
 and the vertical segments move towards each other along the $x$-axis (Figure~\ref{fig:level_shift1}).
 For the next $\varepsilon$ time interval, similar (oppositely oriented) accordion segments are created at the lowest position.
-This time, the vertical segments move outwards.
+This time, the vertical segments move outwards (Figure~\ref{fig:level_shift2}),
+until they reach their original position (Figure~\ref{fig:level_shift3}).
 Overall, two sets of accordion segments on either side are added, and the height of the top segment decreases by $2\varepsilon$.
 
-In the case that $H_{i+1} = H_i+2\varepsilon\cdot d$, the level up-shift is simply the down-shift evolution in reverse (Figure~\ref{fig:column_connector}).
+In the case that $H_{i+1} = H_i+2\varepsilon\cdot d$, the level up-shift
+is simply the down-shift evolution in reverse (Figure~\ref{fig:column_connector}).
 This transition is only possible if the initial number of accordion segments in the $H_i$ cross section is at least $2d$.
 Specifically, assuming that the minimum height is zero, we have the following lemma.
 %This gives us the following lemma.
@@ -75,8 +74,8 @@ The length of the cross section at a zero level is at least $1 + 2\cdot L\cdot \
 So, the minimum possible length of the cross section under our construction is $1 + 2\cdot\max\left\{ H_i\right\}$.
 \end{corollary}
 
-This provides the minimum width of the strip required to construct a column extrusion.
-Now, we can also calculate the length of the strip as the total time evolution required
+This provides the minimum width of any strip required to construct a column extrusion.
+Also the minimum required strip length is given by
 $$ T = 1 + D_1  +  1 + D_2  +  1 + D_3  +\cdots\cdots +  1 + D_{m-1}  +  1 = m + \sum^{m-1}_{i=1} \left| H_{i+1}-H_i\right| $$
 
 \begin{theorem}

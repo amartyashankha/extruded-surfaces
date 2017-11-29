@@ -1,17 +1,18 @@
-\begin{figure}[htb]
-\graphicspath{{./figures/}}
-    \centering
-    \subfloat[] {
-        \def\svgwidth{0.5\textwidth}
-        \input{figures/trapezoid.pdf_tex}
-        \label{fig:segment_trapezoid}
-    }
-    \hspace{-9em}
-    \subfloat[] {
-        \def\svgwidth{0.7\textwidth}
-        \input{figures/trapezoid_angles.pdf_tex}
-        \label{fig:trapezoid_angles}
-    }
-    \caption{}
-    \label{fig:trapezoids}
-\end{figure}
+\begin{wrapfigure}[12]{R}{0.55\textwidth}
+%\begin{figure}[htb]
+    \vspace{-2em}
+    \graphicspath{{./figures/}}
+        \centering
+        \subfloat[] {
+            \includegraphics[width=0.3\textwidth]{figures/trapezoid.pdf}%
+            \label{fig:segment_trapezoid}
+        }
+        \hspace{-11em}
+        \subfloat[] {
+            \includegraphics[width=0.5\textwidth]{figures/trapezoid_angles.pdf}%
+            \label{fig:trapezoid_angles}
+        }
+        \caption{}
+        \label{fig:trapezoids}
+%\end{figure}
+\end{wrapfigure}

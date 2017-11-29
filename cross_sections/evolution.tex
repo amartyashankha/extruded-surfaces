@@ -1,9 +1,12 @@
 \subsection{Time Travel}
 \label{sec:time_travel}
 
-In the process of time travel, all the nodes on a segment $s$, except the \emph{joint nodes} move with velocity $\vec{\hat v_s}$.
-%The evolution of the joint nodes or joints will be discussed in Section~\ref{sec:joints}.
-The joint node velocity $\vec J_v$ may have a component along $\vec{\hat o_s}$.  As a result, the lengths of segments may change (Figure~\ref{fig:trapezoid_angles}).
+In the process of time travel, all the nodes on a segment $s$,
+except the \emph{joint nodes} move with velocity $\vec{\hat v_s}$ (orthogonal to $\vec{\hat o_s}$).
+For example, if we allow a single segment of length $X$ to evolve for time $T$, it will result in a $X\times T$ strip of paper.
+
+The joint node velocity $\vec J_v$ may have a component along a correspoding segment $s$ (along $\vec{\hat o_s}$).
+As a result, the lengths of segments may change (Figure~\ref{fig:trapezoid_angles}).
 This can be visualized as movement of the corresponding joint along one of the segments.
 
 \begin{definition}
@@ -14,6 +17,7 @@ Similarly, we define a right pace $R_s$ grows from its right endpoint.
 Note that both these quantities can be negative.
 \end{definition}
 After time $T$, the length of a segment changes by $T\cdot(R_s-L_s)$.
+The length of a segment is not allowed to become negative.
 For a segment $s_i$ with left joint $J^L$ and right joint $J^R$, we obtain the relations
 \begin{align}
 \vec J_v^L-\vec{\hat v_{s_i}} = L_{s_i}\cdot \vec{\hat o_{s_i}} && \vec J_v^R-\vec{\hat v_{s_i}} = R_{s_i}\cdot \vec{\hat o_{s_i}}
@@ -24,14 +28,6 @@ For a segment $s_i$ with left joint $J^L$ and right joint $J^R$, we obtain the r
 A joint $J$ corresponding to segments $s$ and $t$ is \emph{valid} if and only if the evolution
 resulting from the velocities $\vec{\hat v_l}$, $\vec{\hat v_r}$, and $\vec J_v$ preserves distances between nodes.
 \end{proposition}
-
-The movement of a joint increases the length of one of its associated segments,
-and decreases the length of the other segment by the same amount (this ensures that the total length is preserved).
-This puts some constraints on the possible velocities of adjacent segments.
-
-Note that the trajectory of the joints form a crease \ldots angle is angle between direction vectors.
-Creases are also created when a segment changes direction\ldots angle is change in direction vector.
-
 \begin{restatable}{pro}{LeftRightPace}
 \label{pro:left_right_pace}
 The right pace of $s_{i}$ is equal to the left pace of $s_{i+1}$.
@@ -40,17 +36,24 @@ Furthermore, the left pace of the first segment, and the right pace of the last 
 This ensures that the total length of the cross section does not change.
 \end{restatable}
 
-\begin{figure}[htpb]
+The movement of a joint increases the length of one of its associated segments,
+and decreases the length of the other segment by the same amount (this ensures that the total length is preserved).
+This puts some constraints on the possible velocities of adjacent segments.
+
+%\begin{figure}[htpb]
+\begin{wrapfigure}[12]{r}{0.5\textwidth}
+\vspace{-2.2em}
 \graphicspath{{./notebooks/}}
     \centering
-    \def\svgwidth{0.7\textwidth}
+    \def\svgwidth{0.5\textwidth}
     \input{notebooks/joint_plane_velocity.pdf_tex}
     \caption{A joint with segments $l$ and $r$.
     The trajectory of the joint is shown in orange.
     The trajectories of $a$ and $b$ are shown in blue.
     The green arrows indicate $\vec v^\shortparallel$}
     \label{fig:joint_plane_velocity}
-\end{figure}
+\end{wrapfigure}
+%\end{figure}
 
 Consider a joint $\vec J_i$ corresponding to segments $l = s_i$ and $r = s_{i+1}$, at time $t=0$.
 Henceforth, we will refer to $L_r$ as $L$, and $R_l$ as $R$.
@@ -62,46 +65,44 @@ and $\vec a'$, and similarly for $b$, we define $\vec b$ and $\vec b'$.
 Let $d$ be the \emph{separation} between nodes $a$ and $b$.
 this setup is shown in Figure~\ref{fig:joint_plane_velocity}
 
-\todo[inline]{Orthogonal velocity}
-
 First, note that $\vec a, \vec b$ lie on the segment $l$, and $\vec a', \vec b'$ lie on the segment $r$,
 which implies that $\vec b-\vec a = d\cdot \vec{\hat o_l}$, and $\vec b'-\vec a' = d\cdot \vec{\hat o_r}$.
 \begin{align}
-\vec b' - \vec a' &= (\vec b + t\cdot \vec v_r^\shortparallel) - (\vec a + t\cdot \vec v_l^\shortparallel)\\
-\implies \vec b' - \vec a' &= (\vec b - \vec a) + t\cdot(\vec v_r^\shortparallel - \vec v_l^\shortparallel)\\
-\implies d\cdot \vec{\hat o_r} &= d\cdot \vec{\hat o_l} + t\cdot(\vec v_r^\shortparallel - \vec v_l^\shortparallel)\\
-\implies \vec v_r^\shortparallel - \vec v_l^\shortparallel &= \frac{d}{t}\cdot(\vec{\hat o_r}-\vec{\hat o_l})\\
-&= -R\cdot(\vec{\hat o_r}-\vec{\hat o_l}) = -L\cdot(\vec{\hat o_r}-\vec{\hat o_l})
+\vec b' - \vec a' &= (\vec b + t\cdot \vec{\hat v_r}^\shortparallel) - (\vec a + t\cdot \vec{\hat v_l}^\shortparallel)\\
+\implies \vec b' - \vec a' &= (\vec b - \vec a) + t\cdot(\vec{\hat v_r}^\shortparallel - \vec{\hat v_l}^\shortparallel)\\
+\implies d\cdot \vec{\hat o_r} &= d\cdot \vec{\hat o_l} + t\cdot(\vec{\hat v_r}^\shortparallel - \vec{\hat v_l}^\shortparallel)\\
+\implies \vec{\hat v_r}^\shortparallel - \vec{\hat v_l}^\shortparallel &= \frac{d}{t}\cdot(\vec{\hat o_r}-\vec{\hat o_l})
+= -R\cdot(\vec{\hat o_r}-\vec{\hat o_l}) = -L\cdot(\vec{\hat o_r}-\vec{\hat o_l})
 \end{align}
-This is only possible if $\vec{\hat o_l}\times \vec{\hat o_r}$ is oriented opposite to $\vec v_l^\shortparallel\times \vec v_r^\shortparallel$.
+This is only possible if $\vec{\hat o_l}\times \vec{\hat o_r}$ is oriented opposite to $\vec{\hat v_l}^\shortparallel\times \vec{\hat v_r}^\shortparallel$.
 
 \begin{restatable}{pro}{SegmentOrientation}
 \label{pro:SegmentOrientation}
 Given two adjacent segments $l$ and $r$ in a cross section $C$, the vector
-$\vec{\hat o_l}\times \vec{\hat o_r}$ must be oriented opposite to $\vec v_l^\shortparallel\times \vec v_r^\shortparallel$.
+$\vec{\hat o_l}\times \vec{\hat o_r}$ must be oriented opposite to $\vec{\hat v_l}^\shortparallel\times \vec{\hat v_r}^\shortparallel$.
 \end{restatable}
 
 If the angle between the segments (between $\vec{\hat o_l}$ and $\vec{\hat o_r}$) is $\theta$,
 the magnitude of $\vec{\hat o_r}-\vec{\hat o_l}$ is $\sqrt{2-2\cos(\theta)}$,
-and $ \left\| \vec v_r^\shortparallel-\vec v_l^\shortparallel\right\| = v\cdot\sqrt{2-2\cos(\pi-\theta)}$.
-Here, $v$ is magnitude of the plane velocity of $J_i$.
+and $ \left\| \vec{\hat v_r}^\shortparallel-\vec{\hat v_l}^\shortparallel\right\| = v\cdot\sqrt{2-2\cos(\pi-\theta)}$.
+Here, $v$ is magnitude of the plane velocity of $J_i$. Given $\phi = \theta/2$, we get --
 \begin{align}
--L = -R = \frac dt &= \vec{\hat v_l} - \vec{\hat o_l}\frac{ \left\| \vec v_r^\shortparallel
-- \vec v_l^\shortparallel\right\|}{ \left\| \vec{\hat o_r}-\vec{\hat o_l}\right\|}\\
-&= v\cdot\frac{\sqrt{\sin^2\left( {\pi/2-\theta/2}\right)}}{\sqrt{\sin^2{\theta/2}}}\\
-&= v\cdot\cot\left( \frac{\theta}{2} \right) = v\cdot\cot\left( \phi \right)
+-L = -R &= \frac dt = \vec{\hat v_l} - \vec{\hat o_l}\frac{ \left\| \vec{\hat v_r}^\shortparallel
+- \vec{\hat v_l}^\shortparallel\right\|}{ \left\| \vec{\hat o_r}-\vec{\hat o_l}\right\|}
+&= v\cdot\frac{\sqrt{\sin^2\left( {\pi/2-\theta/2}\right)}}{\sqrt{\sin^2{\theta/2}}}
+= v\cdot\cot\left( \phi \right)
 \end{align}
-Here, we set $\phi = \theta/2$.
 
 \begin{restatable}{pro}{JointVelocity}
 \label{pro:joint_velocity}
 The velocity of a joint $J$ associated with segments $l$ and $r$, is a constant vector
-$\vec J_v = \vec{\hat v_l} - \vec{\hat o_l}\frac{ \left\| \vec v_r^\shortparallel
-- \vec v_l^\shortparallel\right\|}{ \left\| \vec{\hat o_r}-\vec{\hat o_l}\right\|}
-= \vec v_l - \left\| \vec v_l^\shortparallel\right\|\cdot\vec{\hat o_l}\cdot\cot\left( \phi \right)$
+$\vec J_v
+%= \vec{\hat v_l} - \vec{\hat o_l}\frac{ \left\| \vec{\hat v_r}^\shortparallel
+%- \vec{\hat v_l}^\shortparallel\right\|}{ \left\| \vec{\hat o_r}-\vec{\hat o_l}\right\|}
+= \vec{\hat v_l} - \left\| \vec{\hat v_l}^\shortparallel\right\|\cdot\vec{\hat o_l}\cdot\cot\left( \theta/2 \right)$,
+where $\theta$ is the angle between $\vec{\hat o_l}$ and $\vec{\hat o_r}$.
 \end{restatable}
 
-This can result in a segment length becoming zero then delete.
-We may create a new segment at any point of zero length.
-
+\todo[inline]{
 Note that time evolution is reversible.
+}

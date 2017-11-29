@@ -1,10 +1,10 @@
 \subsection{Multiple Column Extrusions form a Grid Extrusion}
 \label{sec:grid_extrusion}
 
-Now we consider mutiple column extrusions evolving in parallel.
+Now, we consider mutiple column extrusions evolving in parallel.
 Henceforth, we will refer to the evolution of column cross sections along the $y$-axis
 (the ''1''s in Equation~\ref{eq:column_decomposition} as \emph{horizontal evoluton}.
-Meanwhile, vertical transition will refer to level shifting evolution in the $x-z$ plane.
+Meanwhile, a \emph{vertical transition} will refer to level shifting evolution in the $x-z$ plane.
 Let $\mathcal C^{(i)}$ be a valid cross section evolution corresponding
 to the $i^{th}$ column in the grid extrusion (as defined in Section~\ref{sec:column_extrusion}).
 As before, for simplicity, we will assume that the minimum height in each column is zero $\left( i.e.\ \min_j\left\{ E_{i,j}\right\} = 0 \right)$.
@@ -28,10 +28,10 @@ $$D_j = \max_j\left\{ D_{ij}\right\} = \max_j\left\{ \left| E_{i,j+1}-E_{i,j}\ri
 So, the slowest column dictates the transition time, and the faster columns have to \emph{stall} for additional time.
 To achieve this, we define an \emph{up-down} gadget, which is very similar to our original level shifting gadget.
 This up-down gadget (Figure~\ref{fig:up_down}) evolves for $2\varepsilon$ time, but the height of the corresponding column remains unchanged.
-This gadget starts at a height $h$, and for the first $\varepsilon$ time interval (Figure~\ref{fig:up_down1}),
+This gadget starts at a height $H_i$, and for the first $\varepsilon$ time interval (Figure~\ref{fig:up_down1}),
 evolves exactly the same way as the down-shift gadget (Figure~\ref{fig:level_shift1}).
 For the second $\varepsilon$ time interval, the cross section evolves in reverse (Figure~\ref{fig:up_down2}),
-back to it's original state (Figure~\ref{fig:up_down3}).
+back to it's original state at height $H_i$ (Figure~\ref{fig:up_down3}).
 
 So, the vertical transition of $\mathcal C^{(i)}$ needs to use a total of $\left( D_j - D_{i,j}\right)/\left( 2\varepsilon\right)$
 up-down gadgets (each gadget \emph{stalls} for $2\varepsilon$ time).
@@ -44,5 +44,5 @@ We obtain the following primitive, as a consequence of Theorem~\ref{thm:column_e
 %The number of accordion layers for column $i$ at its minium height is
 %$L_i = 2 + \left( \max_j\left\{ E_{i,j}\right\} - \min_j\left\{ E_{i,j}\right\} \right)/\varepsilon$.
 By Theorem~\ref{thm:column_extrusion}, the extrusion for column $i$ is constructed from a paper strip with size
-$$\left( 1 + 2\cdot\max_j\left\{ E_{ij}\right\}\right) {\sc X}  m + \sum\limits^{m-1}_{j=1} D_j $$
+$$\left( 1 + 2\cdot\max_j\left\{ E_{ij}\right\}\right)\times \left( m + \sum\limits^{m-1}_{j=1} D_j \right) $$
 \end{proposition}

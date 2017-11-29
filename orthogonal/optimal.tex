@@ -1,9 +1,6 @@
 \subsection{Optimality}
 \label{sec:optimality}
 
-Under some suitable assumptions, our construction can be made $2+\varepsilon$ optimal,
-for arbitrarily small $\varepsilon$.
-
 Consider a $n\times n$ orthogonal terrain where the highest points along $x$-axis are $M = \max_j E_{ij}$,
 and the maximum deltas along the $y$-axis are $D_j = \max_i{\|E_{i,j}-E_{i,j+1}\|} = M$.
 Now, we consider a sort of worst case orthogonal terrain defined as follows.
@@ -21,12 +18,10 @@ $$L = n + \sum^{n}_{i=1} M = n + (n-1)\cdot M$$
 Assuming that the top faces of the terrain form axis aligned squares in the unfolded state,
 we conclude that the minimum required size of the folding is $L\times L$.
 
-From Theorem~\ref{thm:grid_extrusion}, we know that the terrain can be folded from a $X\times Y$ strip of paper, where
-$$
-X = n + 2(n-1)\cdot M + o(1) && Y = n + (n-1)\cdot M
-$$
+From Theorem~\ref{thm:grid_extrusion}, we know that the terrain can be folded from a $X\times Y$ strip of paper,
+where $X = n + 2(n-1)\cdot M + o(1)$ and $Y = n + (n-1)\cdot M$.
 Since $Y = L$, and $X < 2L$ (assuming an appropriately small value of $\varepsilon$),
-or construction results in a folding is within a factor two o the optimal paper usage.
+or construction results in a folding is within a factor two of the optimal paper usage, under the aforementioned assumption.
 
 %\begin{claim}
 %The $x$-axis length of the strip of paper required to fold this shape can be made arbitrarily close to $X$.

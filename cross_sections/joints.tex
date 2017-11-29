@@ -11,21 +11,28 @@ A particular joint $\vec J_i$ is associated with a left segment $s_i$, a right s
 \begin{definition}
 \label{def:joint_plane}
 A joint plane is the plane that coincides with both segments $l$ and $r$ associated with a particular joint $J$.
+In case the two segments are concident (i.e. $\vec{\hat o_l} = \pm \vec{\hat o_r}$),
+we define the joint plane to be orthogonal to $\vec{\hat v_l} = \vec{\hat v_r}$.
 \end{definition}
 
 \begin{definition}
 \label{def:joint_plane_velocity}
 Consider a joint $J$ associated with segments $l$, $r$, and joint plane $\mathcal P$,
-where $\vec v_l$ and $\vec v_r$ are the velocities of segments $l$ and $r$.
-We define $\vec v_l^\shortparallel$ and $\vec v_l^\perp$ as the components of $\vec v_l$ coinciding with,
+where $\vec{\hat v_l}$ and $\vec{\hat v_r}$ are the velocities of segments $l$ and $r$.
+We define $\vec{\hat v_l}^\shortparallel$ and $\vec{\hat v_l}^\perp$ as the components of $\vec{\hat v_l}$ coinciding with,
 and orthogonal to $\mathcal P$ respectively.
-Similarly, we define $\vec v_r^\shortparallel$ and $\vec v_r^\perp$, as the components of $\vec v_r$.
-By Property~\ref{pro:orthogonal_velocity}, $\vec v_l^\shortparallel$ and $\vec v_r^\shortparallel$
-have to be orthogonal to $\vec{\hat o_l}$ and $\vec{\hat o_r}$ respectively.
+Similarly, we define $\vec{\hat v_r}^\shortparallel$ and $\vec{\hat v_r}^\perp$, as the components of $\vec{\hat v_r}$.
+By Property~\ref{pro:orthogonal_velocity}, $\vec{\hat v_l}^\shortparallel$ and $\vec{\hat v_r}^\shortparallel$
+are orthogonal to $\vec{\hat o_l}$ and $\vec{\hat o_r}$ respectively.
+This uniquely determines the direction of all velocity components.
 \end{definition}
+
+Henceforth, we will refer to the $\vec{\hat v}^\shortparallel$ component as the \emph{joint plane velocity},
+and the $\vec{\hat v}^\perp$ component as the \emph{joint orthogonal velocity,}
 
 \begin{restatable}{pro}{JointOrthogonalVelocity}
 \label{pro:joint_orthogonal_velocity}
-For a joint $J$ associated with segments $l$ and $r$, $\vec v_l^\perp = \vec v_r^\perp$.
-As a corollary, $ \left\| \vec v_l^\shortparallel\right\| = \left\| \vec v_r^\shortparallel\right\|$.
+For a joint $J$ associated with segments $l$ and $r$, $\vec{\hat v_l}^\perp = \vec{\hat v_r}^\perp$
+i.e. the joint orthognal velocites have to be equal, such that the joint plane moves with a fixed velocity along it's normal.
+As a corollary, $ \left\| \vec{\hat v_l}^\shortparallel\right\| = \left\| \vec{\hat v_r}^\shortparallel\right\|$.
 \end{restatable}

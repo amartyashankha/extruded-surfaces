@@ -1,6 +1,5 @@
 \subsection{Multiple Cross Sections}
 \label{sec:intervals}
-\input{cross_sections/strip_narrowing}
 
 \begin{definition}
 \label{def:compatible}
@@ -12,25 +11,38 @@ if and only if $C$ and $D$ correspond to the same sequence of segments after the
 
 \begin{definition}
 \label{def:cross_section_sequence}
-A cross section sequence is a sequence is an ordered list of cross section intervals $ \langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+A cross section sequence is a sequence is an ordered list of cross section intervals
+$ \langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
 such that $C_{i}$ is next-compatible with $C_{i-1}$ for all $i\in [n-1]$.
 This is equivalent to stating that $C_{i}$ is previous-compatible with $C_{i+1}$ for all $i\in [n-1]$.
-Note that we do not care about the directions of the segments.
+Note that we do not care about the velocites of the segments.
 \end{definition}
 
 We will represent our full construction as a valid \emph{cross section sequence}.
 Given a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
 the transition from $\mathcal C_i$ to $\mathcal C_{i+1}$ corresponds to the deletion of one or more
 length zero segments from $\mathcal C_i$, and the addition of one or more zero length segments to obtain $\mathcal C_{i+1}$.
-One simple example is shown in Figure~\ref{fig:strip_narrowing}.
+Figure~\ref{fig:strip_narrowing} shows a simple example.
+\input{cross_sections/strip_narrowing}
 
 \begin{definition}
 \label{def:sequence_folding}
 Given a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
 We obtain $\mathcal F_i^T$ as the folding of cross section $\mathcal C_i$.
-For every joint $J_i$, we attach the corresponding trapezoids for $s_i$ and $s_{i+1}$
-along the joint trajectory to obtain the folding of $\mathcal C$.
+For each $i\le n-1$, we attach $\mathcal F_i^T$ to $\mathcal F_{i+1}^T$ by gluing
+the final cross section of $\mathcal C_i$ to the initial cross section of $\mathcal C_{i+1}$.
+This results in the final folding of the cross section sequence.
 \end{definition}
+
+\begin{proposition}
+\label{prop:creases}
+In addition to the creases formed along the trajectory of joints (Proposition~\ref{prop:joint_crease}),
+creases are also created when a segment changes velocity.
+For instance, consider two adjacent cross sections $\mathcal C$ and $\mathcal D$,
+with corresponding segments $s_C\in \mathcal C_F$ and $s_D\in \mathcal D_I$,
+where $s_C$ and $s_D$ are identical except for their velocity direction.
+Then, the segment $s_C$ (same as $s_D$) forms a crease in the folded state.
+\end{proposition}
 
 \subsubsection{Evolution Corresponds to Flat Paper}
 \label{sec:flat}
@@ -40,8 +52,7 @@ We note here that our construction may still result in self intersections.
 
 We consider a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
 where each cross section interval $\mathcal C_i$ has evolution time $T_i$.
-
-We will then use Theorem~\ref{def:cross_section_sequence} to attach the sequence of $X\times T_i$ strips,
+We then use Theorem~\ref{def:cross_section_sequence} to attach the sequence of $X\times T_i$ strips,
 to form a complete $X\times T$ sheet of paper, where $T = \sum T_i$.
 
 \begin{restatable}{thm}{main}
@@ -61,5 +72,8 @@ Then, the folding $\mathcal F_{\mathcal C}$ obtained by successively gluing the 
 of $\mathcal F_{i+1}$ (for each $1\le i<m$), is isometric to a $X\times T$ strip of paper, where $T = \sum T_i$.
 \end{restatable}
 \begin{proof}
-
+From Theorem~\ref{thm:interval_strip}, we know that each $\mathcal F_i$ is isometric to a strip $Z_i$ of size $X\times T_i$.
+Further, the initial and final cross sections of $\mathcal C_i$ form the parallel sides of $Z_i$ (of length $X$).
+The gluing of $n$ strips of size $X\times T_i$ forms a strip of size $X\times T$.
+So, the final folding is isometric to a sheet of paper with size $X\times T$.
 \end{proof}

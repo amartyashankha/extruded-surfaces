@@ -1,5 +1,5 @@
 \graphicspath{{./figures/strip_narrowing/}}
-\begin{figure}[!htb]
+\begin{figure}[]
     \begingroup
     \def\svgwidth{0.23\textwidth}
         \captionsetup[subfigure]{width=0.22\textwidth}
@@ -10,7 +10,7 @@
     \begingroup
     \def\svgwidth{0.23\textwidth}
         \captionsetup[subfigure]{width=0.48\textwidth}
-        \subfloat[New zero length segment inserted at left endpoint. Existing segment reverses direction.] {
+        \subfloat[New zero length segment inserted at left endpoint. Existing segment reverses velocity.] {
         \input{figures/strip_narrowing/strip10.pdf_tex}
         %}%
     %\endgroup%
@@ -23,17 +23,18 @@
     \endgroup%
     \begingroup
     \def\svgwidth{0.23\textwidth}
-        \captionsetup[subfigure]{width=0.22\textwidth}
+        \captionsetup[subfigure]{width=0.24\textwidth}
         \subfloat[Evolution continues] {
         \input{figures/strip_narrowing/strip12.pdf_tex}
         }%
     \endgroup%
+    \vspace{-1.2em}
     \begingroup
     \def\svgwidth{0.23\textwidth}
         \captionsetup[subfigure]{width=0.67\textwidth}
         \subfloat[New zero length segment (red) inserted between two existing segments
                   with the same velocity as the rightmost segment.
-                  Existing segments retain their direction.] {
+                  Existing segments retain their velocites.] {
         \input{figures/strip_narrowing/strip20.pdf_tex}
         %}%
     %\endgroup%
@@ -65,9 +66,10 @@
         \input{figures/strip_narrowing/strip24.pdf_tex}
         }%
     \endgroup%
+    \vspace{-1.2em}
     \begingroup
     \def\svgwidth{0.23\textwidth}
-        \captionsetup[subfigure]{width=0.48\textwidth}
+        \captionsetup[subfigure]{width=0.47\textwidth}
         \subfloat[Leftmost (zero length) segment is deleted.
                   The remaining two segments continue in the same direction.
                   Overall strip width has been reduced] {
@@ -81,13 +83,14 @@
         \input{figures/strip_narrowing/strip31.pdf_tex}
         }%
     \endgroup%
+    \hspace{1.5em}
     \begingroup
-    \def\svgwidth{0.48\textwidth}
-        \captionsetup[subfigure]{width=0.44\textwidth}
+    \def\svgwidth{0.42\textwidth}
+        \captionsetup[subfigure]{width=0.42\textwidth}
         \subfloat[Side view of strip narrowing gadget, with layers separated. The red lines denote the boundaries of the cross section.] {
         \input{figures/strip_narrowing/strip_layers.pdf_tex}
         }%
     \endgroup%
-        \caption{Cross section evolution of a strip narrowing gadget. \todo[inline]{cite} }
+        \caption{Cross section evolution of a strip narrowing gadget \cite{strip_narrowing}.}
     \label{fig:strip_narrowing}
 \end{figure}

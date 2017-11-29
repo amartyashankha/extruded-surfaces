@@ -12,19 +12,10 @@ and the final cross section is denoted as $\mathcal C_F = \langle r_1, r_2,\cdot
 \end{definition}
 
 \input{cross_sections/trapezoid_figure}
-%\begin{definition}
-%\label{def:}
-%Say that the total length of the cross sections in $\mathcal C$ is $X$ (we showed in \ldots that length is conserved).
-%We will denote a strip of paper of size $X\times L$ as an $L$-strip.
-%\end{definition}
-%\subsubsection{Interval Folding results in Flat Strip}
-%\label{sec:interval_flat_strip}
 
 In this section, we focus on a single cross section interval $\mathcal C$ with segments $\langle s_1, s_2,\cdots s_n \rangle$ evolving over time $T$.
 First consider the surface traced out by an individual segment $s_i$.
 Since the endpoints of $s_i$ move in a straight line, each segment traces a trapezoid.
-\todo[inline]{What is a trace?}
-
 We define the \emph{height} of a trapezoid to be the distance between its parallel sides.
 
 \begin{lemma}
@@ -34,37 +25,45 @@ Specifically, if $L,R$ are the initial left and right endpoints of $s$, and $L',
 $Z_s = LL'R'R$ is the corresponding trapezoid (Figure~\ref{fig:segment_trapezoid}).
 \end{lemma}
 \begin{proof}
-By Property~\ref{pro:joint_velocity}, we know that the joint trajectories are straight lines, which form the non-parallel sides of the trapezoid.
+By Property~\ref{pro:joint_velocity}, we know that the joint trajectories are straight lines, which form the non-parallel sides.
 Since the non-joint nodes on a segment all have the same velocity, the initial and final segment positions form the parallel sides.
 \end{proof}
-\todo[inline]{Define gluing}
-\todo[inline]{Define joint trajectory}
 
 \begin{lemma}
 \label{lem:trapezoid_gluing_parallel}
 Consider a joint $J$ with segments $l$ and $r$,
 which has zero orthogonal joint velocity ( i.e. $\vec v_l^\perp = \vec v_r^\perp = \vec 0$).
 The gluing of trapezoids $Z_l$ and $Z_r$ along the joint trajectory $\mathcal T_J$ is isometric to a larger trapezoid.
-This joint trajectory is actually nothing but a crease in the folded state.
 \end{lemma}
 \begin{proof}
 We consider the evolution of joint $J$ for time $T$ (Figure~\ref{fig:trapezoid_angles}).
+First consider a corrdinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as the basis.
 Since, $\vec{\hat v_l} = \vec v_l^\shortparallel$, from Property~\ref{pro:joint_velocity},
 we know that $-R_l = \left\| \vec v_l^\shortparallel\right\|\cdot\vec{\hat o_v}\cdot\cot(\phi) = \vec{\hat o_v}\cdot\cot(\phi)$.
 So, $\vec J_v = \vec{\hat v_l} - \vec{\hat o_v}\cdot\cot(\phi)$.  Therefore,
 \begin{align}
-    \cot(\angle LJJ') &= \frac{\left\| T\cdot R_l\right\|}{ \left\| T\cdot(\vec J_v - R_l)\right\|} = \cot(\phi)\\
-\implies \angle LJJ' &= \phi
+    \cot(\angle LJJ') &= \frac{\left\| T\cdot R_l\right\|}{ \left\| T\cdot(\vec J_v - R_l)\right\|} = \cot(\phi)
+    \implies \angle LJJ' = \phi
 \end{align}
-\todo[inline]{finish \ldots}
+Similarly, we consider a corrdinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as the basis.
+Since $\vec J_v = \vec{\hat v_r} - \vec{\hat o_r}\cdot \cot(\phi)$, we get
+$$
+\cot(\angle RJJ') = \frac{-\left\| T\cdot L_r\right\|}{ \left\| T\cdot(\vec J_v - L_r)\right\|} = -\cot(\phi)
+\implies \angle RJJ' = \pi - \phi
+$$
+This immplies that $\cot(\angle RJJ') + \cot(\angle LJJ') = \pi$.
+So, the gluing of $Z_l$ and $Z_r$ along the joint trajectory $JJ'$ is isometric to a larger trapezoid.
 \end{proof}
 
-\input{cross_sections/trapezoidZ_figure}
 \begin{lemma}
 \label{lem:trapezoid_gluing}
 Consider a joint $J$ with segments $l$ and $r$ with non-zero orthogonal velocity.
 The gluing of trapezoids $Z_l$ and $Z_r$ along the joint trajectory $\mathcal T_J$ is isometric to a larger trapezoid.
 \end{lemma}
+\begin{adjustbox}{valign=C,raise=\strutheight,minipage={1.0\linewidth}}
+\input{cross_sections/trapezoidZ_figure}
+\strut{}
+\vspace*{-2em}
 \begin{proof}
 As before, let $LJR$ and $L'J'R'$ represent the initial and final positions of the segments respectively.
 We also construct the projection of $L'J'R'$ to the joint plane $\mathcal P$ as $L^\shortparallel J^\shortparallel R^\shortparallel$.
@@ -81,9 +80,9 @@ Similarly, since $\angle J^\shortparallel JL = \pi-\phi$, the unit vector along 
 which implies that $\cos \angle LJJ' = -\cos\phi/\sqrt{1+z^2}$.
 Finally, since both $\angle LJJ$ and $\angle RJJ'$ are less than $\pi$, and $\cos\left(\angle LJJ' \right) = -\cos\left(\angle RJJ' \right)$,
 we conclude that $\angle LJJ' + \angle RJJ' = \pi$.
-
-Since $LJJ'L'$ and $RJJ'R'$ are both trapezoids, this implies that the resulting gluing along $JJ'$ is a larger trapezoid.
+Since $LJJ'L'$ and $RJJ'R'$ are both trapezoids, this implies that the resulting gluing along $JJ'$ is isometric to a larger trapezoid.
 \end{proof}
+\end{adjustbox}
 
 \begin{definition}
 \label{def:interval_folding}
@@ -118,5 +117,8 @@ In other words, the left edge of the trapezoid has length $T$, and is orthogonal
 Similarly, because the right pace of $s_n$ is zero, the right edge of the trapezoid is also orthogonal.
 Therefore, $\mathcal F_C^T$ is isometric to a right angled trapezoid (i.e. a strip) of length $X$ and width $T$.
 \end{proof}
-\todo[inline]{property for NO zero length segments}
 
+\begin{proposition}
+\label{prop:joint_crease}
+The trajectory of a joint forms a crease in the folded state.
+\end{proposition}
