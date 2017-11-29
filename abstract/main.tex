@@ -1,0 +1,86 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,graphicx,natbib,float,xcolor,geometry,mathptmx}
+\usepackage{wrapfig}
+\usepackage{subfig}
+\usepackage{lipsum}
+
+%%%% ---- Formatting ---- %%%%
+
+% margins
+\geometry{a4paper, top=40mm, right=25.4mm, bottom = 25.4mm, left = 25.4mm}
+
+% links
+\usepackage[pdfusetitle]{hyperref}
+\hypersetup{hidelinks,colorlinks,urlcolor=[rgb]{0,0,1}}
+
+% paragraph formatting
+\setlength{\parskip}{12pt plus 0.2ex minus 0.2ex}
+\setlength{\parindent}{0pt}
+
+% figure captions
+\usepackage[font=small,labelfont=bf,margin=10pt]{caption}
+
+% define keywords, title page and document properties
+\makeatletter
+  
+  % define keywords variable
+  \def\@keywords{}
+  \newcommand{\keywords}[1]{
+    \def\@keywords{#1}
+  }
+
+  % make title page
+  \def\@maketitle{%
+  \newpage
+  \null
+  {\centering
+  \let \footnote \thanks
+    {\Large \bfseries \@title \par}%
+    \vskip -4pt%
+    {\it \@author \par}%
+  \par}
+  \vskip 12pt
+ 	\underline{keywords}: \@keywords
+  }
+
+%  % add info to pdf metadata
+%  \hypersetup{pdftitle={\@title},pdfauthor={\@author}}
+
+\makeatother
+
+% change section heading
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {36pt}%
+                                   {0.5pt \@plus.5pt}%
+                                   {\centering\normalfont\bfseries}}
+\makeatother
+
+
+% bibliography
+\bibliographystyle{plainnat}
+\setcitestyle{authoryear}
+
+
+
+%%%% ---- Abstract Properties ---- %%%%
+
+\input{../title}
+\author{C. J. H. Dickens, G. Orwell, G. R. R. Martin}
+\keywords{cross sections, orthogonal terrains, time evolution}
+
+
+%%%% ---- Start Document ---- %%%%
+
+\begin{document}
+
+\maketitle
+
+
+\section*{Abstract}
+
+\input{abs}
+
+\end{document}
