@@ -4,29 +4,44 @@
 Under some suitable assumptions, our construction can be made $2+\varepsilon$ optimal,
 for arbitrarily small $\varepsilon$.
 
-We define the maximum deltas along the $y$-axis as $D_j = \max_i{\|E_{i,j}-E_{i,j+1}\|}$,
-and let $Y = n + \sum_{i=1}^{n-1} D_j$
-We also define the lowest and highest points along $x$-axis as
-$L_i = \max_j E_{ij}$ and $H_i = \max_j E_{ij}$, and let
-$$X = n + \sum\limits_{i=1}^n \left[(H_i-\min(L_i,L_{i+1})) + (H_i-\min(L_i,L_{i-1}))\right]$$
+Consider a $n\times n$ orthogonal terrain where the highest points along $x$-axis are $M = \max_j E_{ij}$,
+and the maximum deltas along the $y$-axis are $D_j = \max_i{\|E_{i,j}-E_{i,j+1}\|} = M$.
+Now, we consider a sort of worst case orthogonal terrain defined as follows.
+$$
+E_{ij}=
+\begin{cases}
+M, \textrm{ if $(i+j)$ is even}\\
+0, \textrm{ if $(i+j)$ is odd}
+\end{cases}
+$$
 
-The terms in the summation account for the total length of all the necessary worst case vertical walls,
-and the $n$ is for the top faces.
+This forms a checkerboard alternating between the minimum and maximum heights.
+The longest line formed along either axis is the total length of the top surfaces plus the sum of the height changes across the axis, which gives
+$$L = n + \sum^{n}_{i=1} M = n + (n-1)\cdot M$$
+Assuming that the top faces of the terrain form axis aligned squares in the unfolded state,
+we conclude that the minimum required size of the folding is $L\times L$.
 
-\begin{claim}
-The $x$-axis length of the strip of paper required to fold this shape can be made arbitrarily close to $X$.
-\end{claim}
-\begin{claim}
-The $y$-axis length of the strip of paper required to fold this shape will be exactly $Y$.
-\end{claim}
+From Theorem~\ref{thm:grid_extrusion}, we know that the terrain can be folded from a $X\times Y$ strip of paper, where
+$$
+X = n + 2(n-1)\cdot M + o(1) && Y = n + (n-1)\cdot M
+$$
+Since $Y = L$, and $X < 2L$ (assuming an appropriately small value of $\varepsilon$),
+or construction results in a folding is within a factor two o the optimal paper usage.
 
-First, we pick an $\epsilon$, such that $2\varepsilon$ divides all extrusion heights.
-The construction will require paper of size $X'\times Y$, where $X' = X + 2\epsilon(n-1)$.
+%\begin{claim}
+%The $x$-axis length of the strip of paper required to fold this shape can be made arbitrarily close to $X$.
+%\end{claim}
+%\begin{claim}
+%The $y$-axis length of the strip of paper required to fold this shape will be exactly $Y$.
+%\end{claim}
 
-There are two components to the construction
-\begin{itemize}
-	\item $n$ strips parallel to the $y$-axis. Each of these strips will fold to the corresponding strip in the extruded graph. The total area of these strips will be $X\times Y$.
-    \item $n-1$ Intermediate strips, each of size $2\epsilon\times Y$ to connect the main strips together.
-\end{itemize}
-The total area is therefore $X\times Y + (n-1)2\epsilon\times Y = X'\times Y$. This can of course be made arbitrarily close to $X\times Y$.
+%First, we pick an $\epsilon$, such that $2\varepsilon$ divides all extrusion heights.
+%The construction will require paper of size $X'\times Y$, where $X' = X + 2\epsilon(n-1)$.
+
+%There are two components to the construction
+%\begin{itemize}
+	%\item $n$ strips parallel to the $y$-axis. Each of these strips will fold to the corresponding strip in the extruded graph. The total area of these strips will be $X\times Y$.
+    %\item $n-1$ Intermediate strips, each of size $2\epsilon\times Y$ to connect the main strips together.
+%\end{itemize}
+%The total area is therefore $X\times Y + (n-1)2\epsilon\times Y = X'\times Y$. This can of course be made arbitrarily close to $X\times Y$.
 

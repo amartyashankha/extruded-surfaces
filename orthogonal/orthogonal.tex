@@ -4,20 +4,12 @@
 In this section, we outline a construction of orthogonal terrains with arbitrary rational extrusion heights.
 In our construction, the cross section at will always be on the $x-z$ plane.
 This makes the analysis much simpler.
-\graphicspath{{./figures/}}
-\begin{figure}[!htb]
-    \centering
-    \subfloat[Orthogonal terrain.]{
-        \includegraphics[width=0.4\linewidth]{figures/terrain.png}
-        \label{fig:terrain}
-    }%
-    \subfloat[A column extrusion with heights $\{0,1,3,1,2,0\}$]{
-        \def\svgwidth{0.6\textwidth}
-        \input{./figures/column_extrusion.pdf_tex}%
-        \label{fig:column_extrusion}
-    }%
+\begin{wrapfigure}[8]{R}{0.4\textwidth}
+    \includegraphics[width=\linewidth]{figures/terrain.png}
+    \label{fig:terrain}
     \caption{}
-\end{figure}%
+    \vspace{-1.6em}
+\end{wrapfigure}
 
 To simplify the presentation, we will consider an uniform $X-Y$ grid,
 with arbitrary rational extrusion heights corresponding to every grid square (Figure~\ref{fig:terrain}).
@@ -33,6 +25,15 @@ We consider each ''column'' of a given grid extrusion separately as an individua
 We will construct each of the $n$ columns independently (Figure~\ref{fig:level_shift}),
 and attach them together with \emph{column connectors} (Figure~\ref{fig:column_connector}).
 
+\graphicspath{{./figures/}}
+\begin{wrapfigure}[8]{R}{0.6\textwidth}
+    \def\svgwidth{0.6\textwidth}
+    \input{./figures/column_extrusion.pdf_tex}%
+    \label{fig:column_extrusion}
+    \caption{}
+    \vspace{-1.3em}
+\end{wrapfigure}
+
 We begin by choosing an $2\varepsilon=1/K$ where $K$ is a positive integer.
 This is chosen such that $E_{i,j}$ is an integral multiple of $2\varepsilon$ for all $i,j$.
 Then we scale the entire construction up by a factor of $K$.
@@ -43,3 +44,5 @@ Given a strip of size $X\times T$, we will consider the evolution of a cross sec
 \input{orthogonal/construction}
 \input{orthogonal/size}
 \input{orthogonal/optimal}
+\input{orthogonal/assumption}
+\input{orthogonal/non_uniform}
