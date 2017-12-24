@@ -1,5 +1,47 @@
 \section{Introduction}
 \label{sec:introduction}
 
-\paragraph{Outline}
+Many algorithms and universality results exist for producing parameterized
+families of origami structures, but few are provably efficient, i.e. provide
+constructions from a paper having dimensions within a low constant factor of an
+optimal construction. At 5OSME, \cite{MazeFolding_Origami5} presented a
+efficient construction for folding orthogonal mazes which is computable in
+polynomial time. Origamizer, presented in \cite{Origamizer_SoCG2017} constructs
+foldings corresponding to general polyhedral surfaces, but does not provide any
+bound on the efficiency of the constructions. On the other hand, Treemaker from
+~\cite{Lang} produces efficient crease patterns to fold uniaxial bases, but may
+require exponential time to to find an efficient solution. 
 
+In this paper, we present an algorithm for efficiently producing an origami
+folding that corresponds to an input {\bf orthogonal terrain} with arbitrary
+rational extrusion heights. A folding corresponds to an orthogonal terrain if
+the folding covers every point on the terrain, but no point on the folding
+exists above the terrain. This result improves an algorithm,
+\cite{BoxPleating_Origami5} also presented at 5OSME, applicable to a more
+general class of inputs, providing a universal construction to fold general
+orthogonal polyhedra, though the construction is less inefficient than our
+construction applied to orthogonal terrains. Our construction approach follows
+three steps: 
+
+\vspace{-0.2pc} 
+\begin{enumerate} 
+\item Decompose the orthogonal terrain into strips that are constant along one dimension.
+\item Cover the strips efficiently using rectangular strips of paper.
+\item Stitch the strips together along matching boundaries.
+\end{enumerate}
+\vspace{-0.2pc}
+
+In order to better communicate the algorithm and the final folded state
+produced, we also introduce a new {\bf cross-section evolution} representation
+of a folded isometry: a straight line is swept across the crease pattern of a
+folded surface, and we keep track of how the folding of the line evolves as a
+cross-section of the folded surface. The propagation of the cross-section
+between crease pattern vertices is uniquely determined by the initial
+orientation of the cross-section, so the folded isometry can be constructed by
+sweeping the line and locally modifying the cross-section when crossing crease
+pattern vertices during propagation. This representation not only simplifies the
+description of the 3D folded isometries constructed, but also provides a simpler
+framework to argue that the folded state does not self intersect, by propagating
+planar cross-sections monotonically along a single direction. We then
+show that our construction's efficiency is within a small constant factor of
+any folding with optimal efficiency.
