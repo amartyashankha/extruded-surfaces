@@ -1,5 +1,10 @@
+\input{cross_sections/trapezoid_figure}
+
 \subsection{Cross Section Interval Folding}
 \label{sec:interval_folding}
+
+~
+\vspace*{-4ex}
 
 \begin{definition}
 \label{def:interval}
@@ -10,8 +15,6 @@ The evolution forms a cross section interval $\mathcal C$ of length $T$.
 The initial cross section is denoted as $\mathcal C_I = \langle s_1, s_2,\cdots s_n \rangle$,
 and the final cross section is denoted as $\mathcal C_F = \langle r_1, r_2,\cdots r_n \rangle$.
 \end{definition}
-
-\input{cross_sections/trapezoid_figure}
 
 In this section, we focus on a single cross section interval $\mathcal C$ with segments $\langle s_1, s_2,\cdots s_n \rangle$ evolving over time $T$.
 First consider the surface traced out by an individual segment $s_i$.
@@ -37,7 +40,7 @@ The gluing of trapezoids $Z_l$ and $Z_r$ along the joint trajectory $\mathcal T_
 \end{lemma}
 \begin{proof}
 We consider the evolution of joint $J$ for time $T$ (Figure~\ref{fig:trapezoid_angles}).
-First consider a corrdinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as the basis.
+First consider a coordinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as the basis.
 Since, $\vec{\hat v_l} = \vec v_l^\shortparallel$, from Property~\ref{pro:joint_velocity},
 we know that $-R_l = \left\| \vec v_l^\shortparallel\right\|\cdot\vec{\hat o_v}\cdot\cot(\phi) = \vec{\hat o_v}\cdot\cot(\phi)$.
 So, $\vec J_v = \vec{\hat v_l} - \vec{\hat o_v}\cdot\cot(\phi)$.  Therefore,
@@ -45,25 +48,27 @@ So, $\vec J_v = \vec{\hat v_l} - \vec{\hat o_v}\cdot\cot(\phi)$.  Therefore,
     \cot(\angle LJJ') &= \frac{\left\| T\cdot R_l\right\|}{ \left\| T\cdot(\vec J_v - R_l)\right\|} = \cot(\phi)
     \implies \angle LJJ' = \phi
 \end{align}
-Similarly, we consider a corrdinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as the basis.
+Similarly, we consider a coordinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as the basis.
 Since $\vec J_v = \vec{\hat v_r} - \vec{\hat o_r}\cdot \cot(\phi)$, we get
 $$
 \cot(\angle RJJ') = \frac{-\left\| T\cdot L_r\right\|}{ \left\| T\cdot(\vec J_v - L_r)\right\|} = -\cot(\phi)
 \implies \angle RJJ' = \pi - \phi
 $$
-This immplies that $\cot(\angle RJJ') + \cot(\angle LJJ') = \pi$.
+This implies that $\cot(\angle RJJ') + \cot(\angle LJJ') = \pi$.
 So, the gluing of $Z_l$ and $Z_r$ along the joint trajectory $JJ'$ is isometric to a larger trapezoid.
 \end{proof}
 
+\input{cross_sections/trapezoidZ_figure}
+
+~
+\vspace*{-4ex}
+
 \begin{lemma}
 \label{lem:trapezoid_gluing}
-Consider a joint $J$ with segments $l$ and $r$ with non-zero orthogonal velocity.
+Consider a joint $J$ with segments $l$ and $r$ with non-zero orthogonal velocity; see Figure~\ref{fig:trapezoidZ}.
 The gluing of trapezoids $Z_l$ and $Z_r$ along the joint trajectory $\mathcal T_J$ is isometric to a larger trapezoid.
 \end{lemma}
-\begin{adjustbox}{valign=C,raise=\strutheight,minipage={1.0\linewidth}}
-\input{cross_sections/trapezoidZ_figure}
-\strut{}
-\vspace*{-2em}
+
 \begin{proof}
 As before, let $LJR$ and $L'J'R'$ represent the initial and final positions of the segments respectively.
 We also construct the projection of $L'J'R'$ to the joint plane $\mathcal P$ as $L^\shortparallel J^\shortparallel R^\shortparallel$.
@@ -82,7 +87,6 @@ Finally, since both $\angle LJJ$ and $\angle RJJ'$ are less than $\pi$, and $\co
 we conclude that $\angle LJJ' + \angle RJJ' = \pi$.
 Since $LJJ'L'$ and $RJJ'R'$ are both trapezoids, this implies that the resulting gluing along $JJ'$ is isometric to a larger trapezoid.
 \end{proof}
-\end{adjustbox}
 
 \begin{definition}
 \label{def:interval_folding}

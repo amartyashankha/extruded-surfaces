@@ -21,9 +21,9 @@ Note that both these quantities can be negative.
 After time $T$, the length of a segment changes by $T\cdot(R_s-L_s)$.
 The length of a segment is not allowed to become negative.
 For a segment $s_i$ with left joint $J^L$ and right joint $J^R$, we obtain the relations
-\begin{align}
+\begin{align*}
 \vec J_v^L-\vec{\hat v_{s_i}} = L_{s_i}\cdot \vec{\hat o_{s_i}} && \vec J_v^R-\vec{\hat v_{s_i}} = R_{s_i}\cdot \vec{\hat o_{s_i}}
-\end{align}
+\end{align*}
 
 \begin{proposition}
 \label{prop:valid_joint}
@@ -43,8 +43,18 @@ The movement of a joint increases the length of one of its associated segments,
 and decreases the length of the other segment by the same amount (this ensures that the total length is preserved).
 This puts some constraints on the possible velocities of adjacent segments.
 
+Consider a joint $\vec J_i$ corresponding to segments $l = s_i$ and $r = s_{i+1}$, at time $t=0$.
+Henceforth, we will refer to $L_r$ as $L$, and $R_l$ as $R$.
+Without loss of genenerality, we assume that $L<0$.
+At a later time $t$, let the new joint position be $\vec J'_i$.
+We define nodes $a$ and $b$ corresponding to $\vec J_i$ and $\vec J_{i+1}$ respectively.
+We also define the initial and final positions of $a$ as $\vec a$,
+and $\vec a'$, and similarly for $b$, we define $\vec b$ and $\vec b'$.
+Let $d$ be the \emph{separation} between nodes $a$ and $b$.
+This setup is shown in Figure~\ref{fig:joint_plane_velocity}.
+
 %\begin{figure}[htpb]
-\begin{wrapfigure}[13]{r}{0.4\textwidth}
+\begin{wrapfigure}[8]{r}{0.4\textwidth}
 %\vspace{-2.2em}
 \graphicspath{{./notebooks/}}
     \centering
@@ -58,25 +68,16 @@ This puts some constraints on the possible velocities of adjacent segments.
 \end{wrapfigure}
 %\end{figure}
 
-Consider a joint $\vec J_i$ corresponding to segments $l = s_i$ and $r = s_{i+1}$, at time $t=0$.
-Henceforth, we will refer to $L_r$ as $L$, and $R_l$ as $R$.
-Without loss of genenerality, we assume that $L<0$.
-At a later time $t$, let the new joint position be $\vec J'_i$.
-We define nodes $a$ and $b$ corresponding to $\vec J_i$ and $\vec J_{i+1}$ respectively.
-We also define the initial and final positions of $a$ as $\vec a$,
-and $\vec a'$, and similarly for $b$, we define $\vec b$ and $\vec b'$.
-Let $d$ be the \emph{separation} between nodes $a$ and $b$.
-this setup is shown in Figure~\ref{fig:joint_plane_velocity}
 
 First, note that $\vec a, \vec b$ lie on the segment $l$, and $\vec a', \vec b'$ lie on the segment $r$,
 which implies that $\vec b-\vec a = d\cdot \vec{\hat o_l}$, and $\vec b'-\vec a' = d\cdot \vec{\hat o_r}$.
-\begin{align}
+\begin{align*}
 \vec b' - \vec a' &= (\vec b + t\cdot \vec{\hat v_r}^\shortparallel) - (\vec a + t\cdot \vec{\hat v_l}^\shortparallel)\\
 \implies \vec b' - \vec a' &= (\vec b - \vec a) + t\cdot(\vec{\hat v_r}^\shortparallel - \vec{\hat v_l}^\shortparallel)\\
 \implies d\cdot \vec{\hat o_r} &= d\cdot \vec{\hat o_l} + t\cdot(\vec{\hat v_r}^\shortparallel - \vec{\hat v_l}^\shortparallel)\\
 \implies \vec{\hat v_r}^\shortparallel - \vec{\hat v_l}^\shortparallel &= \frac{d}{t}\cdot(\vec{\hat o_r}-\vec{\hat o_l})
-= -R\cdot(\vec{\hat o_r}-\vec{\hat o_l}) = -L\cdot(\vec{\hat o_r}-\vec{\hat o_l})
-\end{align}
+\\&= -R\cdot(\vec{\hat o_r}-\vec{\hat o_l}) = -L\cdot(\vec{\hat o_r}-\vec{\hat o_l})
+\end{align*}
 This is only possible if $\vec{\hat o_l}\times \vec{\hat o_r}$ is oriented opposite to $\vec{\hat v_l}^\shortparallel\times \vec{\hat v_r}^\shortparallel$.
 
 \begin{restatable}{pro}{SegmentOrientation}
@@ -89,12 +90,12 @@ If the angle between the segments (between $\vec{\hat o_l}$ and $\vec{\hat o_r}$
 the magnitude of $\vec{\hat o_r}-\vec{\hat o_l}$ is $\sqrt{2-2\cos(\theta)}$,
 and $ \left\| \vec{\hat v_r}^\shortparallel-\vec{\hat v_l}^\shortparallel\right\| = v\cdot\sqrt{2-2\cos(\pi-\theta)}$.
 Here, $v$ is magnitude of the plane velocity of $J_i$. Given $\phi = \theta/2$, we get --
-\begin{align}
+\begin{align*}
 -L = -R &= \frac dt = \vec{\hat v_l} - \vec{\hat o_l}\frac{ \left\| \vec{\hat v_r}^\shortparallel
 - \vec{\hat v_l}^\shortparallel\right\|}{ \left\| \vec{\hat o_r}-\vec{\hat o_l}\right\|}
 &= v\cdot\frac{\sqrt{\sin^2\left( {\pi/2-\theta/2}\right)}}{\sqrt{\sin^2{\theta/2}}}
 = v\cdot\cot\left( \phi \right)
-\end{align}
+\end{align*}
 
 \begin{restatable}{pro}{JointVelocity}
 \label{pro:joint_velocity}

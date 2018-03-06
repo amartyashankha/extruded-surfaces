@@ -1,36 +1,41 @@
 \graphicspath{{./figures/strip_narrowing/}}
 \begin{figure}[]
+    \centering
     \begingroup
-    \def\svgwidth{0.23\textwidth}
+    \def\svgwidth{0.21\textwidth}
         \captionsetup[subfigure]{width=0.22\textwidth}
-        \subfloat[The trivial cross section.] {
+        \subfloat[The trivial cross section.]{\centering
         \input{figures/strip_narrowing/strip0.pdf_tex}
         }%
-    \endgroup%
+    \endgroup
+    \hfill
     \begingroup
-    \def\svgwidth{0.23\textwidth}
+    \def\svgwidth{0.21\textwidth}
         \captionsetup[subfigure]{width=0.48\textwidth}
-        \subfloat[New zero length segment inserted at left endpoint. Existing segment reverses velocity.] {
+        \subfloat[New zero length segment inserted at left endpoint. Existing segment reverses velocity.]{\centering
         \input{figures/strip_narrowing/strip10.pdf_tex}
         %}%
     %\endgroup%
     %\begingroup
-    \def\svgwidth{0.23\textwidth}
+    \def\svgwidth{0.21\textwidth}
         %\captionsetup[subfigure]{width=0.22\textwidth}
         %\subfloat[] {
         \input{figures/strip_narrowing/strip11.pdf_tex}
         }%
-    \endgroup%
+    \endgroup
+    \hfill
     \begingroup
-    \def\svgwidth{0.23\textwidth}
+    \def\svgwidth{0.21\textwidth}
         \captionsetup[subfigure]{width=0.24\textwidth}
-        \subfloat[Evolution continues] {
-        \input{figures/strip_narrowing/strip12.pdf_tex}
+        \subfloat[Evolution continues]{%
+          \makebox[0.24\textwidth]{\input{figures/strip_narrowing/strip12.pdf_tex}}
         }%
     \endgroup%
+
     \vspace{-1.2em}
+
     \begingroup
-    \def\svgwidth{0.23\textwidth}
+    \def\svgwidth{0.21\textwidth}
         \captionsetup[subfigure]{width=0.67\textwidth}
         \subfloat[New zero length segment (red) inserted between two existing segments
                   with the same velocity as the rightmost segment.
@@ -39,36 +44,39 @@
         %}%
     %\endgroup%
     %\begingroup
-    \def\svgwidth{0.23\textwidth}
+    \def\svgwidth{0.21\textwidth}
         %\captionsetup[subfigure]{width=0.22\textwidth}
         %\subfloat[] {
         \input{figures/strip_narrowing/strip21.pdf_tex}
         %}%
     %\endgroup%
     %\begingroup
-    \def\svgwidth{0.23\textwidth}
+    \def\svgwidth{0.21\textwidth}
         %\captionsetup[subfigure]{width=0.22\textwidth}
         %\subfloat[] {
         \input{figures/strip_narrowing/strip22.pdf_tex}
         }%
     \endgroup%
     %\begingroup
-    %\def\svgwidth{0.23\textwidth}
+    %\def\svgwidth{0.21\textwidth}
         %\captionsetup[subfigure]{width=0.22\textwidth}
         %\subfloat[Evolution continues] {
         %\input{figures/strip_narrowing/strip23.pdf_tex}
         %}%
     %\endgroup%
+    \hfill
     \begingroup
-    \def\svgwidth{0.23\textwidth}
+    \def\svgwidth{0.21\textwidth}
         \captionsetup[subfigure]{width=0.28\textwidth}
-        \subfloat[Length of leftmost (blue) segment becomes zero.] {
-        \input{figures/strip_narrowing/strip24.pdf_tex}
+        \subfloat[Length of leftmost (blue) segment becomes zero.]{%
+          \makebox[0.28\textwidth]{\input{figures/strip_narrowing/strip24.pdf_tex}}
         }%
     \endgroup%
+
     \vspace{-1.2em}
+
     \begingroup
-    \def\svgwidth{0.23\textwidth}
+    \def\svgwidth{0.21\textwidth}
         \captionsetup[subfigure]{width=0.47\textwidth}
         \subfloat[Leftmost (zero length) segment is deleted.
                   The remaining two segments continue in the same direction.
@@ -77,7 +85,7 @@
         %}%
     %\endgroup%
     %\begingroup
-    \def\svgwidth{0.23\textwidth}
+    \def\svgwidth{0.21\textwidth}
         %\captionsetup[subfigure]{width=0.22\textwidth}
         %\subfloat[] {
         \input{figures/strip_narrowing/strip31.pdf_tex}
