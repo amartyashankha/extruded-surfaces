@@ -1,13 +1,15 @@
 \subsection{Time Travel}
 \label{sec:time_travel}
 
-In the process of time travel, all the nodes on a segment $s$,
-except the \emph{joint nodes} move with velocity $\vec{\hat v_s}$ (orthogonal to $\vec{\hat o_s}$).
-For example, if we allow a single segment of length $X$ to evolve for time $T$, it will result in a $X\times T$ strip of paper.
+In the process of time travel, all the nodes on a segment $s$, except the
+\emph{joint nodes} move with velocity $\vec{\hat v_s}$ (orthogonal to $\vec{\hat
+o_s}$). For example, if we allow a single segment of length $X$ to evolve for
+time $T$, it will result in a $X\times T$ strip of paper.
 
-The joint node velocity $\vec J_v$ may have a component along a correspoding segment $s$ (along $\vec{\hat o_s}$).
-As a result, the lengths of segments may change (Figure~\ref{fig:trapezoid_angles}).
-This can be visualized as movement of the corresponding joint along one of the segments.
+The joint node velocity $\vec J_v$ may have a component along a correspoding
+segment $s$ (along $\vec{\hat o_s}$). As a result, the lengths of segments may
+change (Figure~\ref{fig:trapezoid_angles}). This can be visualized as movement
+of the corresponding joint along one of the segments.
 
 \begin{definition}
 \label{def:segment_length}
@@ -28,6 +30,7 @@ For a segment $s_i$ with left joint $J^L$ and right joint $J^R$, we obtain the r
 A joint $J$ corresponding to segments $s$ and $t$ is \emph{valid} if and only if the evolution
 resulting from the velocities $\vec{\hat v_l}$, $\vec{\hat v_r}$, and $\vec J_v$ preserves distances between nodes.
 \end{proposition}
+\vspace{-1pc}
 \begin{restatable}{pro}{LeftRightPace}
 \label{pro:left_right_pace}
 The right pace of $s_{i}$ is equal to the left pace of $s_{i+1}$.

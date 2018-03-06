@@ -26,13 +26,17 @@
 \input{title}
 \authorlist[Biswas, Demaine, Ku]{Amartya Shankha Biswas, Erik D. Demaine, Jason S. Ku}
 % the text in square brackets will be shown in the headers; this should be the author surnames
-\affiliations{Name of First Author \at Name, Address of Institute, \email{name@email.address}
-\and Name of Second Author \at Name, Address of Institute, \email{name@email.address}}
+\affiliations{Amartya Shankha Biswas, Erik D. Demaine, and Jason S. Ku \at
+Massachusetts Institute of Technology, 32 Vassar St., Cambridge, MA 02139\\
+\email{asbiswas@mit.edu}, \email{edemaine@mit.edu}, and \email{jasonku@mit.edu}
+}
 
 \makeatletter
   \let\runtitle\@title
   \let\runauthor\shortauthor
 \makeatother
+
+\def\runtitle{Efficient Origami Construction of Orthogonal Terrains}
 
 \fancyhead[RE]{\footnotesize \textsf{\textsc{\runauthor}}}
 \fancyhead[LO]{\footnotesize \textsf{\textsc{\runtitle}}}
@@ -48,8 +52,6 @@
 %\input{abstract}
 
 \input{introduction}
-
-\input{extrusions/extrusions}
 
 \input{cross_sections/cross_sections}
 
