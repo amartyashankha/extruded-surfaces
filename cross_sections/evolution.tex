@@ -22,7 +22,7 @@ After time $T$, the length of a segment changes by $T\cdot(R_s-L_s)$.
 The length of a segment is not allowed to become negative.
 For a segment $s_i$ with left joint $J^L$ and right joint $J^R$, we obtain the relations
 \begin{align*}
-\vec J_v^L-\vec{\hat v_{s_i}} = L_{s_i}\cdot \vec{\hat o_{s_i}} && \vec J_v^R-\vec{\hat v_{s_i}} = R_{s_i}\cdot \vec{\hat o_{s_i}}
+\vec J_v^L-\vec{\hat v_{s_i}} = L_{s_i}\cdot \vec{\hat o_{s_i}}, && \vec J_v^R-\vec{\hat v_{s_i}} = R_{s_i}\cdot \vec{\hat o_{s_i}}.
 \end{align*}
 
 \begin{proposition}
@@ -63,20 +63,22 @@ This setup is shown in Figure~\ref{fig:joint_plane_velocity}.
     \caption{A joint with segments $l$ and $r$.
     The trajectory of the joint is shown in orange.
     The trajectories of $a$ and $b$ are shown in blue.
-    The green arrows indicate $\vec v^\shortparallel$}
+    The green arrows indicate $\vec v^\shortparallel$.}
     \label{fig:joint_plane_velocity}
 \end{wrapfigure}
 %\end{figure}
 
 
 First, note that $\vec a, \vec b$ lie on the segment $l$, and $\vec a', \vec b'$ lie on the segment $r$,
-which implies that $\vec b-\vec a = d\cdot \vec{\hat o_l}$, and $\vec b'-\vec a' = d\cdot \vec{\hat o_r}$.
+which implies that $\vec b-\vec a = d\cdot \vec{\hat o_l}$, and $\vec b'-\vec a' = d\cdot \vec{\hat o_r}$:
 \begin{align*}
 \vec b' - \vec a' &= (\vec b + t\cdot \vec{\hat v_r}^\shortparallel) - (\vec a + t\cdot \vec{\hat v_l}^\shortparallel)\\
 \implies \vec b' - \vec a' &= (\vec b - \vec a) + t\cdot(\vec{\hat v_r}^\shortparallel - \vec{\hat v_l}^\shortparallel)\\
 \implies d\cdot \vec{\hat o_r} &= d\cdot \vec{\hat o_l} + t\cdot(\vec{\hat v_r}^\shortparallel - \vec{\hat v_l}^\shortparallel)\\
 \implies \vec{\hat v_r}^\shortparallel - \vec{\hat v_l}^\shortparallel &= \frac{d}{t}\cdot(\vec{\hat o_r}-\vec{\hat o_l})
-\\&= -R\cdot(\vec{\hat o_r}-\vec{\hat o_l}) = -L\cdot(\vec{\hat o_r}-\vec{\hat o_l})
+= -R\cdot(\vec{\hat o_r}-\vec{\hat o_l})
+\\&  % line break for narrow column
+= -L\cdot(\vec{\hat o_r}-\vec{\hat o_l}).
 \end{align*}
 This is only possible if $\vec{\hat o_l}\times \vec{\hat o_r}$ is oriented opposite to $\vec{\hat v_l}^\shortparallel\times \vec{\hat v_r}^\shortparallel$.
 
@@ -93,8 +95,8 @@ Here, $v$ is magnitude of the plane velocity of $J_i$. Given $\phi = \theta/2$, 
 \begin{align*}
 -L = -R &= \frac dt = \vec{\hat v_l} - \vec{\hat o_l}\frac{ \left\| \vec{\hat v_r}^\shortparallel
 - \vec{\hat v_l}^\shortparallel\right\|}{ \left\| \vec{\hat o_r}-\vec{\hat o_l}\right\|}
-&= v\cdot\frac{\sqrt{\sin^2\left( {\pi/2-\theta/2}\right)}}{\sqrt{\sin^2{\theta/2}}}
-= v\cdot\cot\left( \phi \right)
+= v\cdot\frac{\sqrt{\sin^2\left( {\pi/2-\theta/2}\right)}}{\sqrt{\sin^2{\theta/2}}}
+= v\cdot\cot\left( \phi \right).
 \end{align*}
 
 \begin{restatable}{pro}{JointVelocity}

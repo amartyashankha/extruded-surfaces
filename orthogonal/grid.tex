@@ -22,7 +22,7 @@ Since we want to glue the sequence of $\left\{ \mathcal C^{(i)}\right\}$s, our c
 \begin{definition}
 \label{def:slowest_column}
 We define the common transition time from row $j$ to row $j+1$ as
-$$D_j = \max_j\left\{ D_{ij}\right\} = \max_j\left\{ \left| E_{i,j+1}-E_{i,j}\right|\right\}$$
+$$D_j = \max_j\left\{ D_{ij}\right\} = \max_j\left\{ \left| E_{i,j+1}-E_{i,j}\right|\right\}.$$
 \end{definition}
 
 So, the slowest column dictates the transition time, and the faster columns have to \emph{stall} for additional time.
@@ -44,5 +44,5 @@ We obtain the following primitive, as a consequence of Theorem~\ref{thm:column_e
 %The number of accordion layers for column $i$ at its minium height is
 %$L_i = 2 + \left( \max_j\left\{ E_{i,j}\right\} - \min_j\left\{ E_{i,j}\right\} \right)/\varepsilon$.
 By Theorem~\ref{thm:column_extrusion}, the extrusion for column $i$ is constructed from a paper strip with size
-$$\left( 1 + 2\cdot\max_j\left\{ E_{ij}\right\}\right)\times \left( m + \sum\limits^{m-1}_{j=1} D_j \right) $$
+$$\left( 1 + 2\cdot\max_j\left\{ E_{ij}\right\}\right)\times \left( m + \sum\limits^{m-1}_{j=1} D_j \right). $$
 \end{proposition}

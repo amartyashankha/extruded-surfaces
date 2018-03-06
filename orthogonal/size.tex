@@ -9,15 +9,15 @@ So, the leftmost and rightmost columns use strips of width $(1 + M_0)$ and $(1 +
 
 Additionally, we have $n-1$ strip connecors, each of width $2\varepsilon$.
 So, the total width of the orthogonal terrain construction is
-$$X = 2(n-1)\cdot\varepsilon + n + 2\cdot\sum\limits_{i=1}^n M_i - M_0 - M_n$$
-Now, note that our construction is also valid for any $\varepsilon' = \varepsilon/(2k)$, where $k$ is an integer.
+$$X = 2(n-1)\cdot\varepsilon + n + 2\cdot\sum\limits_{i=1}^n M_i - M_0 - M_n.$$
+Our construction is also valid for any $\varepsilon' = \varepsilon/(2k)$, where $k$ is an integer.
 In other words, we can make $\varepsilon$ arbitrarily small.
 
 \begin{theorem}
 \label{thm:grid_extrusion}
 Using the time evolution ($y$ dimension) from Proposition~\ref{prop:accordion_layers},
 we conclude that a grid extrusion can be folded from a strip of size $X\times T$, where
-\begin{align}
-X = n + 2\cdot\sum\limits_{i=1}^n M_i - M_0 - M_n + o(1) && T = m + \sum\limits^{m-1}_{j=1} D_j
-\end{align}
+\begin{align*}
+X = n + 2\cdot\sum\limits_{i=1}^n M_i - M_0 - M_n + o(1), && T = m + \sum\limits^{m-1}_{j=1} D_j.
+\end{align*}
 \end{theorem}

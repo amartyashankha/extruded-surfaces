@@ -3,19 +3,19 @@
 
 Consider a $n\times n$ orthogonal terrain where the highest points along $x$-axis are $M = \max_j E_{ij}$,
 and the maximum deltas along the $y$-axis are $D_j = \max_i{\|E_{i,j}-E_{i,j+1}\|} = M$.
-Now, we consider a sort of worst case orthogonal terrain defined as follows.
+Now, we consider a sort of worst case orthogonal terrain defined as follows:
 $$
 E_{ij}=
 \begin{cases}
-M, \textrm{ if $(i+j)$ is even}\\
-0, \textrm{ if $(i+j)$ is odd}
+M & \textrm{ if $(i+j)$ is even,}\\
+0 & \textrm{ if $(i+j)$ is odd.}
 \end{cases}
 $$
 
 This forms a checkerboard alternating between the minimum and maximum heights.
 We assume that the top faces of the terrain form axis aligned squares in the unfolded state,
 The longest line formed along either axis is the total length of the top surfaces plus the sum of the height changes across the axis, which gives
-$$L = n + \sum^{n}_{i=1} M = n + (n-1)\cdot M$$
+$$L = n + \sum^{n}_{i=1} M = n + (n-1)\cdot M.$$
 We conclude that the minimum required size of the folding is $L\times L$.
 
 From Theorem~\ref{thm:grid_extrusion}, we know that the terrain can be folded from a $X\times Y$ strip of paper,

@@ -44,15 +44,15 @@ First consider a coordinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as th
 Since, $\vec{\hat v_l} = \vec v_l^\shortparallel$, from Property~\ref{pro:joint_velocity},
 we know that $-R_l = \left\| \vec v_l^\shortparallel\right\|\cdot\vec{\hat o_v}\cdot\cot(\phi) = \vec{\hat o_v}\cdot\cot(\phi)$.
 So, $\vec J_v = \vec{\hat v_l} - \vec{\hat o_v}\cdot\cot(\phi)$.  Therefore,
-\begin{align}
+\begin{align*}
     \cot(\angle LJJ') &= \frac{\left\| T\cdot R_l\right\|}{ \left\| T\cdot(\vec J_v - R_l)\right\|} = \cot(\phi)
-    \implies \angle LJJ' = \phi
-\end{align}
+    \implies \angle LJJ' = \phi.
+\end{align*}
 Similarly, we consider a coordinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as the basis.
 Since $\vec J_v = \vec{\hat v_r} - \vec{\hat o_r}\cdot \cot(\phi)$, we get
 $$
 \cot(\angle RJJ') = \frac{-\left\| T\cdot L_r\right\|}{ \left\| T\cdot(\vec J_v - L_r)\right\|} = -\cot(\phi)
-\implies \angle RJJ' = \pi - \phi
+\implies \angle RJJ' = \pi - \phi.
 $$
 This implies that $\cot(\angle RJJ') + \cot(\angle LJJ') = \pi$.
 So, the gluing of $Z_l$ and $Z_r$ along the joint trajectory $JJ'$ is isometric to a larger trapezoid.
