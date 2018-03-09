@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'terrain.pdf' (pdf, eps, ps)
+%% Accompanies image file 'test.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -49,6 +49,6 @@
   \global\let\svgscale\undefined%
   \makeatother%
   \begin{picture}(1,0.66666667)%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{terrain.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{test.pdf}}%
   \end{picture}%
 \endgroup%
