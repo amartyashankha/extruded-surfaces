@@ -3,8 +3,8 @@
 
 We introduce a new method of origami construction, using cross section diagrams.
 Instead of beginning our construction from a 2-dimensional sheet of paper, we
-consider a 1-dimensional cross section moving forwards in time. A simple example
-using strip narrowing\cite{strip_narrowing} is demonstrated in
+consider a 1-dimensional cross section moving forwards in time through 3D space.
+A simple example using strip narrowing\cite{strip_narrowing} is demonstrated in
 Figure~\ref{fig:strip_narrowing}.
 
 \subsection{Segments and Cross Sections}
@@ -23,8 +23,20 @@ A cross section $C$ is defined as an ordered list of line segments $\langle s_1,
 such that for every segment $s_i$ (except the last),
 the right endpoint of $s_i$ coincides with the left endpoint of $s_{i+1}$.
 Each segment $s$ is also associated with a velocity vector $\vec{\hat v_s}$ of unit magnitude.
-For a segment $s\in C$ we will also denote this velocity as $\vec{\hat v_i}$.
+For a segment $s_i\in C$ we will also denote this velocity as $\vec{\hat v_i}$.
 \end{definition}
+
+\vspace{-1pc}
+\begin{restatable}{inv}{UniformVelocity}
+\label{inv:uniform_velocity}
+All non-joint nodes on a segment $s$ have the same velocity $\vec{\hat v_s}$.
+\end{restatable}
+\vspace{-1pc}
+
+\begin{restatable}{inv}{OrthogonalVelocity}
+\label{inv:orthogonal_velocity}
+The velocity $\vec{\hat v_s}$ of segment $s$ is orthogonal to its orientation $\vec{\hat o_s}$.
+\end{restatable}
 
 \begin{definition}
 \label{def:node}
@@ -32,18 +44,6 @@ Given a cross section $C = \langle s_1, s_2,\cdots s_n \rangle$, a node $x$ deno
 A joint node is a node that resides on the endpoint of a segment.
 The distance between two nodes on a cross section is defined as the overall length of cross section between the two nodes.
 \end{definition}
-
-\vspace{-1pc}
-\begin{restatable}{pro}{UniformVelocity}
-\label{pro:uniform_velocity}
-All non-joint nodes on a segment $s$ move with the same velocity $\vec{\hat v_s}$.
-\end{restatable}
-\vspace{-1pc}
-
-\begin{restatable}{pro}{OrthogonalVelocity}
-\label{pro:orthogonal_velocity}
-The velocity $\vec{\hat v_s}$ of segment $s$ is orthogonal to its orientation $\vec{\hat o_s}$.
-\end{restatable}
 
 \input{cross_sections/joints}
 \input{cross_sections/evolution}

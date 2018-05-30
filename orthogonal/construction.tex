@@ -2,7 +2,7 @@
 \label{sec:column_extrusion}
 
 First, we consider a single column (Figure~\ref{fig:column_extrusion})
-of the orthogonal terrain $\left\{ E_{i1}, E_{i2}, \cdots, E_{i,n} \right\}$.
+of the orthogonal terrain $\left\{ E_{i,1}, E_{i,2}, \cdots, E_{i,n} \right\}$.
 We denote the column extrusion heights as $\left\{ H_1, H_2,\cdots H_n \right\}$, where $H_j = E_{i,j}$.
 Consider the decomposition of $T$ into the following time intervals:% (parallel to the $x$-axis):
 \begin{align}
@@ -34,10 +34,10 @@ The vertical lines are connected to the top segment with
 a sequence of $2k$ horizontal segments that \emph{accordion} back and forth.
 During each $1$-interval, all segments move along the positive $y$ direction (Figure~\ref{fig:level_shift0}),to create the $i$th level.
 Subsequently, during the level shift, all segments move in the $x-z$ plane (Figure~\ref{fig:level_shift1},~\ref{fig:level_shift2}).
-\begin{property}
+\begin{restatable}{pro}{AccordionEven}
 \label{pro:accordion_even}
 The number of accordion folds during horizontal evolution (along the $y$ axis) must be even.
-\end{property}
+\end{restatable}
 
 The top segment moves downwards in intervals of $2\varepsilon$.
 During this process, the horizontal segments move downwards continuously (Figure~\ref{fig:level_shift1},~\ref{fig:level_shift2}).
@@ -87,6 +87,3 @@ X\ge 1 + 2\cdot\max\left\{ H_i\right\}, && T \ge \left( m + \sum\limits^{m-1}_{i
 \end{align*}
 %X\ge 1 + 2\cdot\left( \max\left\{ H_i\right\}-\min\left\{ H_i\right\}\right) &&T \ge \left( m + \sum\limits^{m-1}_{i=1} \left| H_{i+1}-H_i\right|\right)
 \end{theorem}
-
-\input{orthogonal/grid}
-\input{orthogonal/connector}

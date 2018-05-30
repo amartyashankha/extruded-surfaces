@@ -13,7 +13,7 @@ of the corresponding joint along one of the segments.
 
 \begin{definition}
 \label{def:segment_length}
-For ever segment $s$ in a cross section $C$, we associate a left pace $L_s$,
+For every segment $s$ in a cross section $C$, we associate a left pace $L_s$,
 which indicates the rate at which $s$ shrinks from its left endpoint.
 Similarly, we define a right pace $R_s$ grows from its right endpoint.
 Note that both these quantities can be negative.
@@ -25,14 +25,14 @@ For a segment $s_i$ with left joint $J^L$ and right joint $J^R$, we obtain the r
 \vec J_v^L-\vec{\hat v_{s_i}} = L_{s_i}\cdot \vec{\hat o_{s_i}}, && \vec J_v^R-\vec{\hat v_{s_i}} = R_{s_i}\cdot \vec{\hat o_{s_i}}.
 \end{align*}
 
-\begin{proposition}
-\label{prop:valid_joint}
+\begin{definition}
+\label{def:valid_joint}
 A joint $J$ corresponding to segments $s$ and $t$ is \emph{valid} if and only if the evolution
 resulting from the velocities $\vec{\hat v_l}$, $\vec{\hat v_r}$, and $\vec J_v$ preserves distances between nodes.
-\end{proposition}
+\end{definition}
 \vspace{-1pc}
-\begin{restatable}{pro}{LeftRightPace}
-\label{pro:left_right_pace}
+\begin{restatable}{inv}{LeftRightPace}
+\label{inv:left_right_pace}
 The right pace of $s_{i}$ is equal to the left pace of $s_{i+1}$.
 This is to preserve the overall length of the cross section, and the distance between any two nodes.
 Furthermore, the left pace of the first segment, and the right pace of the last segment should be zero, i.e., $L_0 = R_n = 0$
@@ -82,8 +82,8 @@ which implies that $\vec b-\vec a = d\cdot \vec{\hat o_l}$, and $\vec b'-\vec a'
 \end{align*}
 This is only possible if $\vec{\hat o_l}\times \vec{\hat o_r}$ is oriented opposite to $\vec{\hat v_l}^\shortparallel\times \vec{\hat v_r}^\shortparallel$.
 
-\begin{restatable}{pro}{SegmentOrientation}
-\label{pro:SegmentOrientation}
+\begin{restatable}{inv}{SegmentOrientation}
+\label{inv:SegmentOrientation}
 Given two adjacent segments $l$ and $r$ in a cross section $C$, the vector
 $\vec{\hat o_l}\times \vec{\hat o_r}$ must be oriented opposite to $\vec{\hat v_l}^\shortparallel\times \vec{\hat v_r}^\shortparallel$.
 \end{restatable}
@@ -91,7 +91,8 @@ $\vec{\hat o_l}\times \vec{\hat o_r}$ must be oriented opposite to $\vec{\hat v_
 If the angle between the segments (between $\vec{\hat o_l}$ and $\vec{\hat o_r}$) is $\theta$,
 the magnitude of $\vec{\hat o_r}-\vec{\hat o_l}$ is $\sqrt{2-2\cos(\theta)}$,
 and $ \left\| \vec{\hat v_r}^\shortparallel-\vec{\hat v_l}^\shortparallel\right\| = v\cdot\sqrt{2-2\cos(\pi-\theta)}$.
-Here, $v$ is magnitude of the plane velocity of $J_i$. Given $\phi = \theta/2$, we get --
+Here, $v$ is magnitude of the plane velocity (projection onto the joint plane $\mathcal P$) of $J_i$.
+Given $\phi = \theta/2$, we get --
 \begin{align*}
 -L = -R &= \frac dt = \vec{\hat v_l} - \vec{\hat o_l}\frac{ \left\| \vec{\hat v_r}^\shortparallel
 - \vec{\hat v_l}^\shortparallel\right\|}{ \left\| \vec{\hat o_r}-\vec{\hat o_l}\right\|}
@@ -99,8 +100,8 @@ Here, $v$ is magnitude of the plane velocity of $J_i$. Given $\phi = \theta/2$, 
 = v\cdot\cot\left( \phi \right).
 \end{align*}
 
-\begin{restatable}{pro}{JointVelocity}
-\label{pro:joint_velocity}
+\begin{restatable}{inv}{JointVelocity}
+\label{inv:joint_velocity}
 The velocity of a joint $J$ associated with segments $l$ and $r$, is a constant vector
 $\vec J_v
 %= \vec{\hat v_l} - \vec{\hat o_l}\frac{ \left\| \vec{\hat v_r}^\shortparallel

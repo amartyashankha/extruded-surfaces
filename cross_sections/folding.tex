@@ -28,7 +28,7 @@ Specifically, if $L,R$ are the initial left and right endpoints of $s$, and $L',
 $Z_s = LL'R'R$ is the corresponding trapezoid (Figure~\ref{fig:segment_trapezoid}).
 \end{lemma}
 \begin{proof}
-By Property~\ref{pro:joint_velocity}, we know that the joint trajectories are straight lines, which form the non-parallel sides.
+By Invariant~\ref{inv:joint_velocity}, we know that the joint trajectories are straight lines, which form the non-parallel sides.
 Since the non-joint nodes on a segment all have the same velocity, the initial and final segment positions form the parallel sides.
 \end{proof}
 
@@ -41,14 +41,14 @@ The gluing of trapezoids $Z_l$ and $Z_r$ along the joint trajectory $\mathcal T_
 \begin{proof}
 We consider the evolution of joint $J$ for time $T$ (Figure~\ref{fig:trapezoid_angles}).
 First consider a coordinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as the basis.
-Since, $\vec{\hat v_l} = \vec v_l^\shortparallel$, from Property~\ref{pro:joint_velocity},
+Since, $\vec{\hat v_l} = \vec v_l^\shortparallel$, from Invariant~\ref{inv:joint_velocity},
 we know that $-R_l = \left\| \vec v_l^\shortparallel\right\|\cdot\vec{\hat o_v}\cdot\cot(\phi) = \vec{\hat o_v}\cdot\cot(\phi)$.
 So, $\vec J_v = \vec{\hat v_l} - \vec{\hat o_v}\cdot\cot(\phi)$.  Therefore,
 \begin{align*}
     \cot(\angle LJJ') &= \frac{\left\| T\cdot R_l\right\|}{ \left\| T\cdot(\vec J_v - R_l)\right\|} = \cot(\phi)
     \implies \angle LJJ' = \phi.
 \end{align*}
-Similarly, we consider a coordinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as the basis.
+Similarly, we consider a coordinate system with $(\vec{\hat v_r}, \vec{\hat o_r})$ as the basis.
 Since $\vec J_v = \vec{\hat v_r} - \vec{\hat o_r}\cdot \cot(\phi)$, we get
 $$
 \cot(\angle RJJ') = \frac{-\left\| T\cdot L_r\right\|}{ \left\| T\cdot(\vec J_v - L_r)\right\|} = -\cot(\phi)
@@ -115,14 +115,14 @@ By repeated use of Lemma~\ref{lem:trapezoid_gluing}, we know that $\mathcal F_C^
 Let $L,L'$ be the initial and final positions of the left (non-parallel) edge of the trapezoid, and
 let $R,R'$ be the initial and final positions of the right edge of the trapezoid.
 Say that $C$ comprises of segments $ \langle s_1, s_2,\cdots s_n \rangle$.
-From Property~\ref{pro:left_right_pace}, we know that the left pace of $s_0$ is zero.
+From Invariant~\ref{inv:left_right_pace}, we know that the left pace of $s_0$ is zero.
 So, the line $LL'$ follows the trajectory of $\vec{\hat v_0}$, which is orthogonal to the segment $s_0$.
 In other words, the left edge of the trapezoid has length $T$, and is orthogonal to the parallel edges.
 Similarly, because the right pace of $s_n$ is zero, the right edge of the trapezoid is also orthogonal.
 Therefore, $\mathcal F_C^T$ is isometric to a right angled trapezoid (i.e., a strip) of length $X$ and width $T$.
 \end{proof}
 
-\begin{proposition}
-\label{prop:joint_crease}
+\begin{remark}
+\label{rem:joint_crease}
 The trajectory of a joint forms a crease in the folded state.
-\end{proposition}
+\end{remark}
