@@ -1,0 +1,227 @@
+-------------------------------------
+  Title: Efficient Origami Construction of Orthogonal Terrains using
+Cross-Section Evolution
+-------------------------------------
+
+We thank the reviewers for the careful read and helpful feedback. Responses to
+the reviewer's comments are addressed inline below.
+
+----------------------- REVIEW 1 ---------------------
+Overall evaluation: 2 (Minor revision)
+
+---
+
+Q1) The phrase "cross section" should not have a hyphen.  This is done correctly
+for most of the paper, but not in the title nor throughout page 1.
+
+A1) We have removed the hyphen throughout.
+
+---
+
+Q2) Quotation marks are not LaTeXed properly throughout the paper.  For example,
+on Page 9 after Definition 14, it looks like the LaTeX code for the sentence is 
+
+We consider each "column" of...
+where the LaTeX code should be:
+We consider each ``column" of...
+
+That will make the quotation marks be open and close in the correct way.  This
+should be corrected throughout the paper.
+
+A2) Fixed!
+
+---
+
+Q3) Page 1, 2nd-to-last sentence of the second paragraph:  "...though the
+construction is less inefficient than our construction applied to orthogonal
+terrains."  Shouldn't this be, "... though the construction is less efficient
+than our construction applied to orthogonal terrains."
+
+A3) Yup! Fixed.
+
+---
+
+Q4) In Section 2, it is not stated what the ambient space is for the "1-dimensional
+cross section moving forward in time."  Is this happening in 3D space?  Or in a
+2D plane?  This should be stated explicitly.  (It has implications for the later
+definition of the velocity vectors.)
+
+A4) The 1-dimensional cross section sweeps accross the target surface in 3D. We
+have added this explicitely.
+
+---
+
+Q5) In Section 2.1, Definition 2, should the last sentence say, "For a segment
+$s_i\in C$ we will denote its velocity as $\hat{v}_i$." ?
+
+A5) Yes! We have added the subscript to s_i.
+
+---
+
+Q6) Also in Section 2.1:  Two properties are listed.  But these seem meant to be
+part of the definitions.  Shouldn't they be stated as such?  For example,
+Property 2 should be part of Definition 2, where the velocity vectors are
+defined --- that is, they should be defined as being orthogonal to the
+orientation vector of the segment.  (Although see below for my comments on
+Property 3.)
+
+A6) Yes, this was unclear. We have renamed these as Invariants, implying that
+they are necessary properties for our construction.
+
+---
+
+Q7) As for Property 1, I confess that I really do not understand what it is saying.
+The velocity vectors \hat{v}_s are assigned to segments according to Definition
+2.  But Property 1 describes non-joint points as "moving" when this has not been
+defined.  Do the authors intend to associate each non-joint node in a sector s
+with the sector's velocity vector \hat{v}_s?  If so, then each non-joint node
+has a unit velocity vector assigned to it, and so of course they have the same
+velocity ... Do you see why this is confusing?  Is Property 1 even necessary to
+state, since all non-joint nodes in a fixed segment share the same velocity
+vector?
+
+A7) Yes, this is implied by the definition. We have changed the ambiguous
+wording 'move with' to 'have', which is the meaning you state. We name it so
+that it may be referenced in the statement of Theorem 1.
+
+---
+
+Q8) In Definition 6, the authors state, "We define v_l^||  and v_l^⊥ as the
+components of v_l coinciding with, and orthogonal to P respectively." Components
+of a vector usually refer to a specific coordinate system, and none is specified
+here.  Do the authors really mean for v_l^|| to be the projection of v_l onto
+the plane P?  If so, that would be a way to define it that is independent of the
+coordinate system.  On the other hand, do the authors really mean that we are
+defining a coordinate system at the joint J in 3D space where two axes lie in P
+and the third axis is orthogonal to P?  Then the P components and the orthogonal
+component makes more sense.  If this is correct, then perhaps this should be
+stated more explicitly.
+
+A8) We have restated these definitions according to the reviewer's suggestion.
+
+---
+
+Q9) Again, Property 3 seems to be part of the definitions being given for joints
+and velocities.  Stating these as Properties does make it easier for the authors
+to refer to them later.  But if they want to do this, then I would recommend
+that the authors state somewhere that these Properties are part of the
+definitions and not things that should be proven (nor viewed as natural
+consequences of the definitions).  
+
+A9) We hope that the reclassification of Properties to Invariants adequately
+addresses this issue.
+
+---
+
+Q10) In Definition 4, what is the difference, notationally, between J_i being
+not bolded and J_i being bold?  Both seem to be points, which is equivalent to a
+vector in this context, yes?
+
+A10) This was a typo. Fixed!
+
+---
+
+Q11) In Definition 7,  "For ever segment s in a cross section C..."  should be
+"For every segment s..."
+
+A11) Fixed!
+
+---
+
+Q12) Is Proposition 1 really a proposition?  In math, "propositions" are like
+theorems, in that they are statements that need to be proved.  It looks to me
+like "Proposition 1" is actually defining what it means for a joint node to be
+"valid."  If so, this should be a Definition, not a Proposition.
+
+A12) You are right. We have changed to a defintion.
+
+---
+
+Q13) On page 4, middle of the page, "Here, v is the magnitude of the plane
+velocity of J_i."  What does "plane velocity" mean here?
+
+A13) We mean projection of J_i onto the joint plane $\mathcal P$. We have
+clarified in the text.
+
+---
+
+Q14) In the middle of the proof of Lemma 2 (page 5), "Similarly, we consider a
+coordinate system with (\hat{v}_l, \hat{o}_l) as the basis."  Don't we want
+(\hat{v}_r, \hat{o}_r) here?
+
+A14) Yes! We have fixed the text.
+
+---
+
+Q15) In Definition 9, the choice of the word "folding" to mean the unfolded
+piece of paper seems backwards and confusing.  I recommend calling it the
+"unfolding" of the cross section interval.
+
+A15) Here, we do mean the folding, not the unfolding, so the current terminology
+should suffice. Each Z_i is a trapezoid in R^3, which we have clarified.
+
+---
+
+Q16) On page 6, I am not sure why Proposition 2 is stated as a proposition.  The
+statement, "The trajectory of a joint forms a crease in the folded state." is
+something the authors are asserting, not proving rigorously.  My impression is
+that they view this statement as an immediate consequence of their cross section
+model, not as something to be proved.  So why is this called a Proposition?  A
+"Remark" or "Fact" would be a better descriptor.
+
+A16) We have changed this descriptor to 'Remark'.
+
+---
+
+Q17) On page 8, why are the Properties 1-6 being restated? Since they are
+previously defined in the paper, Theorem 1 on page 7 should merely say, "...
+such that Properties 1-6 hold for all segments and joints in each of the cross
+sections involved."  This would save a lot of space.
+
+A17) We have now simply referenced the Invariants.
+
+---
+
+Q18) Page 9, start of Section 3.1:  The E_{i,j} notation is not being used
+consistently.  In the first sentence of this section, we see \{ E_{i1}, E_{i2},
+..., E_{i,n} \}.  The first two terms there should have commas in the
+subscripts:  E_{i,1} and E_{i,2}.
+
+A18) Fixed!
+
+---
+
+Q19) Page 10, bottom:  It seems that Property 1 is being redefined.  As far as I
+can discern, this has nothing to do with the Property 1 defined on page 2, and
+it is very bad form to refer to two different things using the same name.
+Perhaps the "Property 1" on page 10 should be called, "Property 7."
+
+A19) Now that the previous properties are now Invariants, there is no longer a
+naming collision.
+
+---
+
+Q20) Page 11:  The second sentence of Section 3.2 seems to be missing a
+close-parenthesis.  
+
+A20) Fixed!
+
+---
+
+Q21) Page 13, last sentence reads, "We obtain the following primitive, as a
+consequence of Theorem 2."  Should this be, "We obtain the following
+proposition, as a consequence of Theorem 2." ?
+
+A21) Indeed, fixed!
+
+---
+
+Q22) I also recommend, if there is room, the addition of a short Conclusion.
+(Perhaps there will be room for a conclusion if the statement of Theorem 1 is
+made shorter, as I suggested above.)  If a conclusion can be included, I suggest
+stating something about any limitations this algorithm has or ways it could be
+improved (if any).
+
+A22) We have added a conclusions indicating two directions for future work.
+
+---

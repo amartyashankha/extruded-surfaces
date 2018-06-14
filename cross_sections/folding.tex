@@ -94,7 +94,7 @@ Consider a cross section interval $\mathcal C$ formed from a cross section $C$ e
 By Lemma~\ref{lem:trapezoid}, the segments $ \langle s_1, s_2,\cdots s_n \rangle$ form trapezoids
 $ \langle Z_1, Z_2,\cdots Z_n \rangle$ each of height $T$, where $Z_i$ represents the $i^{th}$ trapezoid in folded space.
 The folding $\mathcal F_C^T$ corresponding to $\mathcal C$ is formed by successively gluing the trapezoids
-$Z_i$ to $Z_{i+1}$ along the trajectory of joint $J_i$ (for $1\le i<n$) to form a connected shape.
+$Z_i$ to $Z_{i+1}$ along the trajectory of joint $\vec J_i$ (for $1\le i<n$) to form a connected shape.
 \end{definition}
 
 \begin{definition}
@@ -105,11 +105,11 @@ where the right endpoint of the $i$th segment is attached to the left endpoint o
 Similarly, the final-boundary of $\mathcal F_C^T$ is defined as the union of the final segments in $\mathcal C_F$.
 \end{definition}
 
-\begin{theorem}
+\begin{restatable}{thm}{interval_strip}
 \label{thm:interval_strip}
 Consider a cross section interval $\mathcal C$ formed from a cross section $C$ evolving over time $T$ to form a folding $\mathcal F_C^T$.
 Further assume that the total length of cross section $C$ is $X$ units. Then, $\mathcal F_C^T$ is isometric to a $X\times T$ strip of paper.
-\end{theorem}
+\end{restatable}
 \begin{proof}
 By repeated use of Lemma~\ref{lem:trapezoid_gluing}, we know that $\mathcal F_C^T$ is isometric to a trapezoid.
 Let $L,L'$ be the initial and final positions of the left (non-parallel) edge of the trapezoid, and
