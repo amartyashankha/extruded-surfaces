@@ -1,0 +1,59 @@
+Reviewer 1: The authors mostly addressed all of my comments.  The only one they
+ did not fully address was changing their "Properties" to "Invariants."
+Invariants is a better term for these things, but it is still confusing to the
+reader, I think.  Usually invariants are things that you would prove, and the
+authors did not follow my suggestion to state explicitly that these
+properties/invariants are consequences of the definitions, not things that need
+to be proved.  Therefore, the reader has to figure out themselves that these
+"invariants" follow from the definitions.  Nonetheless, this does not affect
+their results --- it only concerns the quality of the writing.  So I do not view
+this something that should make the paper be rejected.
+ 
+A bigger problem is that the authors do not seem to have addressed Reviewer 4's
+ comments. Several of Reviewer 4's concerns were addressed when the authors made
+corrections from my review, but not all of concerns were addressed.  
+ 
+It does not help that the authors did not provide a corrected version of their
+ paper with the changes highlighted --- instead they provided some (not all) of
+the LaTeX code of their paper with changes highlighted!  That is bizarre.  
+ 
+From the view of my review comments, I am satisfied with the corrections.  But I
+ thought that Reviewer 4's review made some very good points. 
+ 
+Reviewer 4: I think they have somehow overlooked my comments. No reply in the
+response document. (I put Reviewer 4's comments for version 1 below - ZY)
+Especially, there are bugs in the typesetting where it includes duplicate
+numbering for the Theorems. Also, I suggest that Lemma, Theorem, and Corollary
+should use unified numbering.
+
+
+Previous reviewer 4’s comment for the first submission
+
+1: (Major revision)
+
+This paper proposes an approach for designing 3D folded state of origami by
+sweeping length-constrained section curves. The universality result of
+orthogonal terrains is shown in the paper.
+
+The results seem nice but its writing, especially the formalization of the
+problem, requires significant improvement. I suggest major revision with the
+following revision.
+
+Definitions 1-6: Shouldn't the section curve restricted to be planar, because
+the resulting shape is a generalized cylinder. Currently, "joint planes" exist
+as many as the number of joints, but this should be unique. Also, this section
+plane should be parallel after the sweeping process. Can you simplify the
+definition from this point of view? The current definition has a freedom that is
+not used afterwards.
+
+What does it mean by "valid" in Proposition 1? Also, shouldn't it be "non-joint
+node" that the distance will not change? Wait, what happens when non-joint node
+collides with the joint? Does the node transfer to the adjacent segment or is
+merged to the joint? What is the purpose of "proposition"?
+
+Definition 9: What is the definition of "folding"? Shouldn't it be the extruded
+surface instead of folding? 
+
+There are duplicate theorems and property numbers. (two Theorem 1, two property
+1). I stopped following the theorems after this duplication. I would like to
+review them after the revision.
