@@ -1,0 +1,59 @@
+We apologize for not answering Reviewer 4's comments earlier, but we were not
+sent the review until now. We thank the reviewer for the careful read and
+helpful feedback. Responses to the reviewer's comments are addressed inline
+below.
+
+----------------------- REVIEW 4 ---------------------
+
+Q1) Definitions 1-6: Shouldn't the section curve restricted to be planar,
+because the resulting shape is a generalized cylinder. Currently, "joint planes"
+exist as many as the number of joints, but this should be unique. Also, this
+section plane should be parallel after the sweeping process. Can you simplify
+the definition from this point of view? The current definition has a freedom
+that is not used afterwards.
+
+A1) No, the joint planes may be distinct for each joint, and the final folding
+need not be a generalized cylinder. It just happens to be the case that our
+construction has a common joint plane at all times (not a generalized cylinder
+though), but it breaks for relatively simple cases.
+
+For instance, the strip narrowing gadget in Figure 4 is not a generalized
+cylinder. Also, if you fold the beginning of the strip narrowing gadget (Figure
+4(a)-(c)) in half with a crease following the direction of the strip, the joint
+planes no longer coincide (in fact they become orthogonal). The photo linked
+below shows this.
+
+https://tinyurl.com/ydh5ll8u
+
+---
+
+Q2) What does it mean by "valid" in Proposition 1? Also, shouldn't it be
+"non-joint node" that the distance will not change? Wait, what happens when
+non-joint node collides with the joint? Does the node transfer to the adjacent
+segment or is merged to the joint? What is the purpose of "proposition"?
+
+A2) This is now Definition 8. Good point, we changed it to non-joint nodes for
+clarification. The joint node is moves along the cross section, and the nodes
+that pass through it transfer to the adjacent segment.
+
+---
+
+Q3) Definition 9: What is the definition of "folding"? Shouldn't it be the
+extruded surface instead of folding? 
+
+A3) This is now Definition 10. We are referring to the final folded state, which
+is formed by gluing the trapezoids together. This can be any straight crease
+origami folding (decomposed into trapezoids and degenerate trapezoids i.e.
+triangles).
+
+---
+
+Q4) There are duplicate theorems and property numbers. (two Theorem 1, two
+property 1). I stopped following the theorems after this duplication. I would
+like to review them after the revision. 
+
+A4) Sorry about that. It has been fixed. We have also used unified numbering for
+Theorems, Lemmas, and Corollaries. Thank you for pointing this out.
+
+---
+
