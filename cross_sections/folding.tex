@@ -40,19 +40,19 @@ The gluing of trapezoids $Z_l$ and $Z_r$ along the joint trajectory $\mathcal T_
 \end{lemma}
 \begin{proof}
 We consider the evolution of joint $J$ for time $T$ (Figure~\ref{fig:trapezoid_angles}).
-First consider a coordinate system with $(\vec{\hat v_l}, \vec{\hat o_l})$ as the basis.
-Since, $\vec{\hat v_l} = \vec v_l^\shortparallel$, from Invariant~\ref{inv:joint_velocity},
-we know that $-R_l = \left\| \vec v_l^\shortparallel\right\|\cdot\vec{\hat o_v}\cdot\cot(\phi) = \vec{\hat o_v}\cdot\cot(\phi)$.
-So, $\vec J_v = \vec{\hat v_l} - \vec{\hat o_v}\cdot\cot(\phi)$.  Therefore,
+First consider a coordinate system with $(\vec{\hat v}_l, \vec{\hat o}_l)$ as the basis.
+Since, $\vec{\hat v}_l = \vec v_l^\shortparallel$, from Invariant~\ref{inv:joint_velocity},
+we know that $-R_l = \left\| \vec v_l^\shortparallel\right\|\cdot\cot(\omega) = \cot(\omega)$.
+So, $\vec J_v = \vec{\hat v}_l - \vec{\hat o}_v\cdot\cot(\omega)$.  Therefore,
 \begin{align*}
-    \cot(\angle LJJ') &= \frac{\left\| T\cdot R_l\right\|}{ \left\| T\cdot(\vec J_v - R_l)\right\|} = \cot(\phi)
-    \implies \angle LJJ' = \phi.
+    \cot(\angle LJJ') &= \frac{T\cdot R_l}{ \left\| T\cdot\vec{\hat v}_l\right\|} = \cot(\omega)
+    \implies \angle LJJ' = \omega.
 \end{align*}
-Similarly, we consider a coordinate system with $(\vec{\hat v_r}, \vec{\hat o_r})$ as the basis.
-Since $\vec J_v = \vec{\hat v_r} - \vec{\hat o_r}\cdot \cot(\phi)$, we get
+Similarly, we consider a coordinate system with $(\vec{\hat v}_r, \vec{\hat o}_r)$ as the basis.
+Since $\vec J_v = \vec{\hat v}_r - \vec{\hat o}_r\cdot \cot(\omega)$, we get
 $$
-\cot(\angle RJJ') = \frac{-\left\| T\cdot L_r\right\|}{ \left\| T\cdot(\vec J_v - L_r)\right\|} = -\cot(\phi)
-\implies \angle RJJ' = \pi - \phi.
+\cot(\angle RJJ') = \frac{-\left\| T\cdot L_r\right\|}{ \left\| T\cdot(\vec J_v - L_r)\right\|} = -\cot(\omega)
+\implies \angle RJJ' = \pi - \omega.
 $$
 This implies that $\cot(\angle RJJ') + \cot(\angle LJJ') = \pi$.
 So, the gluing of $Z_l$ and $Z_r$ along the joint trajectory $JJ'$ is isometric to a larger trapezoid.
@@ -73,16 +73,16 @@ The gluing of trapezoids $Z_l$ and $Z_r$ along the joint trajectory $\mathcal T_
 As before, let $LJR$ and $L'J'R'$ represent the initial and final positions of the segments respectively.
 We also construct the projection of $L'J'R'$ to the joint plane $\mathcal P$ as $L^\shortparallel J^\shortparallel R^\shortparallel$.
 The evolution of the projection is analogous to the setting in Lemma~\ref{lem:trapezoid_gluing_parallel}.
-Therefore, $\angle LJJ^\shortparallel = \phi = \theta/2$ and $\angle RJJ^\shortparallel = \pi-\phi$.
+Therefore, $\angle LJJ^\shortparallel = \omega = \theta/2$ and $\angle RJJ^\shortparallel = \pi-\omega$.
 
 Consider the positive $z$-axis along the joint orthogonal velocity (i.e., normal to the joint plane $\mathcal P$).
 We define the orthogonal displacement vector as $\overrightarrow{JJ'} = z\cdot\vec{\hat k}$.
 Let the positive $x$-axis be along $JJ^\shortparallel$. So, the unit vector along $\overrightarrow{JJ'}$ is $\frac{1}{\sqrt{1+z^2}}(1,0,z)$.
 
-Since $\angle J^\shortparallel JR = \phi$, the unit vector along $\overrightarrow JR$ is $(\cos\phi,\sin\phi,0)$.
-So, we compute $\cos \angle RJJ' = \cos\phi/\sqrt{1+z^2}$.
-Similarly, since $\angle J^\shortparallel JL = \pi-\phi$, the unit vector along $\overrightarrow JL$ is $(-\cos\phi,\sin\phi,0)$,
-which implies that $\cos \angle LJJ' = -\cos\phi/\sqrt{1+z^2}$.
+Since $\angle J^\shortparallel JR = \omega$, the unit vector along $\overrightarrow JR$ is $(\cos\omega,\sin\omega,0)$.
+So, we compute $\cos \angle RJJ' = \cos\omega/\sqrt{1+z^2}$.
+Similarly, since $\angle J^\shortparallel JL = \pi-\omega$, the unit vector along $\overrightarrow JL$ is $(-\cos\omega,\sin\omega,0)$,
+which implies that $\cos \angle LJJ' = -\cos\omega/\sqrt{1+z^2}$.
 Finally, since both $\angle LJJ$ and $\angle RJJ'$ are less than $\pi$, and $\cos\left(\angle LJJ' \right) = -\cos\left(\angle RJJ' \right)$,
 we conclude that $\angle LJJ' + \angle RJJ' = \pi$.
 Since $LJJ'L'$ and $RJJ'R'$ are both trapezoids, this implies that the resulting gluing along $JJ'$ is isometric to a larger trapezoid.

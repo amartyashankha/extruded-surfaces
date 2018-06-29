@@ -4,7 +4,7 @@
 \begin{definition}
 \label{def:joints}
 A cross section with $n$ segments is also associated with a list of joints
-$ \langle \vec J_1,\cdots \vec J_{n-1} \rangle$,
+$ \langle J_1,\cdots J_{n-1} \rangle$,
 where $\vec J_i$ corresponds to the right endpoint of $s_i$ (same as left endpoint of $s_{i+1}$.
 A particular joint $\vec J_i$ is associated with a left segment $s_i$,
 a right segment $s_{i+1}$, and a velocity $\vec J_v$.
@@ -13,21 +13,21 @@ a right segment $s_{i+1}$, and a velocity $\vec J_v$.
 \begin{definition}
 \label{def:joint_plane}
 A joint plane is the plane that coincides with both segments $l$ and $r$ associated with a particular joint $J$.
-In case the two segments are coincident (i.e. $\vec{\hat o_l} = \pm \vec{\hat o_r}$),
-we define the joint plane to be orthogonal to $\vec{\hat v_l} = \vec{\hat v_r}$.
+In case the two segments are coincident (i.e. $\vec{\hat o}_l = \pm \vec{\hat o}_r$),
+we define the joint plane to be orthogonal to $\vec{\hat v}_l = \vec{\hat v}_r$.
 \end{definition}
 
 \begin{definition}
 \label{def:joint_plane_velocity}
 Consider a joint $J$ associated with segments $l$, $r$, and joint plane $\mathcal P$,
-where $\vec{\hat v_l}$ and $\vec{\hat v_r}$ are the velocities of segments $l$ and $r$.
-We define $\vec{\hat v_l}^\shortparallel$ and $\vec{\hat v_l}^\perp$ as components of
-$\vec{\hat v_l}$, such that $\vec{\hat v_l}^\shortparallel$ is the projection of $\vec{\hat v_l}$
-onto $\mathcal P$, and $\vec{\hat v_l}^\perp = \vec{\hat v_l} - \vec{\hat v_l}^\shortparallel$
+where $\vec{\hat v}_l$ and $\vec{\hat v}_r$ are the velocities of segments $l$ and $r$.
+We define $\vec{\hat v}_l^\shortparallel$ and $\vec{\hat v}_l^\perp$ as components of
+$\vec{\hat v}_l$, such that $\vec{\hat v}_l^\shortparallel$ is the projection of $\vec{\hat v}_l$
+onto $\mathcal P$, and $\vec{\hat v}_l^\perp = \vec{\hat v}_l - \vec{\hat v}_l^\shortparallel$
 (orthogonal to $\mathcal P$).
-Similarly, we define $\vec{\hat v_r}^\shortparallel$ and $\vec{\hat v_r}^\perp$, as the components of $\vec{\hat v_r}$.
-By Invariant~\ref{inv:orthogonal_velocity}, $\vec{\hat v_l}^\shortparallel$ and $\vec{\hat v_r}^\shortparallel$
-are orthogonal to $\vec{\hat o_l}$ and $\vec{\hat o_r}$ respectively.
+Similarly, we define $\vec{\hat v}_r^\shortparallel$ and $\vec{\hat v}_r^\perp$, as the components of $\vec{\hat v}_r$.
+By Invariant~\ref{inv:orthogonal_velocity}, $\vec{\hat v}_l^\shortparallel$ and $\vec{\hat v}_r^\shortparallel$
+are orthogonal to $\vec{\hat o}_l$ and $\vec{\hat o}_r$ respectively.
 This uniquely determines the direction of all velocity components.
 \end{definition}
 
@@ -36,7 +36,7 @@ and the $\vec{\hat v}^\perp$ component as the \emph{joint orthogonal velocity,}
 
 \begin{restatable}{inv}{JointOrthogonalVelocity}
 \label{inv:joint_orthogonal_velocity}
-For a joint $J$ associated with segments $l$ and $r$, $\vec{\hat v_l}^\perp = \vec{\hat v_r}^\perp$
+For a joint $J$ associated with segments $l$ and $r$, $\vec{\hat v}_l^\perp = \vec{\hat v}_r^\perp$
 i.e. the joint orthogonal velocities have to be equal, such that the joint plane moves with a fixed velocity along it's normal.
-As a corollary, $ \left\| \vec{\hat v_l}^\shortparallel\right\| = \left\| \vec{\hat v_r}^\shortparallel\right\|$.
+As a corollary, $ \left\| \vec{\hat v}_l^\shortparallel\right\| = \left\| \vec{\hat v}_r^\shortparallel\right\|$.
 \end{restatable}

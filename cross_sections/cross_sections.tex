@@ -13,7 +13,7 @@ Figure~\ref{fig:strip_narrowing}.
 \begin{definition}
 \label{def:segment}
 A segment $s$ is an oriented line segment with left and right endpoints $\vec s_l$ and $\vec s_r$.
-Each segment is also associated with an orientation vector $\vec{\hat o_s} \equiv\frac{\vec s_r-\vec s_l}{ \left\| \vec s_r-\vec s_l\right\|}$.
+Each segment is also associated with an orientation vector $\vec{\hat o}_s \equiv\frac{\vec s_r-\vec s_l}{ \left\| \vec s_r-\vec s_l\right\|}$.
 This vector serves to disambiguate the orientation of zero length segments.
 \end{definition}
 
@@ -22,20 +22,20 @@ This vector serves to disambiguate the orientation of zero length segments.
 A cross section $C$ is defined as an ordered list of line segments $\langle s_1,s_2,\cdots,s_n\rangle$,
 such that for every segment $s_i$ (except the last),
 the right endpoint of $s_i$ coincides with the left endpoint of $s_{i+1}$.
-Each segment $s$ is also associated with a velocity vector $\vec{\hat v_s}$ of unit magnitude.
-For a segment $s_i\in C$ we will also denote this velocity as $\vec{\hat v_i}$.
+Each segment $s$ is also associated with a velocity vector $\vec{\hat v}_s$ of unit magnitude.
+For a segment $s_i\in C$ we will also denote this velocity as $\vec{\hat v}_i$.
 \end{definition}
 
 \vspace{-1pc}
 \begin{restatable}{inv}{UniformVelocity}
 \label{inv:uniform_velocity}
-All non-joint nodes on a segment $s$ have the same velocity $\vec{\hat v_s}$.
+All non-joint nodes on a segment $s$ have the same velocity $\vec{\hat v}_s$.
 \end{restatable}
 \vspace{-1pc}
 
 \begin{restatable}{inv}{OrthogonalVelocity}
 \label{inv:orthogonal_velocity}
-The velocity $\vec{\hat v_s}$ of segment $s$ is orthogonal to its orientation $\vec{\hat o_s}$.
+The velocity $\vec{\hat v}_s$ of segment $s$ is orthogonal to its orientation $\vec{\hat o}_s$.
 \end{restatable}
 
 \begin{definition}
