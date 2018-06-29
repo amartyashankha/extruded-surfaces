@@ -17,14 +17,14 @@ with arbitrary rational extrusion heights corresponding to every grid square (Fi
 \begin{definition}
 An $n\times m$ rational grid extrusion is a 3-dimensional structure,
 whose projection onto the $x-y$ plane forms an unit grid of size $n\times m$.
-In the 3-dimensional structure, the unit face corresponding to the location $(i.j)$,
-exists at height $E_{i,j}$ (in the $z$ direction), where $E_{i,j}$ is a rational number.
+The 3-dimensional structure is formed as the union of $n\times m$ boxes, each with an unit base
+such that the height of the $(i,j)^{th}$ box is $E_{i,j}$ where $E_{i, j}$ is a rational number.
 \end{definition}
 %In the case that $E_{i,j}$ is rational, we can simply scale down down our construction by an appropriate size, to obtain integer heights.
 
 \graphicspath{{./figures/}}
 \begin{wrapfigure}[7]{r}{0.5\textwidth}
-    \vspace{-2.5em}
+    \vspace{-2.2em}
     \def\svgwidth{0.5\textwidth}
     \input{./figures/column_extrusion.pdf_tex}%
     \caption{Column extrusion with heights $\left\{ 0,1,3,1,2,0\right\}$.}

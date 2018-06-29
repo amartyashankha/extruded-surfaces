@@ -18,11 +18,11 @@ which indicates the rate at which $s$ shrinks from its left endpoint.
 Similarly, we define a right pace $R_s$ grows from its right endpoint.
 Note that both these quantities can be negative.
 \end{definition}
-After time $T$, the length of a segment changes by $T\cdot(R_s-L_s)$.
+After time $T$, the length of a segment changes by $T(R_s-L_s)$.
 The length of a segment is not allowed to become negative.
 For a segment $s_i$ with left joint $J^L$ and right joint $J^R$, we obtain the relations
 \begin{align*}
-\vec J_v^L-\vec{\hat v_{s_i}} = L_{s_i}\cdot \vec{\hat o_{s_i}}, && \vec J_v^R-\vec{\hat v_{s_i}} = R_{s_i}\cdot \vec{\hat o_{s_i}}.
+\vec J_v^L-\vec{\hat v_{s_i}} = L_{s_i} \vec{\hat o_{s_i}}, && \vec J_v^R-\vec{\hat v_{s_i}} = R_{s_i} \vec{\hat o_{s_i}}.
 \end{align*}
 
 \begin{definition}
@@ -70,15 +70,15 @@ This setup is shown in Figure~\ref{fig:joint_plane_velocity}.
 
 
 First, note that $\vec a, \vec b$ lie on the segment $l$, and $\vec a', \vec b'$ lie on the segment $r$,
-which implies that $\vec b-\vec a = d\cdot \vec{\hat o}_l$, and $\vec b'-\vec a' = d\cdot \vec{\hat o}_r$:
+which implies that $\vec b-\vec a = d \vec{\hat o}_l$, and $\vec b'-\vec a' = d \vec{\hat o}_r$:
 \begin{align*}
-\vec b' - \vec a' &= (\vec b + t\cdot \vec{\hat v}_r^\shortparallel) - (\vec a + t\cdot \vec{\hat v}_l^\shortparallel)\\
-\implies \vec b' - \vec a' &= (\vec b - \vec a) + t\cdot(\vec{\hat v}_r^\shortparallel - \vec{\hat v}_l^\shortparallel)\\
-\implies d\cdot \vec{\hat o}_r &= d\cdot \vec{\hat o}_l + t\cdot(\vec{\hat v}_r^\shortparallel - \vec{\hat v}_l^\shortparallel)\\
-\implies \vec{\hat v}_r^\shortparallel - \vec{\hat v}_l^\shortparallel &= \frac{d}{t}\cdot(\vec{\hat o}_r-\vec{\hat o}_l)
-= -R\cdot(\vec{\hat o}_r-\vec{\hat o}_l)
+\vec b' - \vec a' &= (\vec b + t \vec{\hat v}_r^\shortparallel) - (\vec a + t \vec{\hat v}_l^\shortparallel)\\
+\implies \vec b' - \vec a' &= (\vec b - \vec a) + t(\vec{\hat v}_r^\shortparallel - \vec{\hat v}_l^\shortparallel)\\
+\implies d \vec{\hat o}_r &= d \vec{\hat o}_l + t(\vec{\hat v}_r^\shortparallel - \vec{\hat v}_l^\shortparallel)\\
+\implies \vec{\hat v}_r^\shortparallel - \vec{\hat v}_l^\shortparallel &= \frac{d}{t}(\vec{\hat o}_r-\vec{\hat o}_l)
+= -R(\vec{\hat o}_r-\vec{\hat o}_l)
 \\&  % line break for narrow column
-= -L\cdot(\vec{\hat o}_r-\vec{\hat o}_l).
+= -L(\vec{\hat o}_r-\vec{\hat o}_l).
 \end{align*}
 This is only possible if $\vec{\hat o}_l\times \vec{\hat o}_r$ is oriented opposite to $\vec{\hat v}_l^\shortparallel\times \vec{\hat v}_r^\shortparallel$.
 
@@ -107,7 +107,7 @@ The velocity of a joint $J$ associated with segments $l$ and $r$, is a constant 
 $\vec J_v
 %= \vec{\hat v}_l - \vec{\hat o}_l\frac{ \left\| \vec{\hat v}_r^\shortparallel
 %- \vec{\hat v}_l^\shortparallel\right\|}{ \left\| \vec{\hat o}_r-\vec{\hat o}_l\right\|}
-= \vec{\hat v}_l - \left\| \vec{\hat v}_l^\shortparallel\right\|\cdot\vec{\hat o}_l\cdot\cot\left( \theta/2 \right)$,
+= \vec{\hat v}_l - \left\| \vec{\hat v}_l^\shortparallel\right\|\vec{\hat o}_l\cdot\cot\left( \theta/2 \right)$,
 where $\theta$ is the angle between $\vec{\hat o}_l$ and $\vec{\hat o}_r$.
 \end{restatable}
 
