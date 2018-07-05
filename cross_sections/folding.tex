@@ -42,16 +42,17 @@ The gluing of trapezoids $Z_l$ and $Z_r$ along the joint trajectory $\mathcal T_
 We consider the evolution of joint $J$ for time $T$ (Figure~\ref{fig:trapezoid_angles}).
 First consider a coordinate system with $(\vec{\hat v}_l, \vec{\hat o}_l)$ as the basis.
 Since, $\vec{\hat v}_l = \vec v_l^\shortparallel$, from Invariant~\ref{inv:joint_velocity},
-we know that $-R_l = \left\| \vec v_l^\shortparallel\right\|\cot(\omega) = \cot(\omega)$.
+we know that $R_l = \left\| \vec v_l^\shortparallel\right\|\cot(\omega) = \cot(\omega)$.
 So, $\vec J_v = \vec{\hat v}_l - \vec{\hat o}_v\cot(\omega)$.  Therefore,
 \begin{align*}
     \cot(\angle LJJ') &= \frac{T R_l}{ \left\| T\vec{\hat v}_l\right\|} = \cot(\omega)
     \implies \angle LJJ' = \omega.
 \end{align*}
-Similarly, we consider a coordinate system with $(\vec{\hat v}_r, \vec{\hat o}_r)$ as the basis.
+Similarly, we consider a coordinate system with $(\vec{\hat v}_r, \vec{\hat
+o}_r)$ as the basis, with $L_r = \left\| \vec v_r^\shortparallel\right\|\cot(\omega) = - \cot(\omega)$.
 Since $\vec J_v = \vec{\hat v}_r - \vec{\hat o}_r \cot(\omega)$, we get
 $$
-\cot(\angle RJJ') = \frac{-\left\| T L_r\right\|}{ \left\| T(\vec J_v - L_r)\right\|} = -\cot(\omega)
+\cot(\angle RJJ') = \frac{T L_r}{ \left\| T\vec{\hat v}_r\right\|} = -\cot(\omega)
 \implies \angle RJJ' = \pi - \omega.
 $$
 This implies that $\cot(\angle RJJ') + \cot(\angle LJJ') = \pi$.
