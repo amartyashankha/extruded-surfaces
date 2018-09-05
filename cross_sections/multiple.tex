@@ -5,21 +5,21 @@
 \label{def:compatible}
 Given two cross section intervals $\mathcal C$ and $\mathcal D$, such that $\mathcal C_F$ and $\mathcal D_I$ are equivalent,
 we say that $\mathcal D$ is next-compatible with $\mathcal C$ and $\mathcal C$ is previous-compatible with $\mathcal D$.
-Two cross sections $C = \langle s_1, s_2,\cdots s_n \rangle$ and $D = \langle r_1, r_2,\cdots r_m \rangle$ are equivalent
+Two cross sections $C = \langle s_1, s_2,\dots, s_n \rangle$ and $D = \langle r_1, r_2,\dots, r_m \rangle$ are equivalent
 if and only if $C$ and $D$ correspond to the same sequence of segments after the deletion of all zero length segments.
 \end{definition}
 
 \begin{definition}
 \label{def:cross_section_sequence}
 A cross section sequence is a sequence is an ordered list of cross section intervals
-$ \langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+$ \langle \mathcal C_1, \mathcal C_2,\dots, \mathcal C_n \rangle$,
 such that $C_{i}$ is next-compatible with $C_{i-1}$ for all $i\in [2,n]$.
 This is equivalent to stating that $C_{i}$ is previous-compatible with $C_{i+1}$ for all $i\in [1,n-1]$.
 Note that we do not care about the velocities of the segments.
 \end{definition}
 
 We will represent our full construction as a valid \emph{cross section sequence}.
-Given a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+Given a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\dots, \mathcal C_n \rangle$,
 the transition from $\mathcal C_i$ to $\mathcal C_{i+1}$ corresponds to the deletion of one or more
 length zero segments from $\mathcal C_i$, and the addition of one or more zero length segments to obtain $\mathcal C_{i+1}$.
 Figure~\ref{fig:strip_narrowing} shows a simple example.
@@ -27,7 +27,7 @@ Figure~\ref{fig:strip_narrowing} shows a simple example.
 
 \begin{definition}
 \label{def:sequence_folding}
-Given a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+Given a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\dots, \mathcal C_n \rangle$,
 We obtain $\mathcal F_i^T$ as the folding of cross section $\mathcal C_i$.
 For each $i\le n-1$, we attach $\mathcal F_i^T$ to $\mathcal F_{i+1}^T$ by gluing
 the final cross section of $\mathcal C_i$ to the initial cross section of $\mathcal C_{i+1}$.
@@ -50,14 +50,14 @@ Then, the segment $s_C$ (same as $s_D$) forms a crease in the folded state.
 In this section we will demonstrate that the folding formed by cross section evolution is realizable from a sheet of flat paper.
 We note here that our construction may still result in self intersections.
 
-We consider a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+We consider a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\dots, \mathcal C_n \rangle$,
 where each cross section interval $\mathcal C_i$ has evolution time $T_i$.
-We then use Theorem~\ref{def:cross_section_sequence} to attach the sequence of $X\times T_i$ strips,
+We then use Definition~\ref{def:cross_section_sequence} to attach the sequence of $X\times T_i$ strips,
 to form a complete $X\times T$ sheet of paper, where $T = \sum T_i$.
 
-\begin{restatable}{thm}{main}
+\begin{restatable}{theorem}{main}
 \label{thm:main}
-Consider a cross section sequence $\mathcal C = \langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_m \rangle$ where each
+Consider a cross section sequence $\mathcal C = \langle \mathcal C_1, \mathcal C_2,\dots, \mathcal C_m \rangle$ where each
 cross section interval $\mathcal C_i$ evolves over time $T_i$ to form a folding $\mathcal F_i$
 such that Invariants~1-6 hold for all segments and joints in each of the cross sections involved.
 %\begin{itemize}
@@ -69,7 +69,7 @@ such that Invariants~1-6 hold for all segments and joints in each of the cross s
     %\item[] \vspace{-1.6em}\JointVelocity*
 %\end{itemize}
 Then, the folding $\mathcal F_{\mathcal C}$ obtained by successively gluing the final boundary of $\mathcal F_i$ to the initial boundary
-of $\mathcal F_{i+1}$ (for each $1\le i<m$), is isometric to a $X\times T$ strip of paper, where $T = \sum T_i$.
+of $\mathcal F_{i+1}$ (for each $1\le i<m$), is isometric to an $X\times T$ strip of paper, where $T = \sum T_i$.
 \end{restatable}
 \begin{proof}
 From Theorem~\ref{thm:interval_strip}, we know that each $\mathcal F_i$ is isometric to a strip $Z_i$ of size $X\times T_i$.

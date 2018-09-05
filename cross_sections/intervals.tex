@@ -6,20 +6,20 @@
 \label{def:compatible}
 Given two cross section intervals $\mathcal C$ and $\mathcal D$, such that $\mathcal C^F$ and $\mathcal D^I$ are equivalent,
 we say that $\mathcal D$ is next-compatible with $\mathcal C$ and $\mathcal C$ is previous-compatible with $\mathcal D$.
-Two cross sections $C = \langle s_1, s_2,\cdots s_n \rangle$ and $D = \langle r_1, r_2,\cdots r_m \rangle$ are equivalent
+Two cross sections $C = \langle s_1, s_2,\dots, s_n \rangle$ and $D = \langle r_1, r_2,\dots, r_m \rangle$ are equivalent
 if and only if $C$ and $D$ correspond to the same sequence of segments after the deletion of all zero length segments.
 \end{definition}
 
 \begin{definition}
 \label{def:cross_section_sequence}
-A cross section sequence is a sequence is an ordered list of cross section intervals $ \langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+A cross section sequence is a sequence is an ordered list of cross section intervals $ \langle \mathcal C_1, \mathcal C_2,\dots, \mathcal C_n \rangle$,
 such that $C_{i}$ is next-compatible with $C_{i-1}$ for all $i\in [n-1]$.
 This is equivalent to stating that $C_{i}$ is previous-compatible with $C_{i+1}$ for all $i\in [n-1]$.
 Note that we do not care about the directions of the segments.
 \end{definition}
 
 We will represent our full construction as a valid \emph{cross section sequence}.
-Given a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\cdots \mathcal C_n \rangle$,
+Given a cross section sequence $\langle \mathcal C_1, \mathcal C_2,\dots, \mathcal C_n \rangle$,
 the transition from $\mathcal C_i$ to $\mathcal C_{i+1}$ corresponds to the deletion of one or more
 length zero segments from $\mathcal C_i$, and the addition of one or more zero length segments to obtain $\mathcal C_{i+1}$.
 One simple example is shown in Figure~\ref{fig:strip_narrowing}.

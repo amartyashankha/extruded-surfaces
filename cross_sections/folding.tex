@@ -8,15 +8,15 @@
 
 \begin{definition}
 \label{def:interval}
-We consider a cross section composed of segments $ \langle s_1,s_2,\cdots,s_n \rangle$
+We consider a cross section composed of segments $ \langle s_1,s_2,\dots,s_n \rangle$
 with total length $X$ (i.e., $\sum \left| s_i\right| = X$).
-If we allow this cross section to evolve for time $T$, we obtain a new cross section $\langle r_1,r_2,\cdots ,r_n \rangle$.
+If we allow this cross section to evolve for time $T$, we obtain a new cross section $\langle r_1,r_2,\dots ,r_n \rangle$.
 The evolution forms a cross section interval $\mathcal C$ of length $T$.
-The initial cross section is denoted as $\mathcal C_I = \langle s_1, s_2,\cdots s_n \rangle$,
-and the final cross section is denoted as $\mathcal C_F = \langle r_1, r_2,\cdots r_n \rangle$.
+The initial cross section is denoted as $\mathcal C_I = \langle s_1, s_2,\dots, s_n \rangle$,
+and the final cross section is denoted as $\mathcal C_F = \langle r_1, r_2,\dots, r_n \rangle$.
 \end{definition}
 
-In this section, we focus on a single cross section interval $\mathcal C$ with segments $\langle s_1, s_2,\cdots s_n \rangle$ evolving over time $T$.
+In this section, we focus on a single cross section interval $\mathcal C$ with segments $\langle s_1, s_2,\dots, s_n \rangle$ evolving over time $T$.
 First consider the surface traced out by an individual segment $s_i$.
 Since the endpoints of $s_i$ move in a straight line, each segment traces a trapezoid.
 We define the \emph{height} of a trapezoid to be the distance between its parallel sides.
@@ -92,8 +92,8 @@ Since $LJJ'L'$ and $RJJ'R'$ are both trapezoids, this implies that the resulting
 \begin{definition}
 \label{def:interval_folding}
 Consider a cross section interval $\mathcal C$ formed from a cross section $C$ evolving over time $T$.
-By Lemma~\ref{lem:trapezoid}, the segments $ \langle s_1, s_2,\cdots s_n \rangle$ form trapezoids
-$ \langle Z_1, Z_2,\cdots Z_n \rangle$ each of height $T$, where $Z_i$ represents the $i^{th}$ trapezoid in folded space.
+By Lemma~\ref{lem:trapezoid}, the segments $ \langle s_1, s_2,\dots, s_n \rangle$ form trapezoids
+$ \langle Z_1, Z_2,\dots, Z_n \rangle$ each of height $T$, where $Z_i$ represents the $i$th trapezoid in folded space.
 The folded surface $\mathcal F_C^T$ corresponding to $\mathcal C$ is formed by successively gluing the trapezoids
 $Z_i$ to $Z_{i+1}$ along the trajectory of joint $\vec J_i$ (for $1\le i<n$) to form a connected shape.
 \end{definition}
@@ -109,13 +109,13 @@ Similarly, the final-boundary of $\mathcal F_C^T$ is defined as the union of the
 \begin{restatable}{thm}{interval_strip}
 \label{thm:interval_strip}
 Consider a cross section interval $\mathcal C$ formed from a cross section $C$ evolving over time $T$ to form a folding $\mathcal F_C^T$.
-Further assume that the total length of cross section $C$ is $X$ units. Then, $\mathcal F_C^T$ is isometric to a $X\times T$ strip of paper.
+Further assume that the total length of cross section $C$ is $X$ units. Then, $\mathcal F_C^T$ is isometric to an $X\times T$ strip of paper.
 \end{restatable}
 \begin{proof}
 By repeated use of Lemma~\ref{lem:trapezoid_gluing}, we know that $\mathcal F_C^T$ is isometric to a trapezoid.
 Let $L,L'$ be the initial and final positions of the left (non-parallel) edge of the trapezoid, and
 let $R,R'$ be the initial and final positions of the right edge of the trapezoid.
-Say that $C$ comprises of segments $ \langle s_1, s_2,\cdots s_n \rangle$.
+Say that $C$ comprises of segments $ \langle s_1, s_2,\dots, s_n \rangle$.
 From Invariant~\ref{inv:left_right_pace}, we know that the left pace of $s_0$ is zero.
 So, the line $LL'$ follows the trajectory of $\vec{\hat v_0}$, which is orthogonal to the segment $s_0$.
 In other words, the left edge of the trapezoid has length $T$, and is orthogonal to the parallel edges.

@@ -1,9 +1,10 @@
-\subsection{Optimality}
+\subsection{Worst-Case Efficiency}
 \label{sec:optimality}
 
-Consider a $n\times n$ orthogonal terrain where the highest points along $x$-axis are $M = \max_j E_{ij}$,
+Consider an $n\times n$ orthogonal terrain where the highest points along $x$-axis are $M = \max_j E_{ij}$,
 and the maximum deltas along the $y$-axis are $D_j = \max_i{\|E_{i,j}-E_{i,j+1}\|} = M$.
-Now, we consider a sort of worst case orthogonal terrain defined as follows:
+For example, one such ``worst-case'' orthogonal terrain is the following
+checkerboard alternating between the minimum and maximum heights:
 $$
 E_{ij}=
 \begin{cases}
@@ -12,16 +13,15 @@ M & \textrm{ if $(i+j)$ is even,}\\
 \end{cases}
 $$
 
-This forms a checkerboard alternating between the minimum and maximum heights.
-We assume that the top faces of the terrain form axis aligned squares in the unfolded state,
+We assume that the top faces of the terrain form axis-aligned squares in the unfolded state,
 The longest line formed along either axis is the total length of the top surfaces plus the sum of the height changes across the axis, which gives
 $$L = n + \sum^{n}_{i=1} M = n + (n-1)\cdot M.$$
-We conclude that the minimum required size of the folding is $L\times L$.
+We conclude that the minimum required size of a folding is $L\times L$.
 
-From Theorem~\ref{thm:grid_extrusion}, we know that the terrain can be folded from a $X\times Y$ strip of paper,
+From Theorem~\ref{thm:grid_extrusion}, we know that the terrain can be folded from an $X\times Y$ strip of paper,
 where $X = n + 2(n-1)\cdot M + o(1)$ and $Y = n + (n-1)\cdot M$.
 Since $Y = L$, and $X < 2L$ (assuming an appropriately small value of $\varepsilon$),
-our construction results in a folding is within a factor two of the optimal paper usage, under the aforementioned assumption.
+our construction results in a folding that is within a factor two of the optimal paper usage for this terrain, under the aforementioned assumption.
 
 %\begin{claim}
 %The $x$-axis length of the strip of paper required to fold this shape can be made arbitrarily close to $X$.

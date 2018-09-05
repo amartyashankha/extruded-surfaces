@@ -2,12 +2,12 @@
 \label{sec:column_extrusion}
 
 First, we consider a single column (Figure~\ref{fig:column_extrusion})
-of the orthogonal terrain $\left\{ E_{i,1}, E_{i,2}, \cdots, E_{i,n} \right\}$.
-We denote the column extrusion heights as $\left\{ H_1, H_2,\cdots H_n \right\}$, where $H_j = E_{i,j}$.
+of the orthogonal terrain $\left\{ E_{i,1}, E_{i,2}, \dots, E_{i,n} \right\}$.
+We denote the column extrusion heights as $\left\{ H_1, H_2,\dots, H_n \right\}$, where $H_j = E_{i,j}$.
 Consider the decomposition of $T$ into the following time intervals:% (parallel to the $x$-axis):
 \begin{align}
     \label{eq:column_decomposition}
-T = 1 + D_1  +  1 + D_2  +  1 + D_3  +\cdots\cdots +  1 + D_{m-1}  +  1.
+T = 1 + D_1  +  1 + D_2  +  1 + D_3  +\cdots +  1 + D_{m-1}  +  1.
 \end{align}
 Here, the time corresponding to the $i$th 1 is realized as the surface at height $H_i$,
 and the time corresponding to $D_i = \left| H_i-H_{i+1}\right|$ is the transition between $H_i$ and $H_{i+1}$.
@@ -33,7 +33,7 @@ This cross section comprises of a two vertical lines separated by a top horizont
 The vertical lines are connected to the top segment with
 a sequence of $2k$ horizontal segments that \emph{accordion} back and forth.
 During each $1$-interval, all segments move along the positive $y$ direction (Figure~\ref{fig:level_shift0}),to create the $i$th level.
-Subsequently, during the level shift, all segments move in the $x-z$ plane (Figure~\ref{fig:level_shift1},~\ref{fig:level_shift2}).
+Subsequently, during the level shift, all segments move in the $x$-$z$ plane (Figure~\ref{fig:level_shift1},~\ref{fig:level_shift2}).
 \begin{restatable}{pro}{AccordionEven}
 \label{pro:accordion_even}
 The number of accordion folds during horizontal evolution (along the $y$ axis) must be even.
@@ -76,11 +76,11 @@ So, the minimum possible length of the cross section under our construction is $
 
 This provides the minimum width of any strip required to construct a column extrusion.
 Also the minimum required strip length is given by
-$$ T = 1 + D_1  +  1 + D_2  +  1 + D_3  +\cdots\cdots +  1 + D_{m-1}  +  1 = m + \sum^{m-1}_{i=1} \left| H_{i+1}-H_i\right|. $$
+$$ T = 1 + D_1  +  1 + D_2  +  1 + D_3  +\cdots +  1 + D_{m-1}  +  1 = m + \sum^{m-1}_{i=1} \left| H_{i+1}-H_i\right|. $$
 
 \begin{restatable}{thm}{column_extrusion}
 \label{thm:column_extrusion}
-A given column extrusion with heights $\left\{ H_1, H_2,\cdots H_n \right\}$, can be constructed from a strip of paper with size
+A given column extrusion with heights $\left\{ H_1, H_2,\dots, H_n \right\}$, can be constructed from a strip of paper with size
 $X\times T$, where
 \begin{align*}
 X\ge 1 + 2\cdot\max\left\{ H_i\right\}, && T \ge \left( m + \sum\limits^{m-1}_{i=1} \left| H_{i+1}-H_i\right|\right).
